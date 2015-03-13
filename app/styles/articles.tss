@@ -1,0 +1,13 @@
+".container": {
+	backgroundColor:"white",
+	width: Ti.UI.FILL,
+	height: Titanium.UI.FILL,
+	fullscreen: false,
+}
+
+
+".idxLetter": {
+	"font": {
+		fontSize: 11
+	}
+}

@@ -1,0 +1,32 @@
+<Alloy>
+		<Window class="container" layout="horizontal" title="Artigos">
+			<View layout="vertical">
+				<Label class="idxLetter">A</Label>
+				<Label class="idxLetter">B</Label>
+				<Label class="idxLetter">C</Label>
+				<Label class="idxLetter">D</Label>
+				<Label class="idxLetter">E</Label>
+				<Label class="idxLetter">F</Label>
+				<Label class="idxLetter">G</Label>
+				<Label class="idxLetter">H</Label>
+				<Label class="idxLetter">I</Label>
+				<Label class="idxLetter">J</Label>
+				<Label class="idxLetter">K</Label>
+				<Label class="idxLetter">L</Label>
+				<Label class="idxLetter">M</Label>
+				<Label class="idxLetter">N</Label>
+				<Label class="idxLetter">O</Label>
+				<Label class="idxLetter">P</Label>
+				<Label class="idxLetter">Q</Label>
+				<Label class="idxLetter">R</Label>
+				<Label class="idxLetter">S</Label>
+				<Label class="idxLetter">T</Label>
+				<Label class="idxLetter">U</Label>
+				<Label class="idxLetter">V</Label>
+				<Label class="idxLetter">W</Label>
+				<Label class="idxLetter">X</Label>
+				<Label class="idxLetter">Y</Label>
+				<Label class="idxLetter">X</Label>
+			</View>
+		</Window>
+</Alloy>
