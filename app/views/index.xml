@@ -1,5 +1,5 @@
 <Alloy>
-	<NavigationWindow id="navGroupWin" platform="ios">
+	<!-- <NavigationWindow id="navGroupWin" platform="ios"> -->
 		<Window class="container" layout="vertical" title="dr.consulta">
 			<View id="header_view">
 				<Label id="title_label">dr.consulta</Label>
@@ -21,5 +21,5 @@
 				<ImageView image="/gravidez.png" class="menu_img" top="1" left="1" onClick="load_gravidez" />
 			</View>
 		</Window>
-	</NavigationWindow>
+	<!-- </NavigationWindow> -->
 </Alloy>

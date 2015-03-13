@@ -8,7 +8,7 @@
     <description>undefined</description>
     <copyright>2015 by Tibi</copyright>
     <icon>appicon.png</icon>
-    <fullscreen>false</fullscreen>
+    <fullscreen>true</fullscreen>
     <navbar-hidden>true</navbar-hidden>
     <analytics>false</analytics>
     <guid>30a64dba-0be8-410f-984a-bf81166f5b4d</guid>

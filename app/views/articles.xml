@@ -1,5 +1,5 @@
 <Alloy>
-		<Window class="container" layout="horizontal" title="Artigos">
+		<Window class="container" title="Artigos">
 			<View layout="vertical">
 				<Label class="idxLetter">A</Label>
 				<Label class="idxLetter">B</Label>
