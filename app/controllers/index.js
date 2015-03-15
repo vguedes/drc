@@ -1,3 +1,5 @@
+var db = Ti.Database.install('/dr.db', '_alloy_');
+
 // if (OS_IOS) {
 	// $.navGroupWin.open();
 // }

@@ -1,32 +1,17 @@
 <Alloy>
-		<Window class="container" title="Artigos">
-			<View layout="vertical">
-				<Label class="idxLetter">A</Label>
-				<Label class="idxLetter">B</Label>
-				<Label class="idxLetter">C</Label>
-				<Label class="idxLetter">D</Label>
-				<Label class="idxLetter">E</Label>
-				<Label class="idxLetter">F</Label>
-				<Label class="idxLetter">G</Label>
-				<Label class="idxLetter">H</Label>
-				<Label class="idxLetter">I</Label>
-				<Label class="idxLetter">J</Label>
-				<Label class="idxLetter">K</Label>
-				<Label class="idxLetter">L</Label>
-				<Label class="idxLetter">M</Label>
-				<Label class="idxLetter">N</Label>
-				<Label class="idxLetter">O</Label>
-				<Label class="idxLetter">P</Label>
-				<Label class="idxLetter">Q</Label>
-				<Label class="idxLetter">R</Label>
-				<Label class="idxLetter">S</Label>
-				<Label class="idxLetter">T</Label>
-				<Label class="idxLetter">U</Label>
-				<Label class="idxLetter">V</Label>
-				<Label class="idxLetter">W</Label>
-				<Label class="idxLetter">X</Label>
-				<Label class="idxLetter">Y</Label>
-				<Label class="idxLetter">X</Label>
+		<Window class="container" title="Artigos" layout="vertical">
+			
+			<View id="header_view">
+				<Label id="title_label">dr.consulta</Label>
 			</View>
+			<Label id="minha">aassdd</Label>
+
+			<!-- <View class="search_bar_view">
+				<ImageView class="search_icon" image="/search_icon.png" />
+				<Label class="search_hint" onClick="load_saude_az">O que você está sentindo?</Label>
+			</View> -->
+			
+			<ScrollView layout="vertical" id="articlesView" class="articlesView" />
+			
 		</Window>
 </Alloy>

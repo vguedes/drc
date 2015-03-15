@@ -11,3 +11,73 @@
 		fontSize: 11
 	}
 }
+
+
+".article": {
+	color: "#000",
+	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+	left: "5%",
+	font: {
+		fontSize: 16
+	}
+}
+
+".separator": {
+	width: Titanium.UI.FILL,
+	height: "0.5",
+	backgroundColor: "#F0F0F2",
+	left: '5%'
+}
+
+"#header_view": {
+	backgroundColor: "#5090CD",
+	width: Titanium.UI.FILL,
+	height: 25
+}
+
+"#title_label": {
+	color: "#fff",
+	backgroundColor: "#5090CD",
+	font: {
+		fontSize: 18
+	}
+}
+
+".search_bar_view": {
+	width: Ti.UI.FILL,
+	layout: "horizontal",
+	backgroundColor: "#F0F0F2",
+	height: "30",
+	font: {
+		fontSize: 18
+	}
+}
+
+".search_icon": {
+	width: 11,
+	height: 15,
+	top: 8,
+	left: 8
+}
+
+".search_hint": {
+	color: "#6E6F71",
+	font: {
+		fontSize: 14
+	},
+	top: 7,
+	left: 7
+}
+
+
+
+
+".articlesView": {
+	contentWidth: 'auto',
+	contentHeight: 'auto'
+}
+
+
+
+
+
