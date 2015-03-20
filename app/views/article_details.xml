@@ -8,24 +8,15 @@
 		<Label id="article" class="article" />
 		<ScrollView layout="vertical">
 			
-			<Label id="whatis_header" class="header">O que é?</Label>
-			<WebView id="whatis" class="data" />
-			<Label id="symptoms_header" class="header">Sintomas</Label>
-			<WebView id="symptoms" class="data" />
-			<Label id="diagnosis_header" class="header">Diagnóstico</Label>
-			<WebView id="diagnosis" class="data" />
-			<Label id="duration_header" class="header">Duração</Label>
-			<WebView id="duration" class="data" />
-			<Label id="prevention_header" class="header">Prevenção</Label>
-			<WebView id="prevention" class="data" />
-			<Label id="treatment_header" class="header">Tratamento</Label>
-			<WebView id="treatment" class="data" />
-			<Label id="when_contact_professional_header" class="header">Quando contactar um profissional</Label>
-			<WebView id="when_contact_professional" class="data" />
-			<Label id="prognosis_header" class="header">Prognóstico</Label>
-			<WebView id="prognosis" class="data" />
-			<Label id="aditional_info_header" class="header">Informação adicional</Label>
-			<WebView id="aditional_info" class="data" />
+			<Button id="what_is" class="header" onClick="openDetail" title="O que é?" />
+			<Button id="symptoms" class="header" onClick="openDetail" title="Sintomas" />
+			<Button id="diagnosis" class="header" onClick="openDetail" title="Diagnóstico" />
+			<Button id="duration" class="header" onClick="openDetail" title="Duração" />
+			<Button id="prevention" class="header" onClick="openDetail" title="Prevenção" />
+			<Button id="treatment" class="header" onClick="openDetail" title="Tratamento" />
+			<Button id="when_contact_professional" class="header" onClick="openDetail" title="Quando contactar um profissional" />
+			<Button id="prognosis" class="header" onClick="openDetail" title="Prognóstico" />
+			<Button id="aditional_info" class="header" onClick="openDetail" title="Informação adicional" />
 		</ScrollView>
 	</Window>
 </Alloy>

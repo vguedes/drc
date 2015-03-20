@@ -34,7 +34,13 @@
 
 ".header": {
 	color: "#000",
-	left: "5%"
+	// backgroundColor: "#C0C0C0",
+	// left: "5%",
+	width: Titanium.UI.FILL,
+	height: "40",
+	font: {
+		fontSize: 12
+	}
 }
 
 ".data": {
