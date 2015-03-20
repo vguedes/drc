@@ -1,0 +1,43 @@
+/**
+	azul escuro		5090CD
+	azul claro		DDE9F5
+	cinza escuro	6E6F71
+	cinza claro		F0F0F2
+ */
+".container" : {
+ 	backgroundColor: "#FFF",
+ 	
+}
+
+"#header_view": {
+	backgroundColor: "#5090CD",
+	width: Titanium.UI.FILL,
+	height: 25
+}
+
+"#title_label": {
+	color: "#fff",
+	backgroundColor: "#5090CD",
+	font: {
+		fontSize: 18
+	}
+}
+
+".article": {
+	color: "#000",
+	left: "5%",
+	font: {
+		fontWeight: 'bold',
+		fontSize: 14
+	}
+}
+
+".header": {
+	color: "#000",
+	left: "5%"
+}
+
+".data": {
+	width: Titanium.UI.FILL,
+	height: "100"
+}

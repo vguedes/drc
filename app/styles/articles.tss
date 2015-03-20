@@ -77,7 +77,15 @@
 	contentHeight: 'auto'
 }
 
+"#idxView": {
+	width: Titanium.UI.FILL,
+	height: Titanium.UI.FILL,
+	backgroundColor: "red"
+}
 
-
+".hor": {
+	width: Titanium.UI.FILL,
+	height: Titanium.UI.SIZE
+}
 
 

@@ -3,10 +3,35 @@ var db = Ti.Database.open('_alloy_');
 
 var asdFunc = function(e) {
 	// alert($['U']);
-	ee = e['source'];
+	ee = e['source'];;
 	for (var el in ee) {
 		Ti.API.log(el + " - " + ee[el]);
 	}
+};
+
+var openArticleDetails = function(e) {
+	var articleId = e['source']['id'];
+	var article = e['source']['title'];
+	// Ti.API.warn(e['source']['text']);
+	// for (var el in ee) {
+		// Ti.API.log(el + " - " + ee[el]);
+	// }
+	var articledetails_view = Alloy.createController("article_details", {'articleId': articleId, 'article': article}).getView();
+    // if (OS_IOS) {
+        // $.navGroupWin.openWindow(saudeaz_view);
+    // }
+ 	// if (OS_ANDROID) {
+ 		articledetails_view.addEventListener('open', function(e) {
+   			articledetails_view.activity.actionBar.hide();
+		});
+        articledetails_view.open();
+    // }    
+};
+
+var showDetails = function (e) {
+	var articleId = e['source']['id'];
+	var article = e['source']['text'];
+	
 };
 
 var articles = [];
@@ -21,35 +46,14 @@ while (articlesRS.isValidRow())
 }
 articlesRS.close();
 
-$.articles = articles;
-
-ls = "abcdefghijklmnopqrstuvwxyz".split("");
-for (var l in ls) {
-	le = ls[l].toUpperCase();
-	
-	var l = Ti.UI.createLabel({
-		text: le,
-		id: le,
-		color: '#000',
-		font: {fontSize: 20},
-		left: '5%'
-	});
-	
-	
-	l.addEventListener('click', asdFunc);
-	$.articlesView.add(l);
-	for (var articlePos in articles) {
-		var article = articles[articlePos];
-		if (article['articleTitle'].charAt(0).toUpperCase() === le) {
-			var l = $.UI.create('Label', {'text': article['articleTitle'], 'classes': ['article'],
-				'id': article['articleId'], 'visible': 'true'});
-			var separator = $.UI.create('View', {'classes': ['separator']});
-			$.articlesView.add(l);
-			$.articlesView.add(separator);
-		}
-	}
+for(var i=0,j=articles.length; i<j; i++){
+  var article = articles[i];
+  var articleId = article['articleId'];
+  var articleTitle = article['articleTitle'];
+  var articleFirstLetter = articleTitle.charAt(0).toUpperCase();
+  var row = Ti.UI.createTableViewRow({title: articleTitle, id: articleId});
+  row.addEventListener('click', openArticleDetails);
+  $['s' + articleFirstLetter].add(row);
 };
 
 
-
-// $.articlesView.scrollTo(0, $.articlesView.U.top);

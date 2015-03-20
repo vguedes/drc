@@ -4,14 +4,41 @@
 			<View id="header_view">
 				<Label id="title_label">dr.consulta</Label>
 			</View>
-			<Label id="minha">aassdd</Label>
+			
+			<View layout="horizontal" class="hor"></View>
+			
+			<TableView id="table" width="95%">
+				<SearchBar hintText="search"></SearchBar>
+				<TableViewSection id="sA" headerTitle="A"></TableViewSection>
+				<TableViewSection id="sB" headerTitle="B"></TableViewSection>
+				<TableViewSection id="sC" headerTitle="C"></TableViewSection>
+				<TableViewSection id="sD" headerTitle="D"></TableViewSection>
+				<TableViewSection id="sE" headerTitle="E"></TableViewSection>
+				<TableViewSection id="sF" headerTitle="F"></TableViewSection>
+				<TableViewSection id="sG" headerTitle="G"></TableViewSection>
+				<TableViewSection id="sH" headerTitle="H"></TableViewSection>
+				<TableViewSection id="sI" headerTitle="I"></TableViewSection>
+				<TableViewSection id="sJ" headerTitle="J"></TableViewSection>
+				<TableViewSection id="sK" headerTitle="K"></TableViewSection>
+				<TableViewSection id="sL" headerTitle="L"></TableViewSection>
+				<TableViewSection id="sM" headerTitle="M"></TableViewSection>
+				<TableViewSection id="sN" headerTitle="N"></TableViewSection>
+				<TableViewSection id="sO" headerTitle="O"></TableViewSection>
+				<TableViewSection id="sP" headerTitle="P"></TableViewSection>
+				<TableViewSection id="sQ" headerTitle="Q"></TableViewSection>
+				<TableViewSection id="sR" headerTitle="R"></TableViewSection>
+				<TableViewSection id="sS" headerTitle="S"></TableViewSection>
+				<TableViewSection id="sT" headerTitle="T"></TableViewSection>
+				<TableViewSection id="sU" headerTitle="U"></TableViewSection>
+				<TableViewSection id="sV" headerTitle="V"></TableViewSection>
+				<TableViewSection id="sW" headerTitle="W"></TableViewSection>
+				<TableViewSection id="sX" headerTitle="X"></TableViewSection>
+				<TableViewSection id="sY" headerTitle="Y"></TableViewSection>
+				<TableViewSection id="sZ" headerTitle="Z"></TableViewSection>
+			</TableView>
+			
+			<View id="idxView"></View>
+			
 
-			<!-- <View class="search_bar_view">
-				<ImageView class="search_icon" image="/search_icon.png" />
-				<Label class="search_hint" onClick="load_saude_az">O que você está sentindo?</Label>
-			</View> -->
-			
-			<ScrollView layout="vertical" id="articlesView" class="articlesView" />
-			
 		</Window>
 </Alloy>

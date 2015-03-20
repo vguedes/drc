@@ -1,0 +1,31 @@
+<Alloy>
+	<Window class="container" layout="vertical">
+
+		<View id="header_view">
+			<Label id="title_label">dr.consulta</Label>
+		</View>
+
+		<Label id="article" class="article" />
+		<ScrollView layout="vertical">
+			
+			<Label id="whatis_header" class="header">O que é?</Label>
+			<WebView id="whatis" class="data" />
+			<Label id="symptoms_header" class="header">Sintomas</Label>
+			<WebView id="symptoms" class="data" />
+			<Label id="diagnosis_header" class="header">Diagnóstico</Label>
+			<WebView id="diagnosis" class="data" />
+			<Label id="duration_header" class="header">Duração</Label>
+			<WebView id="duration" class="data" />
+			<Label id="prevention_header" class="header">Prevenção</Label>
+			<WebView id="prevention" class="data" />
+			<Label id="treatment_header" class="header">Tratamento</Label>
+			<WebView id="treatment" class="data" />
+			<Label id="when_contact_professional_header" class="header">Quando contactar um profissional</Label>
+			<WebView id="when_contact_professional" class="data" />
+			<Label id="prognosis_header" class="header">Prognóstico</Label>
+			<WebView id="prognosis" class="data" />
+			<Label id="aditional_info_header" class="header">Informação adicional</Label>
+			<WebView id="aditional_info" class="data" />
+		</ScrollView>
+	</Window>
+</Alloy>
