@@ -1,21 +1,9 @@
 var db = Ti.Database.open('_alloy_');
 // db.file.setRemoteBackup(false);
 
-var asdFunc = function(e) {
-	// alert($['U']);
-	ee = e['source'];;
-	for (var el in ee) {
-		Ti.API.log(el + " - " + ee[el]);
-	}
-};
-
 var openArticleDetails = function(e) {
 	var articleId = e['source']['id'];
 	var article = e['source']['title'];
-	// Ti.API.warn(e['source']['text']);
-	// for (var el in ee) {
-		// Ti.API.log(el + " - " + ee[el]);
-	// }
 	var articledetails_view = Alloy.createController("article_details", {'articleId': articleId, 'article': article}).getView();
     // if (OS_IOS) {
         // $.navGroupWin.openWindow(saudeaz_view);
@@ -35,7 +23,7 @@ var showDetails = function (e) {
 };
 
 var articles = [];
-var articlesRS = db.execute('SELECT id,titleF FROM article ORDER BY titleF');
+var articlesRS = db.execute('SELECT id, titleF FROM article ORDER BY titleF');
 while (articlesRS.isValidRow())
 {
 	articles.push({

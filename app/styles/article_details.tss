@@ -47,3 +47,14 @@
 	width: Titanium.UI.FILL,
 	height: "100"
 }
+
+".hor": {
+	width: Titanium.UI.FILL,
+	height: Titanium.UI.FILL
+}
+
+".btns_containner": {
+	width: "80%",
+	height: Titanium.UI.FILL
+	
+}

@@ -1,0 +1,32 @@
+
+".container" : {
+ 	backgroundColor: "#FFF"
+}
+
+"#header_view": {
+	backgroundColor: "#5090CD",
+	width: Titanium.UI.FILL,
+	height: 25
+}
+
+"#title_label": {
+	color: "#fff",
+	backgroundColor: "#5090CD",
+	font: {
+		fontSize: 18
+	}
+}
+
+".article": {
+	color: "#000",
+	left: "5%",
+	font: {
+		fontWeight: 'bold',
+		fontSize: 14
+	}
+}
+
+"#detail_HTML": {
+	width: Titanium.UI.SIZE,
+	height: Titanium.UI.SIZE
+}
