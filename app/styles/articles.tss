@@ -32,15 +32,29 @@
 "#header_view": {
 	backgroundColor: "#5090CD",
 	width: Titanium.UI.FILL,
-	height: 25
+	// height: Titanium.UI.SIZE
+	height: 50
+}
+
+"#backButton": {
+	color: "#FFF",
+	// width: Titanium.UI.SIZE,
+	font: {
+		fontSize: 22
+	},
+	// verticalAlign: Titanium.UI.TEXT_VERTICAL_ALIGNMENT_TOP,
+	// zIndex: 10
 }
 
 "#title_label": {
 	color: "#fff",
 	backgroundColor: "#5090CD",
 	font: {
-		fontSize: 18
-	}
+		fontSize: 22
+	},
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER,
+	// width: Titanium.UI.FILL,
+	// zIndex: 1
 }
 
 ".search_bar_view": {

@@ -44,4 +44,4 @@ for(var i=0,j=articles.length; i<j; i++){
   $['s' + articleFirstLetter].add(row);
 };
 
-
+db.close();
