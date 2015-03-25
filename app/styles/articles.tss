@@ -6,13 +6,6 @@
 }
 
 
-".idxLetter": {
-	"font": {
-		fontSize: 11
-	}
-}
-
-
 ".article": {
 	color: "#000",
 	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
@@ -22,35 +15,28 @@
 	}
 }
 
-".separator": {
-	width: Titanium.UI.FILL,
-	height: "0.5",
-	backgroundColor: "#F0F0F2",
-	left: '5%'
-}
-
 "#header_view": {
 	backgroundColor: "#5090CD",
 	width: Titanium.UI.FILL,
 	// height: Titanium.UI.SIZE
-	height: 50
+	height: 25
 }
 
-"#backButton": {
-	color: "#FFF",
-	// width: Titanium.UI.SIZE,
-	font: {
-		fontSize: 22
-	},
-	// verticalAlign: Titanium.UI.TEXT_VERTICAL_ALIGNMENT_TOP,
-	// zIndex: 10
-}
+// "#backButton": {
+	// color: "#FFF",
+	// // width: Titanium.UI.SIZE,
+	// font: {
+		// fontSize: 22
+	// },
+	// // verticalAlign: Titanium.UI.TEXT_VERTICAL_ALIGNMENT_TOP,
+	// // zIndex: 10
+// }
 
 "#title_label": {
 	color: "#fff",
 	backgroundColor: "#5090CD",
 	font: {
-		fontSize: 22
+		fontSize: 18
 	},
 	textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER,
 	// width: Titanium.UI.FILL,
@@ -86,20 +72,8 @@
 
 
 
-".articlesView": {
-	contentWidth: 'auto',
-	contentHeight: 'auto'
-}
-
 "#idxView": {
 	width: Titanium.UI.FILL,
 	height: Titanium.UI.FILL,
 	backgroundColor: "red"
 }
-
-".hor": {
-	width: Titanium.UI.FILL,
-	height: Titanium.UI.SIZE
-}
-
-

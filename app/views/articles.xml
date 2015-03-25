@@ -1,12 +1,10 @@
 <Alloy>
 		<Window class="container" title="Artigos" layout="vertical">
 			
-			<View id="header_view" layout="horizontal">
-				<Label id="backButton" text="&lt;"></Label>
+			<View id="header_view">
+				<!-- <Label id="backButton" text="&lt;"></Label> -->
 				<Label id="title_label">dr.consulta</Label>
 			</View>
-			
-			<View layout="horizontal" class="hor"></View>
 			
 			<TableView id="table" width="95%">
 				<SearchBar hintText="search"></SearchBar>
