@@ -15,14 +15,8 @@ var openArticleDetails = function(e) {
     // }    
 };
 
-var showDetails = function (e) {
-	var articleId = e['source']['id'];
-	var article = e['source']['text'];
-	
-};
-
 var articles = [];
-var articlesRS = db.execute('SELECT id, name FROM article ORDER BY titleF');
+var articlesRS = db.execute('SELECT id, name FROM article ORDER BY name');
 while (articlesRS.isValidRow())
 {
 	articles.push({

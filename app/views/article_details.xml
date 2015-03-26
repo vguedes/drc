@@ -6,18 +6,21 @@
 		</View>
 
 		<Label id="article" class="article" />
+		
+		<WebView id="details"></WebView>
+		
 		<!-- <View layout="horizontal" class="hor"> -->
-			<View layout="vertical" class="btns_containner">
-				<Button id="what_is" class="header" onClick="openDetail" title="O que é?" />
-				<Button id="symptoms" class="header" onClick="openDetail" title="Sintomas" />
-				<Button id="diagnosis" class="header" onClick="openDetail" title="Diagnóstico" />
-				<Button id="duration" class="header" onClick="openDetail" title="Duração" />
-				<Button id="prevention" class="header" onClick="openDetail" title="Prevenção" />
-				<Button id="treatment" class="header" onClick="openDetail" title="Tratamento" />
-				<Button id="when_contact_professional" class="header" onClick="openDetail" title="Quando contactar um profissional" />
-				<Button id="prognosis" class="header" onClick="openDetail" title="Prognóstico" />
-				<Button id="aditional_info" class="header" onClick="openDetail" title="Informação adicional" />
-			</View>
+			<!-- <View layout="vertical" class="btns_containner">
+				<Button id="what_is" class="header" title="O que é?" />
+				<Button id="symptoms" class="header" title="Sintomas" />
+				<Button id="diagnosis" class="header" title="Diagnóstico" />
+				<Button id="duration" class="header" title="Duração" />
+				<Button id="prevention" class="header" title="Prevenção" />
+				<Button id="treatment" class="header" title="Tratamento" />
+				<Button id="when_contact_professional" class="header" title="Quando contactar um profissional" />
+				<Button id="prognosis" class="header" title="Prognóstico" />
+				<Button id="aditional_info" class="header" title="Informação adicional" />
+			</View> -->
 		<!-- </View> -->
 	</Window>
 </Alloy>

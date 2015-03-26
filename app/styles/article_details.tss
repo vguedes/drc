@@ -6,7 +6,7 @@
  */
 ".container" : {
  	backgroundColor: "#FFF",
- 	
+ 	width: Titanium.UI.FILL
 }
 
 "#header_view": {
@@ -21,6 +21,11 @@
 	font: {
 		fontSize: 18
 	}
+}
+
+"#details": {
+	width: Titanium.UI.FILL,
+	height: Titanium.UI.FILL
 }
 
 ".article": {
