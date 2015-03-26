@@ -1,5 +1,4 @@
 var db = Ti.Database.open('_alloy_');
-// db.file.setRemoteBackup(false);
 
 var openArticleDetails = function(e) {
 	var articleId = e['source']['id'];
@@ -23,12 +22,12 @@ var showDetails = function (e) {
 };
 
 var articles = [];
-var articlesRS = db.execute('SELECT id, titleF FROM article ORDER BY titleF');
+var articlesRS = db.execute('SELECT id, name FROM article ORDER BY titleF');
 while (articlesRS.isValidRow())
 {
 	articles.push({
 		'articleId': articlesRS.fieldByName('id'),
-		'articleTitle': articlesRS.fieldByName('titleF')
+		'articleName': articlesRS.fieldByName('name')
 	});
   articlesRS.next();
 }
@@ -37,9 +36,9 @@ articlesRS.close();
 for(var i=0,j=articles.length; i<j; i++){
   var article = articles[i];
   var articleId = article['articleId'];
-  var articleTitle = article['articleTitle'];
-  var articleFirstLetter = articleTitle.charAt(0).toUpperCase();
-  var row = Ti.UI.createTableViewRow({title: articleTitle, id: articleId});
+  var articleName = article['articleName'];
+  var articleFirstLetter = articleName.charAt(0).toUpperCase();
+  var row = Ti.UI.createTableViewRow({title: articleName, id: articleId});
   row.addEventListener('click', openArticleDetails);
   $['s' + articleFirstLetter].add(row);
 };
