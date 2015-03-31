@@ -55,15 +55,18 @@ cinza claro		F0F0F2
 "#header_view": {
 	backgroundColor: "#5090CD",
 	width: Titanium.UI.FILL,
-	height: 25
+	height: 50
 }
 
+
 "#title_label": {
+	width: Ti.UI.FILL,
 	color: "#fff",
 	backgroundColor: "#5090CD",
 	font: {
-		fontSize: 18
-	}
+		fontSize: 30
+	},
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER,
 }
 
 "#plus_label": {

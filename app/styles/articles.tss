@@ -5,6 +5,9 @@
 	fullscreen: false,
 }
 
+".sb": {
+	color: "#000"
+}
 
 ".article": {
 	color: "#000",
@@ -18,29 +21,22 @@
 "#header_view": {
 	backgroundColor: "#5090CD",
 	width: Titanium.UI.FILL,
-	// height: Titanium.UI.SIZE
-	height: 25
+	height: 50
 }
 
-// "#backButton": {
-	// color: "#FFF",
-	// // width: Titanium.UI.SIZE,
-	// font: {
-		// fontSize: 22
-	// },
-	// // verticalAlign: Titanium.UI.TEXT_VERTICAL_ALIGNMENT_TOP,
-	// // zIndex: 10
-// }
+".separator": {
+	top: 10,
+	width: "10%",
+}
 
 "#title_label": {
+	width: '80%',
 	color: "#fff",
 	backgroundColor: "#5090CD",
 	font: {
-		fontSize: 18
+		fontSize: 30
 	},
 	textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER,
-	// width: Titanium.UI.FILL,
-	// zIndex: 1
 }
 
 ".search_bar_view": {
@@ -68,9 +64,6 @@
 	top: 7,
 	left: 7
 }
-
-
-
 
 "#idxView": {
 	width: Titanium.UI.FILL,

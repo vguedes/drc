@@ -1,3 +1,5 @@
+var back = function(e) {$.win.close();};
+
 var args = arguments[0] || {};
 var articleId = args.articleId || false;
 var article = args.article || false;

@@ -1,13 +1,15 @@
 <Alloy>
-		<Window class="container" title="Artigos" layout="vertical">
+		<Window id="win" class="container" title="Artigos" layout="vertical">
 			
-			<View id="header_view">
-				<!-- <Label id="backButton" text="&lt;"></Label> -->
+			<View id="header_view" layout="horizontal">
+				<!-- <Label class="backButton" text="&lt;"></Label> -->
+				<ImageView id="backButton" class="separator" image="/left_arrow.png" onClick="back"></ImageView>
 				<Label id="title_label">dr.consulta</Label>
+				<Label class="separator" text=""></Label>
 			</View>
 			
 			<TableView id="table" width="95%">
-				<SearchBar hintText="search"></SearchBar>
+				<SearchBar class="sb" hintText="search"></SearchBar>
 				<TableViewSection id="sA" headerTitle="A"></TableViewSection>
 				<TableViewSection id="sB" headerTitle="B"></TableViewSection>
 				<TableViewSection id="sC" headerTitle="C"></TableViewSection>

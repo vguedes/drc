@@ -1,4 +1,5 @@
-var db = Ti.Database.open('_alloy_');
+var back = function(e) {$.win.close();};
+
 
 var openArticleDetails = function(e) {
 	var articleId = e['source']['id'];
@@ -16,9 +17,9 @@ var openArticleDetails = function(e) {
 };
 
 var articles = [];
+var db = Ti.Database.open('_alloy_');
 var articlesRS = db.execute('SELECT id, name FROM article ORDER BY name');
-while (articlesRS.isValidRow())
-{
+while (articlesRS.isValidRow()) {
 	articles.push({
 		'articleId': articlesRS.fieldByName('id'),
 		'articleName': articlesRS.fieldByName('name')
@@ -26,6 +27,7 @@ while (articlesRS.isValidRow())
   articlesRS.next();
 }
 articlesRS.close();
+db.close();
 
 for(var i=0,j=articles.length; i<j; i++){
   var article = articles[i];
@@ -36,5 +38,3 @@ for(var i=0,j=articles.length; i<j; i++){
   row.addEventListener('click', openArticleDetails);
   $['s' + articleFirstLetter].add(row);
 };
-
-db.close();
