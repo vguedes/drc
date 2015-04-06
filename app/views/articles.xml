@@ -9,7 +9,7 @@
 			</View>
 			<Button title="Pesquisar" id="tag_search_btn" onClick="searchByTags" right="10px" />
 			<TableView id="table" width="95%">
-				<SearchBar class="sb" hintText="search" showCancel="false"></SearchBar>
+				<SearchBar class="sb" id="sb" hintText="search" showCancel="false"></SearchBar>
 				<TableViewSection id="sA" headerTitle="A"></TableViewSection>
 				<TableViewSection id="sB" headerTitle="B"></TableViewSection>
 				<TableViewSection id="sC" headerTitle="C"></TableViewSection>
