@@ -2,30 +2,27 @@ var back = function(e) {$.win.close();};
 
 var searchByTags = function(e) {
 	var tag = $.sb.getValue();
-	Ti.API.log('info',tag);
+	
+	if (tag) {
+		var article = {};
+		var db = Ti.Database.open('_alloy_');
+		var query = "SELECT * FROM article WHERE id IN (" +
+					"SELECT article_id FROM article_article_tags WHERE article_article_tags.article_tag_id IN (" +
+					"SELECT article_tags.id FROM article_tags WHERE article_tags.tag = '" + tag + "'));";
+		var articlesRS = db.execute(query);
+		if (articlesRS.isValidRow()) {
+			article['articleId'] = articlesRS.fieldByName('id');
+			article['articleName'] = articlesRS.fieldByName('name');
+			Ti.API.log('info',article['articleName']);
+		} else {
+			alert("Não encontrado.");
+		};
+		articlesRS.close();
+		db.close();
 
-	var articles = [];
-	var db = Ti.Database.open('_alloy_');
-	var query = "SELECT * FROM article WHERE id IN (" +
-				"SELECT article_id FROM article_article_tags WHERE article_article_tags.article_tag_id IN (" +
-				"SELECT article_tags.id FROM article_tags WHERE article_tags.tag = '" + tag + "'));";
-
-	/*select * from article where article.id in (
-	select article_id from article_article_tags where article_article_tags.article_tag_id in (
-	select article_tags.id from article_tags where article_tags.tag = "febre"));*/
-
-	var articlesRS = db.execute(query);
-	while (articlesRS.isValidRow()) {
-		articles.push({
-			'articleId': articlesRS.fieldByName('id'),
-			'articleName': articlesRS.fieldByName('name')
-		});
-	  articlesRS.next();
-	}
-	articlesRS.close();
-	db.close();
-	Ti.API.log('info',articles[0]['articleName']);
-
+	} else {
+		alert("Digite algo para pesquisar!");
+	};
 };
 
 var openArticleDetails = function(e) {
