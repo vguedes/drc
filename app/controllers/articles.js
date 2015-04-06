@@ -1,19 +1,34 @@
 var back = function(e) {$.win.close();};
 
+// Extrair método getArticles
+
 var searchByTags = function(e) {
 	var tag = $.sb.getValue();
-	
 	if (tag) {
-		var article = {};
+		tag = tag.split(" ");
+		// Extrair método getArticles		
+		var articles = [];
 		var db = Ti.Database.open('_alloy_');
 		var query = "SELECT * FROM article WHERE id IN (" +
 					"SELECT article_id FROM article_article_tags WHERE article_article_tags.article_tag_id IN (" +
-					"SELECT article_tags.id FROM article_tags WHERE article_tags.tag = '" + tag + "'));";
+					"SELECT article_tags.id FROM article_tags WHERE article_tags.tag = '" + tag.splice(0, 1) + "'));";
+					// MULTIPLAS TAGS COM AND
+		
+		
 		var articlesRS = db.execute(query);
-		if (articlesRS.isValidRow()) {
-			article['articleId'] = articlesRS.fieldByName('id');
-			article['articleName'] = articlesRS.fieldByName('name');
-			Ti.API.log('info',article['articleName']);
+		
+		while (articlesRS.isValidRow()) {
+			articles.push({
+				'articleId': articlesRS.fieldByName('id'),
+				'articleName': articlesRS.fieldByName('name')
+			});
+		  articlesRS.next();
+		}
+		
+		if (articles.length) {
+
+			Ti.API.log('info', articles[0].articleName);		
+		
 		} else {
 			alert("Não encontrado.");
 		};
@@ -40,6 +55,10 @@ var openArticleDetails = function(e) {
     // }    
 };
 
+
+
+
+// Extrair método getArticles
 var articles = [];
 var db = Ti.Database.open('_alloy_');
 var articlesRS = db.execute('SELECT id, name FROM article ORDER BY name');
