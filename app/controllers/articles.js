@@ -11,9 +11,13 @@ var searchByTags = function(e) {
 		var db = Ti.Database.open('_alloy_');
 		var query = "SELECT * FROM article WHERE id IN (" +
 					"SELECT article_id FROM article_article_tags WHERE article_article_tags.article_tag_id IN (" +
-					"SELECT article_tags.id FROM article_tags WHERE article_tags.tag = '" + tag.splice(0, 1) + "'));";
+					"SELECT article_tags.id FROM article_tags WHERE article_tags.tag = '" + tag.splice(0, 1) + "' ";
 					// MULTIPLAS TAGS COM AND
+		while (tag.length > 0) {
+			query.concat("AND")
+		}
 		
+		query.concat("));");
 		
 		var articlesRS = db.execute(query);
 		
