@@ -6,16 +6,25 @@ var searchByTags = function(e) {
 	var tag = $.sb.getValue();
 	if (tag) {
 		tag = tag.split(" ");
+		tags_query_string = "";
+		for (var i=0; i < tag.length; i++) {
+		  t = tag[i];
+		  if (i) {
+		  	tags_query_string = tags_query_string.concat(", '" + t + "'");
+		  } else{
+		  	tags_query_string = tags_query_string.concat("'" + t + "'");
+		  };
+		  
+		};
 		// Extrair método getArticles		
 		var articles = [];
 		var db = Ti.Database.open('_alloy_');
-		var query = "SELECT * FROM article WHERE id IN (" +
-					"SELECT article_id FROM article_article_tags WHERE article_article_tags.article_tag_id IN (" +
-					"SELECT article_tags.id FROM article_tags WHERE article_tags.tag = '" + tag.splice(0, 1) + "' ";
+		var query = "SELECT article.* FROM article " +
+					"JOIN article_article_tags ON article.id = article_article_tags.article_id " +
+					"JOIN article_tags ON article_article_tags.article_tag_id = article_tags.id " +
+					"WHERE article_tags.tag IN (" + tags_query_string + ") " +
+					"group by article.id;";
 					// MULTIPLAS TAGS COM AND
-		while (tag.length > 0) {
-			query.concat("AND")
-		}
 		
 		query.concat("));");
 		
@@ -30,8 +39,10 @@ var searchByTags = function(e) {
 		}
 		
 		if (articles.length) {
-
-			Ti.API.log('info', articles[0].articleName);		
+			
+			for (var i=0; i < articles.length; i++) {
+			  Ti.API.log('info', articles[i].articleName);
+			};
 		
 		} else {
 			alert("Não encontrado.");
