@@ -1,6 +1,6 @@
 var back = function(e) {$.win.close();};
 
-// Extrair método getArticles
+// TODO: Extrair método getArticles
 
 var searchByTags = function(e) {
 	var tag = $.sb.getValue();
@@ -16,7 +16,7 @@ var searchByTags = function(e) {
 		  };
 		  
 		};
-		// Extrair método getArticles		
+		// TODO: Extrair método getArticles		
 		var articles = [];
 		var db = Ti.Database.open('_alloy_');
 		var query = "SELECT article.* FROM article " +
@@ -24,7 +24,6 @@ var searchByTags = function(e) {
 					"JOIN article_tags ON article_article_tags.article_tag_id = article_tags.id " +
 					"WHERE article_tags.tag IN (" + tags_query_string + ") " +
 					"group by article.id;";
-					// MULTIPLAS TAGS COM AND
 		
 		query.concat("));");
 		
@@ -73,7 +72,7 @@ var openArticleDetails = function(e) {
 
 
 
-// Extrair método getArticles
+// TODO: Extrair método getArticles
 var articles = [];
 var db = Ti.Database.open('_alloy_');
 var articlesRS = db.execute('SELECT id, name FROM article ORDER BY name');

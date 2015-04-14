@@ -1,12 +1,23 @@
 var back = function(e) {$.win.close();};
 
+var openRelatedArticle = function(e) {
+	var articleId = e['source']['id'];
+	var article = e['source']['text'];
+	var articledetails_view = Alloy.createController("article_details", {'articleId': articleId, 'article': article}).getView();
+    // if (OS_IOS) {
+        // $.navGroupWin.openWindow(saudeaz_view);
+    // }
+ 	// if (OS_ANDROID) {
+ 		articledetails_view.addEventListener('open', function(e) {
+   			articledetails_view.activity.actionBar.hide();
+		});
+        articledetails_view.open();
+    // }   
+};
+
 var args = arguments[0] || {};
 var articleId = args.articleId || false;
 var article = args.article || false;
-
-// var data_css =  "<head><style>" +
-				// "h1 {fontSize:14; fontWheight:bold; font:red}" +
-				// "</style></head>";
 
 $.article.text = article;
 
@@ -34,8 +45,7 @@ while (rs.isValidRow()) {
 	rs.next();
 }
 
-db.close()
-rs.close()
+rs.close();
 
 
 var accordionData = [];
@@ -60,39 +70,41 @@ accordionData.push('</ul></div></body></html>');
 
 $.details.html = accordionData.join('');
 
+var query2 = "SELECT " +
+			"  article.id," +
+			"  article.name " +
+			"FROM " +
+			"  article " +
+			"INNER JOIN " +
+			"  related_articles " +
+			"ON " +
+			"  article.id = related_articles.related_article_id " +
+			"WHERE " +
+			"  related_articles.article_id = " + articleId + ";";
 
+var articlesRS = db.execute(query2);
 
+var related_articles = [];
+while (articlesRS.isValidRow()) {
+	related_articles.push({
+		'articleId': articlesRS.fieldByName('id'),
+		'articleName': articlesRS.fieldByName('name')
+	});
+  articlesRS.next();
+}
+var articles_labels = [];
+if (related_articles.length) {
+	
+	for (var i=0; i < related_articles.length; i++) {
+	  var art = related_articles[i];
+	  Ti.API.log('info', art.articleName);
+	  var ll = $.UI.create('Label', {text: art.articleName, id: art.articleId, classes: ["rel_articles"]});
+	  ll.addEventListener('click', openRelatedArticle);
+	  $.rel_articles_view.add(ll);
+	};
 
-
-
-// var openDetail = function(e) {
-	// var db = Ti.Database.open('_alloy_');
-// 	
-	// var detail_name = e['source']['id'];
-	// var detail_description = e['source']['title'];
-	// var rs = db.execute("SELECT body FROM article_" + detail_name + " WHERE article_id = " + articleId);
-	// var body = rs.isValidRow() ? rs.fieldByName('body') : "Vazio";
-// 	
-	// rs.close();
-	// db.close();
-// 	
-	// var detail_args = {
-		// article_id: articleId,
-		// article_name: article,
-		// detail_name: detail_name,
-		// detail_description: detail_description,
-		// detail_HTML: body
-	// };
-// 
-	// var detail_view = Alloy.createController("detail", detail_args).getView();
-    // // if (OS_IOS) {
-        // // $.navGroupWin.openWindow(saudeaz_view);
-    // // }
- 	// // if (OS_ANDROID) {
- 		// detail_view.addEventListener('open', function(e) {
-   			// detail_view.activity.actionBar.hide();
-		// });
-        // detail_view.open();
-	// // }	
-// 
-// };
+} else {
+	Ti.API.log('info', 'Sem artigos relacionados');
+};
+articlesRS.close();
+db.close();

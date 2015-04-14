@@ -32,7 +32,22 @@
 
 "#details": {
 	width: Titanium.UI.FILL,
-	height: Titanium.UI.FILL
+	height: Titanium.UI.SIZE
+}
+
+"#rel_articles_view": {
+	width: Titanium.UI.FILL,
+	height: Titanium.UI.SIZE
+}
+
+"#rel_articles_label": {
+	width: Titanium.UI.SIZE,
+	height: Titanium.UI.SIZE
+}
+
+".rel_articles": {
+	left: "10px",
+	color: "#5090CD"
 }
 
 ".article": {

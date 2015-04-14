@@ -2,28 +2,17 @@
 	<Window id="win" class="container" layout="vertical">
 
 		<View id="header_view" layout="horizontal">
-			<!-- <Label class="backButton" text="&lt;"></Label> -->
 			<ImageView id="backButton" class="separator" image="/left_arrow.png" onClick="back"></ImageView>
 			<Label id="title_label">dr.consulta</Label>
 			<Label class="separator" text=""></Label>
 		</View>
-		
+
 		<Label id="article" class="article" />
+
+		<View id="rel_articles_view" layout="horizontal">
+			<Label id="rel_articles_label">Artigos relacionados:</Label>
+		</View>
 		
 		<WebView id="details"></WebView>
-		
-		<!-- <View layout="horizontal" class="hor"> -->
-			<!-- <View layout="vertical" class="btns_containner">
-				<Button id="what_is" class="header" title="O que é?" />
-				<Button id="symptoms" class="header" title="Sintomas" />
-				<Button id="diagnosis" class="header" title="Diagnóstico" />
-				<Button id="duration" class="header" title="Duração" />
-				<Button id="prevention" class="header" title="Prevenção" />
-				<Button id="treatment" class="header" title="Tratamento" />
-				<Button id="when_contact_professional" class="header" title="Quando contactar um profissional" />
-				<Button id="prognosis" class="header" title="Prognóstico" />
-				<Button id="aditional_info" class="header" title="Informação adicional" />
-			</View> -->
-		<!-- </View> -->
 	</Window>
 </Alloy>
