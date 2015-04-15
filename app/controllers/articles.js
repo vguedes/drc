@@ -71,11 +71,31 @@ var openArticleDetails = function(e) {
 
 
 
-
+var args = arguments[0] || {};
+var articlesSession = args.articlesSession || false;
 // TODO: Extrair método getArticles
 var articles = [];
 var db = Ti.Database.open('_alloy_');
-var articlesRS = db.execute('SELECT id, name FROM article ORDER BY name');
+if (articlesSession) {
+	var query = "SELECT " +
+				"  article.id, " +
+				"  article.name " +
+				"FROM " +
+				"  article " +
+				"JOIN " +
+				"  article_article_sessions " +
+				"ON " +
+				"  article.id = article._article_sessions.article_id " +
+				"JOIN " +
+				"  article_sessions " +
+				"ON " +
+				"  article_article_sessions.article_sessions_id = article_sessions.id " +
+				"WHERE " +
+				"  article_sessions.name = '" + articlesSession + "';";
+} else{
+	var query = 'SELECT id, name FROM article ORDER BY name'
+};
+var articlesRS = db.execute(query);
 while (articlesRS.isValidRow()) {
 	articles.push({
 		'articleId': articlesRS.fieldByName('id'),
