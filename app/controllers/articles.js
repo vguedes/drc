@@ -85,7 +85,7 @@ if (articlesSession) {
 				"JOIN " +
 				"  article_article_sessions " +
 				"ON " +
-				"  article.id = article._article_sessions.article_id " +
+				"  article.id = article_article_sessions.article_id " +
 				"JOIN " +
 				"  article_sessions " +
 				"ON " +
