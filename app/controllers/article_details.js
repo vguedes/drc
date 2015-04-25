@@ -1,3 +1,6 @@
+
+var Markdown = require("Markdown.Sanitizer");
+
 var back = function(e) {$.win.close();};
 
 var openRelatedArticle = function(e) {
@@ -8,6 +11,8 @@ var openRelatedArticle = function(e) {
         // $.navGroupWin.openWindow(saudeaz_view);
     // }
  	// if (OS_ANDROID) {
+ 		
+ 		console.log('opening');
  		articledetails_view.addEventListener('open', function(e) {
    			articledetails_view.activity.actionBar.hide();
 		});
@@ -47,20 +52,18 @@ while (rs.isValidRow()) {
 
 rs.close();
 
-
+var convert = new Markdown.getSanitizingConverter().makeHtml;
 var accordionData = [];
-accordionData.push('<html><head><link rel="stylesheet" type="text/css" href="accordion.css"></head><body><div class="accordion vertical"><ul>');
+accordionData.push('<html><head><script type="text/javascript" src="jquery.js"></script><script type="text/javascript" src="detailWebView.js"></script><meta name="viewport" content="initial-scale=1.0, user-scalable=no" /><link rel="stylesheet" type="text/css" href="accordion.css"></head><body><div class="accordion vertical"><ul>');
 
 details_names = Object.keys(details);
 for(var i=0,j=details_names.length; i<j; i++){
 	detail_name = details_names[i];
-	detail_description = details[detail_name];
+	detail_description = convert(details[detail_name]);
+	
 
-	accordionData.push('<li><input type="checkbox" id="checkbox-');
-	accordionData.push(i + 1);
-	accordionData.push('" name="checkbox-accordion" /><label for="checkbox-');
-	accordionData.push(i + 1);
-	accordionData.push('">');
+
+	accordionData.push('<li class="list"><label class="labelBox">');
 	accordionData.push(detail_name);
 	accordionData.push('</label><div class="content">');
 	accordionData.push(detail_description);
@@ -68,7 +71,25 @@ for(var i=0,j=details_names.length; i<j; i++){
 };
 accordionData.push('</ul></div></body></html>');
 
-$.details.html = accordionData.join('');
+console.log(accordionData);
+
+
+var details = Titanium.UI.createWebView({
+            width  : Ti.UI.FILL,
+            height : Ti.UI.FILL,
+            enableZoomControls: false
+        });
+        
+details.html = accordionData.join('');
+
+/*details.addEventListener("load", function() {
+   details.evalJS("$('body').html('changed!');");
+});*/
+
+
+//details.evalJS('window.onload=function(){for(var t=document.getElementsByTagName("li"),e=0;e<t.length;e++){var n=t[e];t[e].addEventListener("click",function(){var t=n.getAttribute("class");"list active"==t?n.innerHtml="list unactive":n.innerHTML="list active"},!1)}};');
+
+$.win.add(details);
 
 var query2 = "SELECT " +
 			"  article.id," +

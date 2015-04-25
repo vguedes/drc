@@ -13,6 +13,9 @@
 			<Label id="rel_articles_label">Artigos relacionados:</Label>
 		</View>
 		
-		<WebView id="details"></WebView>
+		
+		
+		<!--<WebView id="details" width="Titanium.UI.FILL"  enableZoomControls="false"></WebView>-->
 	</Window>
 </Alloy>
+

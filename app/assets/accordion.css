@@ -52,18 +52,24 @@ cinza claro		F0F0F2
     -webkit-transition: all .2s ease-out;
     -moz-transition: all .2s ease-out;
 }
-.accordion ul li label:hover, .accordion [type=radio]:checked ~ label, .accordion [type=checkbox]:checked ~ label {
+/*.accordion ul li label:hover, .accordion [type=radio]:checked ~ label, .accordion [type=checkbox]:checked ~ label {
     background:#737373;
     color:#FFF;
-    // text-shadow:1px 1px 1px #5090CD
+    /* text-shadow:1px 1px 1px #5090CD
+}*/
+
+.active label {
+	background:#737373;
+    color:#FFF;
 }
 .accordion .content {
     padding:0 10px;
-    overflow:hidden;
+    display:block;
     border:1px solid #fff; /* Make the border match the background so it fades in nicely */
     -webkit-transition: all .5s ease-out;
     -moz-transition: all .5s ease-out;
 }
+
 .accordion p {
     color:#333;
     margin:0 0 10px;
@@ -77,23 +83,28 @@ cinza claro		F0F0F2
 
 /* Vertical */
 .vertical ul li {
-    overflow:hidden;
+    float:left;
+    width:95%;
     margin:0 0 1px;
 }
 .vertical ul li label {
     padding:10px;
+    display:block;
+    width:100%;
 }
-.vertical [type=radio]:checked ~ label, .vertical [type=checkbox]:checked ~ label {
+/*.vertical [type=radio]:checked ~ label, .vertical [type=checkbox]:checked ~ label {
     border-bottom:0;
-}
+}*/
 .vertical ul li label:hover {
     border:1px solid #5090CD; /* We don't want the border to disappear on hover */
 }
 .vertical ul li .content {
-    height:0px;
     border-top:0;
+    float:left;
+    width:100%;
+    display:none;
+
 }
-.vertical [type=radio]:checked ~ label ~ .content, .vertical [type=checkbox]:checked ~ label ~ .content {
-    height:300px;
+/*.vertical [type=radio]:checked ~ label ~ .content, .vertical [type=checkbox]:checked ~ label ~ .content {
     border:1px solid #5090CD;
-}
+}*/

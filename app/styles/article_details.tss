@@ -31,10 +31,14 @@
 }
 
 "#details": {
-	width: Titanium.UI.FILL,
-	height: Titanium.UI.SIZE
+	//width: '100%',
+	//height: Titanium.UI.SIZE
+	left:'0px'
 }
 
+
+".active div.content" : { backgroundColor: "#000000"}
+".unactive div.content" : { backgroundColor: "#ffffff"}
 "#rel_articles_view": {
 	width: Titanium.UI.FILL,
 	height: Titanium.UI.SIZE
