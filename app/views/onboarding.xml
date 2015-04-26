@@ -1,12 +1,15 @@
 <Alloy>
 	<Window class="container" layout="vertical">
 		<ImageView image="/logo.png" class="logo"></ImageView>
-		<Label class="subtitle first">Para comecar precisamos</Label>
-		<Label class="subtitle">Validar seu celular</Label>
-		<TextField class="input_phone_number"></TextField>
+		<Label id="sbt1" class="subtitle first">Para comecar precisamos</Label>
+		<Label id="sbt2" class="subtitle">Validar seu celular</Label>
+		<TextField id="input_phone_number" class="input_phone_number"></TextField>
 		<View class="line"></View>
-		<View class="round_btn">
-			<ImageView image="/btn_next_yellowbg_arrow.png" class="btn_next_yellowbg_arrow"></ImageView>
+		<View id="round_btn" class="round_btn">
+			<ImageView id="next_btn" image="/btn_next_yellowbg_arrow.png" class="btn_next_yellowbg_arrow" onClick="sendPhoneNumber">
+				
+			</ImageView>
 		</View>
+		<ImageView id="wait" class="wait" image="/waiting-wheel.gif" visible="False"></ImageView>
 	</Window>
 </Alloy>
