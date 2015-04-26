@@ -1,7 +1,25 @@
 <Alloy>
 	<!-- <NavigationWindow id="navGroupWin" platform="ios"> -->
 		<Window class="container" layout="vertical" title="dr.consulta">
-			<View id="header_view">
+			<View layout="horizontal" class="title">
+				<ImageView class="menu_btn" image="/menu_btn.png"></ImageView>
+				<Label class="label_title">dr.consulta</Label>
+				<ImageView class="bell_btn" image="/bell.png"></ImageView>
+				<ImageView class="find_btn" image="/find.png"></ImageView>
+			</View>
+			<Label class="apponitment_btn">MARQUE UMA CONSULTA OU EXAME</Label>
+			<ScrollView id="content_view" class="content_view" layout="vertical">
+				<View layout="horizontal" class="content_row">
+					
+				</View>
+				<View layout="horizontal" class="content_row">
+					
+				</View>
+			</ScrollView>
+		</Window>
+</Alloy>
+
+			<!-- <View id="header_view">
 				<Label id="title_label">dr.consulta</Label>
 			</View>
 			<View class="search_bar_view">
@@ -19,7 +37,4 @@
 			<View class="btns_columns">
 				<ImageView image="/saude_az.png" class="menu_img" top="1" onClick="load_saude_az" />
 				<ImageView image="/gravidez.png" class="menu_img" top="1" left="1" onClick="load_gravidez" />
-			</View>
-		</Window>
-	<!-- </NavigationWindow> -->
-</Alloy>
+			</View> -->

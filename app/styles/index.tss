@@ -7,99 +7,162 @@ cinza claro		F0F0F2
  */
 
 ".container": {
-	backgroundColor:"white",
+	backgroundColor:"#EEEEEE",
 	width: Ti.UI.FILL,
 	height: Titanium.UI.FILL,
 	fullscreen: false,
 }
 
-"Label": {
-	width: Ti.UI.SIZE,
-	height: Ti.UI.SIZE,
-	color: "#000"
-}
-
-"#label": {
-	font: {
-		fontSize: 12
-	}
-}
-
-
-".search_bar_view": {
-	width: Ti.UI.FILL,
-	layout: "horizontal",
-	backgroundColor: "#F0F0F2",
-	height: "30",
-	font: {
-		fontSize: 18
-	}
-}
-
-".search_icon": {
-	width: 11,
-	height: 15,
-	top: 8,
-	left: 8
-}
-
-".search_hint": {
-	color: "#6E6F71",
-	font: {
-		fontSize: 14
-	},
-	top: 7,
-	left: 7
-}
-
-"#header_view": {
-	backgroundColor: "#5090CD",
+".title": {
 	width: Titanium.UI.FILL,
-	height: 50
+	height: "65px",
+ 	backgroundColor:"#5090cd",
+	top: 0
 }
 
-
-"#title_label": {
-	width: Ti.UI.FILL,
-	color: "#fff",
-	backgroundColor: "#5090CD",
-	font: {
-		fontSize: 30
-	},
-	textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER,
-}
-
-"#plus_label": {
-	color: "#6E6F71",
-	backgroundColor: "#fff",
-	font: {
-		fontSize: 14,
-		fontWeight: "bold"
-	}
-}
-
-"#agendamento_label": {
-	top: 20,
-	width: "90%",
-	height: "30",
-	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
-	backgroundColor: "#DDE9F5",
-	color: "#5090CD",
-	font: {
-		fontSize: 14
-	}
-}
-
-".btns_columns": {
-	backgroundColor: "#F0F0F2",
-	layout: "horizontal",
+".label_title": {
 	width: Titanium.UI.SIZE,
-	height: "125"
+	height: Titanium.UI.FILL,
+ 	color: "white",
+ 	font: {fontWeight:'bold'},
+	left: 40
 }
 
-".menu_img": {
-	width: "124.5",
-	height: "124.5"
+".menu_btn": {
+	left: 10,
+	width: 25,
+	height: 20
 }
+
+".bell_btn": {
+	right: 10,
+	width: 20,
+	height: 15,
+	//TODO: Arrumar
+	left: 60
+}
+
+".find_btn": {
+	right: 0,
+	width: 20,
+	height: 15,
+	zIndex: 2
+}
+
+".apponitment_btn": {
+	width: "90%",
+	height: "65px",
+	top: "15px",
+	backgroundColor: "#E7B00F",
+	color: "white",
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER,
+	font: {
+		fontWeight:'bold',
+		fontSize: 12
+	},
+	borderColor: '#aaa',
+	borderwidth: 1,
+}
+
+".content_view": {
+	width: "90%",
+	height: Titanium.UI.FILL,
+}
+
+".content_row": {
+	top: "15px",
+	width: Titanium.UI.FILL,
+	height: "260px",
+	backgroundColor: "#929292"
+}
+
+// "Label": {
+	// width: Ti.UI.SIZE,
+	// height: Ti.UI.SIZE,
+	// color: "#000"
+// }
+// 
+// "#label": {
+	// font: {
+		// fontSize: 12
+	// }
+// }
+// 
+// 
+// ".search_bar_view": {
+	// width: Ti.UI.FILL,
+	// layout: "horizontal",
+	// backgroundColor: "#F0F0F2",
+	// height: "30",
+	// font: {
+		// fontSize: 18
+	// }
+// }
+// 
+// ".search_icon": {
+	// width: 11,
+	// height: 15,
+	// top: 8,
+	// left: 8
+// }
+// 
+// ".search_hint": {
+	// color: "#6E6F71",
+	// font: {
+		// fontSize: 14
+	// },
+	// top: 7,
+	// left: 7
+// }
+// 
+// "#header_view": {
+	// backgroundColor: "#5090CD",
+	// width: Titanium.UI.FILL,
+	// height: 50
+// }
+// 
+// 
+// "#title_label": {
+	// width: Ti.UI.FILL,
+	// color: "#fff",
+	// backgroundColor: "#5090CD",
+	// font: {
+		// fontSize: 30
+	// },
+	// textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER,
+// }
+// 
+// "#plus_label": {
+	// color: "#6E6F71",
+	// backgroundColor: "#fff",
+	// font: {
+		// fontSize: 14,
+		// fontWeight: "bold"
+	// }
+// }
+// 
+// "#agendamento_label": {
+	// top: 20,
+	// width: "90%",
+	// height: "30",
+	// textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	// backgroundColor: "#DDE9F5",
+	// color: "#5090CD",
+	// font: {
+		// fontSize: 14
+	// }
+// }
+// 
+// ".btns_columns": {
+	// backgroundColor: "#F0F0F2",
+	// layout: "horizontal",
+	// width: Titanium.UI.SIZE,
+	// height: "125"
+// }
+// 
+// ".menu_img": {
+	// width: "124.5",
+	// height: "124.5"
+// }
 
 
