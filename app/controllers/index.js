@@ -42,5 +42,14 @@ function load_saude_az() {
 } 
 
 function load_gravidez() {
-	alert("gravidez");
+	var saudeaz_view = Alloy.createController("onboarding", {}).getView();
+    // if (OS_IOS) {
+        // $.navGroupWin.openWindow(saudeaz_view);
+    // }
+ 	// if (OS_ANDROID) {
+ 		saudeaz_view.addEventListener('open', function(e) {
+   			saudeaz_view.activity.actionBar.hide();
+		});
+        saudeaz_view.open();
+    // } 
 }

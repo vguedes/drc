@@ -1,0 +1,50 @@
+
+".container" : {
+	backgroundColor: "#5090CD",
+	width: Ti.UI.FILL,
+	height: Titanium.UI.FILL,
+	fullscreen: false,
+}
+
+
+".logo" : {
+	top: "50px",
+	left: "10%",
+	right: "10%",
+}
+
+".subtitle" : {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	color: "#FFF",
+	font: {
+		fontSize: 16
+	}
+}
+
+".first" : {
+	top: "40px"
+}
+
+".input_phone_number" : {
+	top: "60px"
+}
+
+".line" : {
+	height: "1px",
+	width: "90%",
+	backgroundColor: "#FFF"
+}
+
+".round_btn" : {
+	backgroundColor:"#E7B00F",
+	width:60,
+	height:60,
+	top: "50px",
+	borderRadius:30,
+}
+
+".btn_next_yellowbg_arrow" : {
+	width: 25,
+	height: 25
+}
