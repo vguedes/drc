@@ -61,7 +61,7 @@ cinza claro		F0F0F2
 		fontSize: 12
 	},
 	borderColor: '#aaa',
-	borderwidth: 1,
+	borderWidth: 1,
 }
 
 ".content_view": {
@@ -73,7 +73,51 @@ cinza claro		F0F0F2
 	top: "15px",
 	width: Titanium.UI.FILL,
 	height: "260px",
-	backgroundColor: "#929292"
+}
+
+".content_horz_separator": {
+	width: "4%",
+	height: "1px"
+}
+
+".content_item": {
+	backgroundColor: "#FFF",
+	width: "48%",
+	height: Titanium.UI.FILL,
+	borderColor: '#92',
+	borderWidth: 1,
+}
+
+".content_icon_view": {
+	width: Titanium.UI.FILL,
+	height: "203px"
+}
+
+".item_icon": {
+	width: "50%",
+	top: "20px",
+}
+
+".item_icon_label": {
+	top: "20px",
+	color: "#6E6F71",
+	width: Titanium.UI.SIZE,
+	height: Titanium.UI.SIZE,
+	font: {
+		fontSize: 12
+	},
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER,
+}
+
+".content_label_view": {
+	width: Titanium.UI.FILL,
+	height: "57px",
+	backgroundColor: "#6E6F71",
+	color: "white",
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER,
+	font: {
+		fontSize: 14
+	}
 }
 
 // "Label": {

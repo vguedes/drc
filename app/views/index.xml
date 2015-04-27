@@ -10,10 +10,46 @@
 			<Label class="apponitment_btn">MARQUE UMA CONSULTA OU EXAME</Label>
 			<ScrollView id="content_view" class="content_view" layout="vertical">
 				<View layout="horizontal" class="content_row">
-					
+					<View class="content_item" layout="vertical">
+						<View class="content_icon_view" layout="vertical">
+							<ImageView image="/gineco_icon.png" class="item_icon"></ImageView>
+							<Label class="item_icon_label">Ginecologista</Label>
+						</View>
+						<Label class="content_label_view" onClick="load_gravidez">
+							ESPECIALIDADES
+						</Label>
+					</View>
+					<View class="content_horz_separator" />
+					<View class="content_item" layout="vertical">
+						<View class="content_icon_view" layout="vertical">
+							<ImageView image="/gravidez_icon.png" class="item_icon"></ImageView>
+							<Label class="item_icon_label">Gravidez e\nrecém nascido</Label>
+						</View>
+						<Label class="content_label_view">
+							DICAS
+						</Label>
+					</View>
 				</View>
 				<View layout="horizontal" class="content_row">
-					
+					<View class="content_item" layout="vertical">
+						<View class="content_icon_view" layout="vertical">
+							<ImageView image="/pele_sol_icon.png" class="item_icon"></ImageView>
+							<Label class="item_icon_label">Pele lesada\npelo sol</Label>
+						</View>
+						<Label class="content_label_view">
+							PARTES DO CORPO
+						</Label>
+					</View>
+					<View class="content_horz_separator" />
+					<View class="content_item" layout="vertical">
+						<View class="content_icon_view" layout="vertical">
+							<ImageView image="/exame_geral_icon.png" class="item_icon"></ImageView>
+							<Label class="item_icon_label">Exame\nmédico geral</Label>
+						</View>
+						<Label class="content_label_view">
+							EXAMES
+						</Label>
+					</View>
 				</View>
 			</ScrollView>
 		</Window>
