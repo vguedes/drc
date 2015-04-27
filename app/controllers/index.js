@@ -13,7 +13,11 @@ $.index.addEventListener('open', function(e) {
 
 
 function load_exames() {
-	alert("exames");
+	//alert("exames");
+	
+	var especialidadesView = Alloy.createController("especialidades",{}).getView();
+	 //especialidadesView.open();
+	
 }
 function load_saude_crianca() {
 	var articlesView = Alloy.createController("articles", {'articlesSession': 'crianca'}).getView();
