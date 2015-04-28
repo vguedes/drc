@@ -55,47 +55,112 @@ var letters = [];
 
 
 	//	Define & Add TableRow Childrens
-	var icoCel = Ti.UI.createImageView({
+	var icoPerson = Ti.UI.createImageView({
 	  image:'/iconPerson.png',
 	  width:'27px',
 	  height:'37px',
-	  left:20
-	});
-	
-	row.add(icoCel);
-	
-	var textFieldCel = Ti.UI.createTextField({
-	  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-	  color: '#336699',
-	  top: 10, left: 100,
-	  width: 250, height: 60,
-	  hintText:"Cel"
-	});
-	
-	row.add(textFieldCel);
-	
-	var icoPerson = Ti.UI.createImageView({
-	  image:'/icoPerson.png',
-	  width:'27px',
-	  height:'37px',
-	  left:20
+	  left:20,
+	  top:10
 	});
 	
 	row.add(icoPerson);
 	
-	var textFieldPerson = Ti.UI.createTextField({
-	  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-	  color: '#336699',
-	  top: 10, left: 100,
-	  width: 250, height: 60
+	var borderSeparator = Ti.UI.createLabel({
+		width:'100%',
+		height:'1px',
+		backgroundColor:'#cccccc',
+		left: 50, width: 250, 
+		top:44
 	});
 	
-	row.add(textFieldPerson);
+	row.add(borderSeparator);
+	
+	var textFieldCel = Ti.UI.createTextField({
+	  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+	  color: '#336699',
+	  top:0,left: 50,
+	  width: 250, height: 60,
+	  hintText:"CPF",
+	  font:{fontSize:14}
+	});
+	
+	row.add(textFieldCel);	
+	
+//	Pushing Row
+tableData.push(row);
 
+	//	Define TableRow CEL
+	var rowCel = Ti.UI.createTableViewRow({
+	    className:'forumEvent',
+	    height:50
+	});
+
+
+	//	Define & Add TableRow Childrens
+	var icoCel = Ti.UI.createImageView({
+	  image:'/iconCel.png',
+	  width:'27px',
+	  height:'37px',
+	  left:20
+	});
+	
+	rowCel.add(icoCel);
+	
+	var borderSeparator = Ti.UI.createLabel({
+		width:'100%',
+		height:'1px',
+		backgroundColor:'#cccccc',
+		left: 50, width: 250, 
+		top:44
+	});
+	
+	rowCel.add(borderSeparator);
+	
+	var textFieldCel = Ti.UI.createTextField({
+	  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+	  color: '#336699',
+	  top:0,
+	  left: 50,
+	  width: 250, height: 60,
+	  hintText:"CELULAR",
+	   font:{fontSize:14}
+	});
+	
+	rowCel.add(textFieldCel);	
+	
+//	Pushing Row
+tableData.push(rowCel);
+
+//	Define TableRow BUTTON add
+
+
+	var rowAction = Ti.UI.createTableViewRow({
+	    className:'forumEvent',
+	    height:50
+	});
+
+
+	//	Define & Add TableRow Childrens
+	var buttonAction = Ti.UI.createButton({
+	    backgroundImage: '/buttonGo.png',
+	    top: 9,
+	    width: '62px',
+	    height: '64px',
+	    right:20,
+	    zIndex:9
+	});
+	
+	buttonAction.addEventListener('click',function(e){
+	    var confirmaDadosView = Alloy.createController("conf_dados_paciente",{}).getView();
+	});
+
+
+	
+	rowAction.add(buttonAction);
 	
 
 //	Pushing Row
-tableData.push(row);
+tableData.push(rowAction);
 
 
 //}// END LOOP
