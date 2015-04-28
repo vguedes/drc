@@ -17,7 +17,6 @@ function clear_auth() {
 	var query = 'DELETE FROM auth_data;';
 	var result = db.execute(query);
 	db.close();
-	alert('Dados deletados');
 	$.phone_value.text = "";
 	$.hash_value.text = "";
 };
