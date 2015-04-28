@@ -262,7 +262,10 @@ var letters = [];
 	});
 	
 	buttonAction.addEventListener('click',function(e){
-	    var consultaMarcadaView = Alloy.createController("consulta_marcada",{}).getView();
+		 var indexView = Alloy.createController("index",{}).getView();
+		 
+	
+	   
 	});
 
 
@@ -288,9 +291,6 @@ var table = Ti.UI.createTableView({
 
 //	ADD objs to window
 win.add(buttonBack);
-
-
-
 win.add(labelTitle);
 win.add(table);
 win.open();
