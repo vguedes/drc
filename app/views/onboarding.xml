@@ -1,5 +1,5 @@
 <Alloy>
-	<Window class="container" layout="vertical">
+	<Window id="win" class="container" layout="vertical">
 		<ImageView image="/logo.png" class="logo"></ImageView>
 		<Label id="sbt1" class="subtitle first">Para comecar precisamos</Label>
 		<Label id="sbt2" class="subtitle">Validar seu celular</Label>
@@ -11,5 +11,6 @@
 			</ImageView>
 		</View>
 		<ImageView id="wait" class="wait" image="/waiting-wheel.gif" visible="False"></ImageView>
+		<Label id="phonenumber" visible="False"></Label>
 	</Window>
 </Alloy>
