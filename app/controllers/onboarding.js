@@ -1,7 +1,7 @@
 var args = arguments[0] || {};
 
 function sendVerificationCode() {
-	alert('inicio verification');
+	// Ti.API.log('error','INICIO verification');
 	var authcode = $.input_phone_number.value;
 	if (! authcode) {
 		alert("Digite o código de verificação.");
@@ -30,12 +30,11 @@ function sendVerificationCode() {
 			xhr_object.setRequestHeader( "Content-length" , postData.length);
 			xhr_object.setRequestHeader( "Connection" , "close" );
 			
-			// Seding
+			// Sending
 			xhr_object.send(postData);
 			
 			//IF LOAD OK
 		    xhr_object.onload = function(){ 
-		    	Ti.API.log('info', "--------- AQUI;");
 		    	var rq_object = JSON.parse(this.responseText);
 		        if (! rq_object['success']) {
 		        	alert(rq_object['error']);
@@ -62,11 +61,12 @@ function sendVerificationCode() {
 			
 		};
 	};
+	// Ti.API.log('error','FIM verification');
 	
 }
 
 function sendPhoneNumber() {
-	alert("inicio phone");
+	// Ti.API.log('error','INICIO phone');
 	var phonenumber = $.input_phone_number.value;
 	if (! phonenumber) {
 		alert("Digite o número do seu celular.");
@@ -92,7 +92,7 @@ function sendPhoneNumber() {
 			xhr_object.setRequestHeader( "Content-length" , postData.length);
 			xhr_object.setRequestHeader( "Connection" , "close" );
 			
-			// Seding
+			// Sending
 			xhr_object.send(postData);
 			
 			//IF LOAD OK
@@ -105,7 +105,9 @@ function sendPhoneNumber() {
 					$.sbt2.text = "digite abaixo o código enviado por SMS";
 					$.input_phone_number.show();
 					$.round_btn.show();
+					$.next_btn.removeEventListener('click', sendPhoneNumber);
 					$.next_btn.addEventListener('click', sendVerificationCode);
+
 		        };
 		    };
 		    
@@ -116,4 +118,5 @@ function sendPhoneNumber() {
 			
 		};
 	};
+	// Ti.API.log('error','FIM phone');
 }
