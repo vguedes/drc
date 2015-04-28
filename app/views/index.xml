@@ -7,7 +7,7 @@
 				<ImageView class="bell_btn" image="/bell.png"></ImageView>
 				<ImageView class="find_btn" image="/find.png"></ImageView>
 			</View>
-			<Label class="apponitment_btn">MARQUE UMA CONSULTA OU EXAME</Label>
+			<Label class="apponitment_btn" onClick="load_consulta">MARQUE UMA CONSULTA OU EXAME</Label>
 			<ScrollView id="content_view" class="content_view" layout="vertical">
 				<View layout="horizontal" class="content_row">
 					<View class="content_item" layout="vertical">

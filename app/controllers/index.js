@@ -33,3 +33,9 @@ function load_gravidez() {
 		});
         saudeaz_view.open();
 }
+
+function load_consulta() {
+	var consultaView = Alloy.createController("especialidades", {}).getView();
+
+}
+
