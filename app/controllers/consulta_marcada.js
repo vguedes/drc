@@ -6,6 +6,14 @@ var win = Ti.UI.createWindow({
 	 backgroundColor: '#eeeeee'
 });
 
+win.addEventListener("open", function() {
+	win.activity.actionBar.hide();
+});
+
+Ti.App.addEventListener("clsAppntStack", function(data) {
+	win.close();
+});
+
 // Create & Define BackButton
 var buttonBack = Ti.UI.createButton({
     backgroundImage: '/left_arrow.png',
@@ -262,7 +270,8 @@ var letters = [];
 	});
 	
 	buttonAction.addEventListener('click',function(e){
-		 var indexView = Alloy.createController("index",{}).getView();
+		 // var indexView = Alloy.createController("index",{}).getView();
+		 Ti.App.fireEvent('clsAppntStack', {});
 		 
 	
 	   

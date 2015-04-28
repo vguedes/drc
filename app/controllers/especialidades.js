@@ -1,9 +1,23 @@
 
 
+function openClinic() {
+	var clinic_view = Alloy.createController("selecione_clinica", {}).getView();
+}
+
+
+
 //	Create & Define Window
 Ti.UI.backgroundColor = 'white';
 var win = Ti.UI.createWindow({
-	 backgroundColor: 'white'
+	 backgroundColor: 'white',
+});
+
+win.addEventListener("open", function() {
+	win.activity.actionBar.hide();
+});
+
+Ti.App.addEventListener("clsAppntStack", function(data) {
+	win.close();
 });
 
 // Create & Define BackButton
@@ -90,6 +104,7 @@ var labelOverMask = Ti.UI.createLabel({
 //	Define Data /Parse JSON
 var tableData = [];
 var tableJsonDataClean = '{"consultas":[{"title":"Almoço"},{"title":"Almoço"},{"title":"Almoço"},{"title":"Almoço"},{"title":"Almoço"},{"title":"Almoço"},{"title":"Almoço"},{"title":"Almoço"},{"title":"Almoço"},{"title":"Almoço"},{"title":"Almoço"},{"title":"Beirute"},{"title":"Beirute"},{"title":"Beirute"},{"title":"Beirute"},{"title":"Beirute"},{"title":"Beirute"},{"title":"Beirute"},{"title":"Caldo de Cana"},{"title":"Caldo de Cana"},{"title":"Caldo de Cana"},{"title":"Caldo de Cana"},{"title":"Caldo de Cana"},{"title":"Caldo de Cana"},{"title":"Caldo de Cana"},{"title":"Caldo de Cana"},{"title":"Caldo de Cana"},{"title":"Caldo de Cana"}]}';
+
 var	tableJsonData = JSON.parse(tableJsonDataClean);
 	
 var tableDataLength = tableJsonData.consultas.length;
@@ -163,9 +178,10 @@ for (var i=1; i<tableDataLength; i++){
 	row.add(labelPrice);
 	
 	//	LISTENERS NAVIGATE
-	row.addEventListener('click',function(e){
-	    var especialidadesView = Alloy.createController("selecione_clinica",{}).getView();
-	});
+	// row.addEventListener('click',function(e){
+	    // var especialidadesView = Alloy.createController("selecione_clinica",{}).getView();
+	// });
+	row.addEventListener('click', openClinic);
 
 //	Pushing Row
 tableData.push(row);
