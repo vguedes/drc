@@ -38,6 +38,10 @@ function sendVerificationCode() {
 		    	var rq_object = JSON.parse(this.responseText);
 		        if (! rq_object['success']) {
 		        	alert(rq_object['error']);
+		        	$.sbt1.text = "Para completar a validação,";
+					$.sbt2.text = "digite abaixo o código enviado por SMS";
+					$.input_phone_number.show();
+					$.round_btn.show();
 		        } else{
 		        	// ALL CLEAR, STORE AUTH AND PHONENUMBER TO DATABASE
 		        	var db = Ti.Database.open('_alloy_');
@@ -51,7 +55,13 @@ function sendVerificationCode() {
 		        		rs.next();
 		        	}
 		        };
-		        // $.win.close();
+	        	$.sbt1.text = "Seja muito bem vindo(a)";
+				$.sbt2.text = "O dr.consulta, seu serviço de\nsaúde agora está com você\nsempre que quiser, na palma\nda sua mão.";
+				$.input_phone_number.hide;
+				$.round_btn.show();
+
+		        $.next_btn.removeEventListener('click', sendVerificationCode);
+				$.next_btn.addEventListener('click', function(){$.win.close();});
 		    };
 		    
 		    //IF LOAD ERROR
