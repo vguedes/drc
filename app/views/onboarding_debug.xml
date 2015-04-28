@@ -1,0 +1,14 @@
+<Alloy>
+	<Window class="container" id="win" layout="vertical">
+		<View class="row" layout="horizontal">
+			<Label class="label">Telefone armazenado: </Label>
+			<Label class="value" id="phone_value"></Label>
+		</View>
+		<View class="row" layout="horizontal">
+			<Label class="label">Hash armazenado: </Label>
+			<Label class="value" id="hash_value"></Label>
+		</View>
+		<Label class="clean_button" onClick="clear_auth">Apagar authorização</Label>
+		<Label class="back_button" onClick="back">Voltar</Label>
+	</Window>
+</Alloy>
