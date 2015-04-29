@@ -21,7 +21,7 @@
 					</View>
 					<View class="content_horz_separator" />
 					<View class="content_item" layout="vertical">
-						<View class="content_icon_view" layout="vertical">
+						<View class="content_icon_view" layout="vertical" onClick="open_gravidez">
 							<ImageView image="/gravidez_icon.png" class="item_icon"></ImageView>
 							<Label class="item_icon_label">Gravidez e\nrecém nascido</Label>
 						</View>

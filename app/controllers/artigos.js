@@ -1,3 +1,6 @@
+var args = arguments[0] || {};
+var articlesSession = args.articlesSession || false;
+var window_title = args.window_title || false;
 
 //	Create & Define Window
 Ti.UI.backgroundColor = 'white';
@@ -5,15 +8,21 @@ var win = Ti.UI.createWindow({
 	 backgroundColor: 'white'
 });
 
+win.addEventListener("open", function() {
+	win.activity.actionBar.hide();
+});
+
+
 //	Create & Define Title Label
 var labelTitle = Ti.UI.createLabel({
 	width: "100%",
 	height: "65px",
 	color: "#fefffd",
 	backgroundColor:"#5090cd",
-	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
 	top:"0",
-	text:"1. Escolha sua especialidade"
+	left: 60,
+	text:window_title
 });
 
 //	Create & Define Tooltip Label
@@ -243,11 +252,34 @@ table.addEventListener('scroll',function(e){
 
 });
 
+var titleView = Ti.UI.createView({
+	width: "100%",
+	height: "65px",
+	color: "#fefffd",
+	backgroundColor:"#5090cd",
+	// textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	top:"0",
+});
+
+var backArrow = Ti.UI.createImageView({
+	image:"/arrow_back.png",
+	width: 20,
+	height: 20,
+	left: 20
+});
+
+backArrow.addEventListener('click', function(e){
+	win.close();
+});
+
+titleView.add(backArrow);
+titleView.add(labelTitle);
+
 //	ADD objs to window
 win.add(labelOverMask);
 win.add(labelPadding);
 win.add(absoluteLabelLetter);
 win.add(labelLetterBall);
-win.add(labelTitle);
+win.add(titleView);
 win.add(table);
 win.open();
