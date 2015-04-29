@@ -1,7 +1,7 @@
 <Alloy>
 	<!-- <NavigationWindow id="navGroupWin" platform="ios"> -->
 		<Window class="container" layout="vertical" title="dr.consulta">
-			<View layout="horizontal" class="title">
+			<View class="title">
 				<ImageView class="menu_btn" image="/menu_btn.png"></ImageView>
 				<Label class="label_title">dr.consulta</Label>
 				<ImageView class="bell_btn" image="/bell.png" onClick="load_phone_auth"></ImageView>
