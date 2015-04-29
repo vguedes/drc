@@ -82,3 +82,10 @@ function open_gravidez(){
 	var consultaView = Alloy.createController("artigos", {'articlesSession': 'gravidez', 'window_title': 'Gravidez e recém nascido'}).getView();
 }
 
+function open_exames(){
+	var consultaView = Alloy.createController("artigos", {'articlesSession': 'exames', 'window_title': 'Exames'}).getView();
+}
+
+ function open_alert() {
+ 	alert("Aguardando integração com tela de detalhes de artigo");
+ }
