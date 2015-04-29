@@ -18,14 +18,14 @@ $.index.open();
         // articlesView.open();
 // 
 // }
-// function load_saude_az() {
-	// var saudeaz_view = Alloy.createController("articles", {}).getView();
- 		// saudeaz_view.addEventListener('open', function(e) {
-   			// saudeaz_view.activity.actionBar.hide();
-		// });
-        // saudeaz_view.open();
-// } 
-// 
+ function load_exame() {
+	 var saudeaz_view = Alloy.createController("articles", {}).getView();
+ 		 saudeaz_view.addEventListener('open', function(e) {
+   			 saudeaz_view.activity.actionBar.hide();
+		 });
+         saudeaz_view.open();
+ } 
+
 function load_gravidez() {
 	var saudeaz_view = Alloy.createController("onboarding", {}).getView();
  		saudeaz_view.addEventListener('open', function(e) {
@@ -38,4 +38,6 @@ function load_consulta() {
 	var consultaView = Alloy.createController("especialidades", {}).getView();
 
 }
+
+
 

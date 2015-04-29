@@ -20,6 +20,7 @@
 	width: "10%",
 }
 
+
 "#title_label": {
 	width: '80%',
 	color: "#fff",

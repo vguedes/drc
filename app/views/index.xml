@@ -41,10 +41,10 @@
 						</Label>
 					</View>
 					<View class="content_horz_separator" />
-					<View class="content_item" layout="vertical">
+					<View class="content_item"  layout="vertical">
 						<View class="content_icon_view" layout="vertical">
-							<ImageView image="/exame_geral_icon.png" class="item_icon"></ImageView>
-							<Label class="item_icon_label">Exame\nmédico geral</Label>
+							<ImageView image="/exame_geral_icon.png" onClick="load_exame" class="item_icon"></ImageView>
+							<Label class="item_icon_label" onClick="load_exame">Exame\nmédico geral</Label>
 						</View>
 						<Label class="content_label_view">
 							EXAMES

@@ -16,6 +16,27 @@ cinza claro		F0F0F2
 
  */
 
+
+
+.placa {
+	background:#5090CD;
+	height:250px;
+	color:#ffffff;
+	float:left; width:100%;
+}
+
+.title {
+	font-size: 25px;
+	margin-left:20px;
+	margin-top:70px; display:block;	
+}
+
+.menor {
+	font-size: 15px;
+	margin-left:20px;display:block;
+	
+}
+
 .accordion {
     font-family:Arial, Helvetica, sans-serif; 
     margin:0 auto;
@@ -42,9 +63,8 @@ cinza claro		F0F0F2
     display:block;
     font-size:16px;
     line-height:16px;
-    background:#F3F3F3;
-    border:1px solid #5090CD;
-    color:#5090CD;
+    border-bottom:1px solid #ccc;
+    color:#ccc;
     // text-shadow:1px 1px 1px #5090CD;
     font-weight:700;
     cursor:pointer;
@@ -58,10 +78,7 @@ cinza claro		F0F0F2
     /* text-shadow:1px 1px 1px #5090CD
 }*/
 
-.active label {
-	background:#737373;
-    color:#FFF;
-}
+
 .accordion .content {
     padding:0 10px;
     display:block;
@@ -95,9 +112,7 @@ cinza claro		F0F0F2
 /*.vertical [type=radio]:checked ~ label, .vertical [type=checkbox]:checked ~ label {
     border-bottom:0;
 }*/
-.vertical ul li label:hover {
-    border:1px solid #5090CD; /* We don't want the border to disappear on hover */
-}
+
 .vertical ul li .content {
     border-top:0;
     float:left;
