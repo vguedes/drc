@@ -1,4 +1,62 @@
 
 ".container" : {
-  
+	backgroundColor:"white",
+	width: Ti.UI.FILL,
+	height: Titanium.UI.FILL,
+	fullscreen: false,
+}
+
+".title": {
+	width: Titanium.UI.FILL,
+	height: "65px",
+ 	backgroundColor:"#5090cd",
+	top: 0
+}
+
+".menu_btn": {
+	left: 10,
+	width: 25,
+	height: 20
+}
+
+".label_title": {
+	width: Titanium.UI.SIZE,
+	height: Titanium.UI.FILL,
+ 	color: "white",
+ 	font: {fontWeight:'bold'},
+	left: 60
+}
+
+".find_btn": {
+	right: 20,
+	width: 18,
+	height: 15,
+}
+
+".row": {
+	width: Titanium.UI.FILL,
+	height: 55
+}
+
+".row_icon": {
+	width: 25,
+	height: 25,
+	left: 20
+}
+
+".row_label": {
+	width: Titanium.UI.SIZE,
+	height: Titanium.UI.FILL,
+	color: "#6e6f71",
+	left: 65
+}
+
+".row_arrow": {
+	width: Titanium.UI.SIZE,
+	height: Titanium.UI.FILL,
+	right: 20,
+	color: "#6e6f71",
+	font: {
+		fontSize: 18
+	}
 }
