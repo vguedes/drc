@@ -29,8 +29,9 @@ $.index.open();
 
 function load_gravidez() {
 	var saudeaz_view = Alloy.createController("onboarding", {}).getView();
- 		saudeaz_view.addEventListener('open', function(e) {
-   			saudeaz_view.activity.actionBar.hide();
+	saudeaz_view.addEventListener('open', function(e) {
+		saudeaz_view.activity.actionBar.hide();
+	});
 }
 // function load_saude_az() {
 	// var saudeaz_view = Alloy.createController("articles", {}).getView();
