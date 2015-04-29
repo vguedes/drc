@@ -78,3 +78,7 @@ function open_partes_corpo() {
         v.open();
 }
 
+function open_gravidez(){
+	var consultaView = Alloy.createController("artigos", {'articlesSession': 'gravidez', 'window_title': 'Gravidez e recém nascido'}).getView();
+}
+
