@@ -37,7 +37,7 @@ var labelLetterBall = Ti.UI.createLabel({
 	color:'white',
 	textAlign:'center',
 	font:{fontSize:30},
-	text:"A",
+	text:"",
 	opacity:0
 });
 
@@ -48,7 +48,7 @@ var absoluteLabelLetter = Ti.UI.createLabel({
     font:{fontSize:20},
     width:25,
     height:30,
-    text:'A',
+    text:'',
     top:"91px",
     left:"40px",
     verticalAlign: 'bottom',
@@ -82,21 +82,56 @@ var labelOverMask = Ti.UI.createLabel({
 
 
 //	Define Data /Parse JSON
-var tableData = [];
-var tableJsonDataClean = '{"consultas":[{"title":"Almoço"},{"title":"Almoço"},{"title":"Almoço"},{"title":"Almoço"},{"title":"Almoço"},{"title":"Almoço"},{"title":"Almoço"},{"title":"Almoço"},{"title":"Almoço"},{"title":"Almoço"},{"title":"Almoço"},{"title":"Beirute"},{"title":"Beirute"},{"title":"Beirute"},{"title":"Beirute"},{"title":"Beirute"},{"title":"Beirute"},{"title":"Beirute"},{"title":"Caldo de Cana"},{"title":"Caldo de Cana"},{"title":"Caldo de Cana"},{"title":"Caldo de Cana"},{"title":"Caldo de Cana"},{"title":"Caldo de Cana"},{"title":"Caldo de Cana"},{"title":"Caldo de Cana"},{"title":"Caldo de Cana"},{"title":"Caldo de Cana"}]}';
-var	tableJsonData = JSON.parse(tableJsonDataClean);
-	
-var tableDataLength = tableJsonData.consultas.length;
 
+var tableJsonData = [];
+var db = Ti.Database.open('_alloy_');
+if (articlesSession) {
+	var query = "SELECT " +
+				"  article.id, " +
+				"  article.name " +
+				"FROM " +
+				"  article " +
+				"JOIN " +
+				"  article_article_sessions " +
+				"ON " +
+				"  article.id = article_article_sessions.article_id " +
+				"JOIN " +
+				"  article_sessions " +
+				"ON " +
+				"  article_article_sessions.article_sessions_id = article_sessions.id " +
+				"WHERE " +
+				"  article_sessions.name = '" + articlesSession + "';";
+} else{
+	var query = 'SELECT id, name FROM article ORDER BY name';
+};
+var articlesRS = db.execute(query);
+while (articlesRS.isValidRow()) {
+	tableJsonData.push({
+		'articleId': articlesRS.fieldByName('id'),
+		'articleName': articlesRS.fieldByName('name')
+	});
+  articlesRS.next();
+}
+articlesRS.close();
+db.close();
+
+var tableData = [];
+	
+var tableDataLength = tableJsonData.length;
 var letters = [];
 
 //	START LOOP INTO DATA ARRAY
-for (var i=1; i<tableDataLength; i++){
+for (var i=0; i<tableDataLength; i++){
 	
 	//	Define data after parse
-	var rowData = tableJsonData.consultas[i];
-	var rowLetter = (rowData.title).charAt(0);
-		
+	var rowData = tableJsonData[i];
+	var rowLetter = rowData.articleName.charAt(0).toUpperCase();
+	
+	if (i === 0) {
+		labelLetterBall.text = rowLetter;
+		absoluteLabelLetter.text = rowLetter;
+	};
+	
 	//	VERIFY tableData to see if there is any same rowLetter	
 		if (letters.indexOf(rowLetter) === -1) {
 		 	letters.push(rowLetter);
@@ -126,35 +161,36 @@ for (var i=1; i<tableDataLength; i++){
 	row.add(labelLetter);
 	
 	
-	var labelIcon = Ti.UI.createLabel({
-		textAlign:'center',
-	    font:{fontSize:10},
-	    left:35,
-	    width:30,
-	    text:'Icon'
-	});
-	
-	row.add(labelIcon);
+	// var labelIcon = Ti.UI.createLabel({
+		// textAlign:'center',
+	    // font:{fontSize:10},
+	    // left:35,
+	    // width:30,
+	    // text:'Icon'
+	// });
+// 	
+	// row.add(labelIcon);
 	
 	
 	var labelDetails = Ti.UI.createLabel({
 	    font:{fontSize:10},
 	    left:80,
 	    width:130,
-	    text:rowData.title
+	    // id:rowData.articleId,
+	    text:rowData.articleName
 	});
 	
 	row.add(labelDetails);
 	
-	var labelPrice = Ti.UI.createLabel({
-	   	left:80,
-	    width:130,
-	    font:{fontSize:9},
-	    top:30,
-	    text:'R$9 a 120'
-	});
-	
-	row.add(labelPrice);
+	// var labelPrice = Ti.UI.createLabel({
+	   	// left:80,
+	    // width:130,
+	    // font:{fontSize:9},
+	    // top:30,
+	    // text:'R$9 a 120'
+	// });
+// 	
+	// row.add(labelPrice);
 
 //	Pushing Row
 tableData.push(row);
@@ -226,8 +262,10 @@ table.addEventListener('scroll',function(e){
 	
 	//define letter
 	var firstVisibleItemIndex = e.firstVisibleItem;
-	var firstVisibleLetter = (table.data[0].rows[firstVisibleItemIndex].children[2].text).charAt(0);
-	var nextVisibleLetter = (table.data[0].rows[firstVisibleItemIndex+1].children[2].text).charAt(0);
+	var firstVisibleLetter = (table.data[0].rows[firstVisibleItemIndex].children[1].text).charAt(0);
+	var nextVisibleLetter = (table.data[0].rows[firstVisibleItemIndex+1].children[1].text).charAt(0);
+	console.log("------------> " + firstVisibleItemIndex);
+	console.log("------------+ " + nextVisibleLetter)
 	
 	//define offset & calcs
 	var baseTop = 75;	
