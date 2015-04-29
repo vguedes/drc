@@ -25,7 +25,7 @@ $.index.open();
    			 saudeaz_view.activity.actionBar.hide();
 		 });
          saudeaz_view.open();
- } 
+ }
 
 function load_gravidez() {
 	var saudeaz_view = Alloy.createController("onboarding", {}).getView();
