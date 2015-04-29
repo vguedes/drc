@@ -36,7 +36,7 @@
 							<ImageView image="/pele_sol_icon.png" class="item_icon"></ImageView>
 							<Label class="item_icon_label">Pele lesada\npelo sol</Label>
 						</View>
-						<Label class="content_label_view">
+						<Label class="content_label_view" onClick="open_partes_corpo">
 							PARTES DO CORPO
 						</Label>
 					</View>

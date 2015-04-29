@@ -70,4 +70,11 @@ function open_dicas() {
         v.open();
 }
 
+function open_partes_corpo() {
+	var v = Alloy.createController("partes_corpo", {}).getView();
+ 		v.addEventListener('open', function(e) {
+   			v.activity.actionBar.hide();
+		});
+        v.open();
+}
 
