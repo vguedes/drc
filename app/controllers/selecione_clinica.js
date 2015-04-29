@@ -1,10 +1,19 @@
-
+var args = arguments[0] || {};
 
 //	Create & Define Window
 Ti.UI.backgroundColor = 'white';
 var win = Ti.UI.createWindow({
 	 backgroundColor: 'white'
 });
+
+Ti.App.addEventListener("clsAppntStack", function(data) {
+	win.close();
+});
+
+win.addEventListener("open", function() {
+	win.activity.actionBar.hide();
+});
+
 
 // Create & Define BackButton
 var buttonBack = Ti.UI.createButton({

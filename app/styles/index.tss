@@ -36,7 +36,7 @@ cinza claro		F0F0F2
 
 ".bell_btn": {
 	right: 10,
-	width: 20,
+	width: 18,
 	height: 15,
 	//TODO: Arrumar
 	left: 60
@@ -44,7 +44,7 @@ cinza claro		F0F0F2
 
 ".find_btn": {
 	right: 0,
-	width: 20,
+	width: 18,
 	height: 15,
 	zIndex: 2
 }

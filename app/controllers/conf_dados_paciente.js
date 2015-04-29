@@ -6,6 +6,15 @@ var win = Ti.UI.createWindow({
 	 backgroundColor: '#eeeeee'
 });
 
+win.addEventListener("open", function() {
+	win.activity.actionBar.hide();
+});
+
+
+Ti.App.addEventListener("clsAppntStack", function(data) {
+	win.close();
+});
+
 // Create & Define BackButton
 var buttonBack = Ti.UI.createButton({
     backgroundImage: '/left_arrow.png',

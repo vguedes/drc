@@ -47,21 +47,15 @@ function sendVerificationCode() {
 		        	var db = Ti.Database.open('_alloy_');
 		        	var query = 'INSERT INTO auth_data VALUES ("' +$.phonenumber.text + '", "' + rq_object.hash + '");';
 		        	var result = db.execute(query);
-		        	// DEBUG
-		        	var query = "SELECT * FROM auth_data";
-		        	var rs = db.execute(query);
-		        	while (rs.isValidRow()) {
-		        		alert(rs.fieldByName('phonenumber') + rs.fieldByName('hash'));
-		        		rs.next();
-		        	}
-		        };
-	        	$.sbt1.text = "Seja muito bem vindo(a)";
-				$.sbt2.text = "O dr.consulta, seu serviço de\nsaúde agora está com você\nsempre que quiser, na palma\nda sua mão.";
-				$.input_phone_number.hide;
-				$.round_btn.show();
 
-		        $.next_btn.removeEventListener('click', sendVerificationCode);
-				$.next_btn.addEventListener('click', function(){$.win.close();});
+		        	$.sbt1.text = "Seja muito bem vindo(a)";
+					$.sbt2.text = "O dr.consulta, seu serviço de\nsaúde agora está com você\nsempre que quiser, na palma\nda sua mão.";
+					$.input_phone_number.hide();
+					$.round_btn.show();
+	
+			        $.next_btn.removeEventListener('click', sendVerificationCode);
+					$.next_btn.addEventListener('click', function(){$.win.close();});
+		        };
 		    };
 		    
 		    //IF LOAD ERROR
