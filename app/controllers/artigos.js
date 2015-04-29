@@ -2,6 +2,12 @@ var args = arguments[0] || {};
 var articlesSession = args.articlesSession || false;
 var window_title = args.window_title || false;
 
+function openArticleDetails(e) {
+	console.error(e.text);
+	console.error(e.articleId);
+}
+
+
 //	Create & Define Window
 Ti.UI.backgroundColor = 'white';
 var win = Ti.UI.createWindow({
@@ -145,7 +151,8 @@ for (var i=0; i<tableDataLength; i++){
 	    className:'forumEvent',
 		rowIndex:i,
 		rowLetter: rowLetter,
-	    height:50
+	    height:50,
+	    width: "100%"
 	});
 
 
@@ -155,9 +162,11 @@ for (var i=0; i<tableDataLength; i++){
 		left:0,
 	    font:{fontSize:20},
 	    width:25,
+	    // touchEnabled: false,
 	    text:rowLetter
 	});
 	
+	labelLetter.addEventListener('click', openArticleDetails);
 	row.add(labelLetter);
 	
 	
@@ -173,24 +182,26 @@ for (var i=0; i<tableDataLength; i++){
 	
 	
 	var labelDetails = Ti.UI.createLabel({
-	    font:{fontSize:10},
+	    font:{fontSize:18},
 	    left:80,
-	    width:130,
-	    // id:rowData.articleId,
+	    // width:130,
+	    touchEnabled: false,
+	    rowId:rowData.articleId,
 	    text:rowData.articleName
 	});
-	
+		
 	row.add(labelDetails);
 	
-	// var labelPrice = Ti.UI.createLabel({
-	   	// left:80,
-	    // width:130,
-	    // font:{fontSize:9},
+	var labelArrow = Ti.UI.createLabel({
+	   	right:0,
+	    width:130,
+	    font:{fontSize:22},
+	    touchEnabled: false,
 	    // top:30,
-	    // text:'R$9 a 120'
-	// });
-// 	
-	// row.add(labelPrice);
+	    text:'>'
+	});
+	
+	row.add(labelArrow);
 
 //	Pushing Row
 tableData.push(row);
@@ -264,8 +275,6 @@ table.addEventListener('scroll',function(e){
 	var firstVisibleItemIndex = e.firstVisibleItem;
 	var firstVisibleLetter = (table.data[0].rows[firstVisibleItemIndex].children[1].text).charAt(0);
 	var nextVisibleLetter = (table.data[0].rows[firstVisibleItemIndex+1].children[1].text).charAt(0);
-	console.log("------------> " + firstVisibleItemIndex);
-	console.log("------------+ " + nextVisibleLetter)
 	
 	//define offset & calcs
 	var baseTop = 75;	
