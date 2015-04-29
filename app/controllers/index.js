@@ -19,7 +19,7 @@ $.index.open();
 // 
 // }
 
- function load_exame() {
+function load_exame() {
 	 var saudeaz_view = Alloy.createController("articles", {}).getView();
  		 saudeaz_view.addEventListener('open', function(e) {
    			 saudeaz_view.activity.actionBar.hide();
@@ -62,5 +62,12 @@ function load_consulta() {
 
 }
 
+function open_dicas() {
+	var v = Alloy.createController("dicas", {}).getView();
+ 		v.addEventListener('open', function(e) {
+   			v.activity.actionBar.hide();
+		});
+        v.open();
+}
 
 

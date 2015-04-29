@@ -25,7 +25,7 @@
 							<ImageView image="/gravidez_icon.png" class="item_icon"></ImageView>
 							<Label class="item_icon_label">Gravidez e\nrecém nascido</Label>
 						</View>
-						<Label class="content_label_view">
+						<Label class="content_label_view" onClick="open_dicas">
 							DICAS
 						</Label>
 					</View>
