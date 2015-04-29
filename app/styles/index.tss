@@ -24,6 +24,7 @@ cinza claro		F0F0F2
 	width: Titanium.UI.SIZE,
 	height: Titanium.UI.FILL,
  	color: "white",
+ 	// backgroundColor: "#505050",
  	font: {fontWeight:'bold'},
 	left: 40
 }
