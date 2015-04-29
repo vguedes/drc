@@ -1,0 +1,41 @@
+<Alloy>
+	<Window class="container" layout="vertical">
+		<View class="title">
+			<ImageView class="menu_btn" image="/menu_btn.png"></ImageView>
+			<Label class="label_title">Dicas</Label>
+			<ImageView class="find_btn" image="/find.png"></ImageView>
+		</View>
+		<TableView>
+			<TableViewRow class="row">
+				<ImageView image="/gravidez_icon.png" class="row_icon"></ImageView>
+				<Label class="row_label">Gravidez e recém nascido</Label>
+				<Label text=">" class="row_arrow"></Label>
+			</TableViewRow>
+			<TableViewRow class="row">
+				<ImageView image="/crianca_adolescente.png" class="row_icon"></ImageView>
+				<Label class="row_label">Criança e adolescente</Label>
+				<Label text=">" class="row_arrow"></Label>
+			</TableViewRow>
+			<TableViewRow class="row">
+				<ImageView image="/exame_geral_icon.png" class="row_icon"></ImageView>
+				<Label class="row_label">Exames</Label>
+				<Label text=">" class="row_arrow"></Label>
+			</TableViewRow>
+			<TableViewRow class="row">
+				<ImageView image="/saude_homem.png" class="row_icon"></ImageView>
+				<Label class="row_label">Saúde do Homem</Label>
+				<Label text=">" class="row_arrow"></Label>
+			</TableViewRow>
+			<TableViewRow class="row">
+				<ImageView image="/saude_mulher.png" class="row_icon"></ImageView>
+				<Label class="row_label">Saúde da Mulher</Label>
+				<Label text=">" class="row_arrow"></Label>
+			</TableViewRow>
+			<TableViewRow class="row">
+				<ImageView image="/terceira_idade.png" class="row_icon"></ImageView>
+				<Label class="row_label">Terceira idade</Label>
+				<Label text=">" class="row_arrow"></Label>
+			</TableViewRow>
+		</TableView>
+	</Window>
+</Alloy>
