@@ -58,7 +58,13 @@ function debug_phone_auth() {
 }
 
 function load_consulta() {
-	var consultaView = Alloy.createController("especialidades", {}).getView();
+	var v = Alloy.createController("especialidades", {}).getView();
+ 		v.addEventListener('open', function(e) {
+   			v.activity.actionBar.hide();
+		});
+        v.open();
+
+	// var consultaView = Alloy.createController("especialidades", {}).getView();
 
 }
 
