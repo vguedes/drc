@@ -3,6 +3,10 @@ var articlesSession = args.articlesSession || false;
 var window_title = args.window_title || false;
 
 function openArticleDetails(e) {
+	
+	console.log('source>'+e.source);
+
+	console.log(e.source.children[1].text);
 	console.error(e.text);
 	console.error(e.articleId);
 }
@@ -166,7 +170,7 @@ for (var i=0; i<tableDataLength; i++){
 	    text:rowLetter
 	});
 	
-	labelLetter.addEventListener('click', openArticleDetails);
+	
 	row.add(labelLetter);
 	
 	
@@ -194,7 +198,7 @@ for (var i=0; i<tableDataLength; i++){
 	
 	var labelArrow = Ti.UI.createLabel({
 	   	right:0,
-	    width:130,
+	    width:30,
 	    font:{fontSize:22},
 	    touchEnabled: false,
 	    // top:30,
@@ -202,6 +206,12 @@ for (var i=0; i<tableDataLength; i++){
 	});
 	
 	row.add(labelArrow);
+	
+	row.addEventListener('click', function(e){
+		console.log('ae'+e);
+		console.log('labelarrow');
+		openArticleDetails(e);
+	});
 
 //	Pushing Row
 tableData.push(row);
@@ -321,6 +331,7 @@ backArrow.addEventListener('click', function(e){
 
 titleView.add(backArrow);
 titleView.add(labelTitle);
+
 
 //	ADD objs to window
 win.add(labelOverMask);
