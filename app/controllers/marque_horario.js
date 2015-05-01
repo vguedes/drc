@@ -1,4 +1,6 @@
-
+var args = arguments[0] || {};
+var speciality_backend_id = args['speciality_backend_id'];
+var clinic_backend_id = args['clinic_backend_id'];
 
 //	Create & Define Window
 Ti.UI.backgroundColor = 'white';
@@ -51,20 +53,24 @@ var labelSelect = Ti.UI.createLabel({
 
 // Create & Define Picke/Selectbox
 var picker1 = Ti.UI.createPicker({
+  type:"Ti.UI.PICKER_TYPE_DATE",
+  // minDate:"2014,4,1",
+  // maxDate:"May 1, 2014 12:00:00",
+  // value:"2014-04-15T12:00:00",
   top:50,
   zIndex:5,
-  backgroundColor: "#666666",
-  width:'100px',left:50
+  // backgroundColor: "#666666",
+  // width:'100px',left:50
 });
 
-var data = [];
-data[0]=Ti.UI.createPickerRow({title:'18 MAR'});
-data[1]=Ti.UI.createPickerRow({title:'19 MAR'});
-data[2]=Ti.UI.createPickerRow({title:'20 MAR'});
-data[3]=Ti.UI.createPickerRow({title:'30 MAR'});
-
-picker1.add(data);
-picker1.selectionIndicator = true;
+// var data = [];
+// data[0]=Ti.UI.createPickerRow({title:'18 MAR'});
+// data[1]=Ti.UI.createPickerRow({title:'19 MAR'});
+// data[2]=Ti.UI.createPickerRow({title:'20 MAR'});
+// data[3]=Ti.UI.createPickerRow({title:'30 MAR'});
+// 
+// picker1.add(data);
+// picker1.selectionIndicator = true;
 
 
 var picker2 = Ti.UI.createPicker({

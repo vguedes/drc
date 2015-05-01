@@ -1,4 +1,5 @@
 var args = arguments[0] || {};
+var speciality_backend_id = args['speciality_backend_id'];
 
 //	Create & Define Window
 Ti.UI.backgroundColor = 'white';
@@ -41,20 +42,39 @@ var labelTitle = Ti.UI.createLabel({
 });
 
 
-//	Define Data /Parse JSON
-var tableData = [];
-var tableJsonDataClean = '{"consultas":[{"title":"Almoço"},{"title":"Almoço"},{"title":"Almoço"},{"title":"Almoço"},{"title":"Almoço"},{"title":"Almoço"},{"title":"Almoço"},{"title":"Almoço"},{"title":"Almoço"},{"title":"Almoço"},{"title":"Almoço"},{"title":"Beirute"},{"title":"Beirute"},{"title":"Beirute"},{"title":"Beirute"},{"title":"Beirute"},{"title":"Beirute"},{"title":"Beirute"},{"title":"Caldo de Cana"},{"title":"Caldo de Cana"},{"title":"Caldo de Cana"},{"title":"Caldo de Cana"},{"title":"Caldo de Cana"},{"title":"Caldo de Cana"},{"title":"Caldo de Cana"},{"title":"Caldo de Cana"},{"title":"Caldo de Cana"},{"title":"Caldo de Cana"}]}';
-var	tableJsonData = JSON.parse(tableJsonDataClean);
-	
-var tableDataLength = tableJsonData.consultas.length;
 
-var letters = [];
+
+
+var tableData = [];
+
+
+var db = Ti.Database.open('_alloy_');
+var query = 'SELECT * FROM clinic ORDER BY name';
+var articlesRS = db.execute(query);
+while (articlesRS.isValidRow()) {
+	tableData.push({
+		'id': articlesRS.fieldByName('id'),
+		'backend_id': articlesRS.fieldByName('backend_id'),
+		'name': articlesRS.fieldByName('name'),
+		'address': articlesRS.fieldByName('address')
+	});
+  articlesRS.next();
+}
+articlesRS.close();
+db.close();
+
+
+
+
+
+//	Define Data /Parse JSON
+var tableDataLength = tableData.length;
 
 //	START LOOP INTO DATA ARRAY
 for (var i=1; i<tableDataLength; i++){
 	
 	//	Define data after parse
-	var rowData = tableJsonData.consultas[i];
+	var rowData = tableData[i];
 
 	//	Define TableRow
 	var row = Ti.UI.createTableViewRow({
@@ -69,7 +89,9 @@ for (var i=1; i<tableDataLength; i++){
 	    top:8,
 		left:15,
 	    font:{fontSize:12},
-	    text:'Sacomã'
+	    clinic_backend_id:rowData.backend_id,
+	    touchEnabled:false,
+	    text:rowData.name
 	});
 	
 	row.add(labelClinic);
@@ -79,19 +101,20 @@ for (var i=1; i<tableDataLength; i++){
 		left:15,
 		top:20,
 	    font:{fontSize:12},
-	    text:'Próxima ao terminal Sacomã'
+	    touchEnabled:false,
+	    text:rowData.address
 	});
 	
 	row.add(labelClinicDetail);
 	
-	var labelDistance = Ti.UI.createLabel({
-	    textAlign:'right',
-		right:15,
-	    font:{fontSize:10},
-	    text:'1,7km'
-	});
-	
-	row.add(labelDistance);
+	// var labelDistance = Ti.UI.createLabel({
+	    // textAlign:'right',
+		// right:15,
+	    // font:{fontSize:10},
+	    // text:'1,7km'
+	// });
+// 	
+	// row.add(labelDistance);
 	
 	var borderSeparator = Ti.UI.createLabel({
 		width:'100%',
@@ -106,7 +129,8 @@ for (var i=1; i<tableDataLength; i++){
 	
 	//	LISTENERS NAVIGATE
 	row.addEventListener('click',function(e){
-	    var marqueHorarioView = Alloy.createController("marque_horario",{}).getView();
+		var clinic_backend_id = e.source.children[0].clinic_backend_id;
+	    var marqueHorarioView = Alloy.createController("marque_horario",{'speciality_backend_id': speciality_backend_id, 'clinic_backend_id': clinic_backend_id}).getView();
 	});
 
 //	Pushing Row
