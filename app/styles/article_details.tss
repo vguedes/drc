@@ -15,15 +15,18 @@
 	height: 50
 }
 
-
-"#header_view1": {
-	backgroundColor: "#5090CD",
-	width: Titanium.UI.FILL,
-	height: '250px'
+".container":{
+	backgroundColor:"#eeeeee"
 }
 
 
-".placa": {
+"#header_view1": {
+	width: Titanium.UI.FILL,
+	height: '300px'
+}
+
+
+".painel": {
 	backgroundColor:"#5090CD",
 	height:"250px",
 	color:"#ffffff",
@@ -34,7 +37,7 @@
 
 ".title": {
 	zIndex:4,
-	left:"20px", 
+	left:"120px", 
 	color:"#ffffff",
 	font: {
 		fontSize: 25
@@ -46,8 +49,8 @@
 	color:"#ffffff",
 	font: {
 		fontSize: 15
-	}, top:90,
-	left:"20px"
+	}, top:110,
+	left:"120px"
 	
 }
 

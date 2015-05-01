@@ -63,11 +63,11 @@ for(var i=0,j=details_names.length; i<j; i++){
 	
 
 
-	accordionData.push('<li class="list"><label class="labelBox">');
+	accordionData.push('<li class="list"><div class="labelBox"><img src="iconCel.png" class="imgIcon"/><label>');
 	accordionData.push(detail_name);
-	accordionData.push('</label><div class="content">');
+	accordionData.push('</label><span class="arrow"></span></div><div class="content"><div class="cb">');
 	accordionData.push(detail_description);
-	accordionData.push('</div></li>');
+	accordionData.push('</div></div></li>');
 };
 accordionData.push('</ul></div></body></html>');
 
@@ -77,7 +77,8 @@ console.log(accordionData);
 var details = Titanium.UI.createWebView({
             width  : Ti.UI.FILL,
             height : Ti.UI.FILL,
-            enableZoomControls: false
+            enableZoomControls: false,
+              backgroundColor: "#eeeeee"
         });
         
 details.html = accordionData.join('');

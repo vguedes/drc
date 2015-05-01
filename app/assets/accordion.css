@@ -17,6 +17,8 @@ cinza claro		F0F0F2
  */
 
 
+* {margin:0; padding:0px;}
+
 
 .placa {
 	background:#5090CD;
@@ -45,7 +47,7 @@ cinza claro		F0F0F2
     /*border-radius:10px;*/
     /*width:100%;*/
     /*padding:10px;*/
-    background:#fff;
+     float:left;
 }
 .accordion ul {
     list-style:none;
@@ -55,15 +57,24 @@ cinza claro		F0F0F2
 .accordion li {
     margin:0;
     padding:0;
+    position:relative;
 }
+
+.accordion li .labelBox .arrow {
+	position:absolute;
+	right:10px; top:20px;
+	background:url("arrowDrop.png") no-repeat scroll 0px 0px; width:19px; height:16px
+}
+
+.accordion .active .labelBox .arrow {
+	background:url("arrowDrop.png") no-repeat scroll -0px -16px; 
+}
+
 .accordion [type=radio], .accordion [type=checkbox] {
     display:none;
 }
-.accordion label {
-    display:block;
+.accordion .labelBox {
     font-size:16px;
-    line-height:16px;
-    border-bottom:1px solid #ccc;
     color:#ccc;
     // text-shadow:1px 1px 1px #5090CD;
     font-weight:700;
@@ -71,7 +82,14 @@ cinza claro		F0F0F2
     text-transform:uppercase;
     -webkit-transition: all .2s ease-out;
     -moz-transition: all .2s ease-out;
+    margin-left:10px;
+    padding:15px 0;
+    float:left;
+    border-bottom:1px solid #ccc; width:100%;
 }
+
+.accordion .imgIcon { margin-right:50px; margin-top:0px;  float:left; position:relative; top:0px;}
+.accordion label { float:left; margin-top:15px; width: 50%;}
 /*.accordion ul li label:hover, .accordion [type=radio]:checked ~ label, .accordion [type=checkbox]:checked ~ label {
     background:#737373;
     color:#FFF;
@@ -80,12 +98,14 @@ cinza claro		F0F0F2
 
 
 .accordion .content {
-    padding:0 10px;
-    display:block;
-    border:1px solid #fff; /* Make the border match the background so it fades in nicely */
+    padding:0 0px;
+  display:none;
+   /* border:1px solid #fff; /* Make the border match the background so it fades in nicely */
     -webkit-transition: all .5s ease-out;
     -moz-transition: all .5s ease-out;
 }
+
+.active .content { display:block;}
 
 .accordion p {
     color:#333;
@@ -97,28 +117,33 @@ cinza claro		F0F0F2
     margin:10px 0;
 }
 
+.cb { padding:10px 20px;}
+
+.content * { color:#ccc; font-size:12px;}
+.content img { width:200px;}
 
 /* Vertical */
 .vertical ul li {
     float:left;
-    width:95%;
-    margin:0 0 1px;
-}
-.vertical ul li label {
-    padding:10px;
-    display:block;
     width:100%;
+    margin:0 0 0px;
+  
+}
+.vertical ul li .labelBox {
+    padding:0px;
+    display:block;
+    width:100%; line-height:16px;
 }
 /*.vertical [type=radio]:checked ~ label, .vertical [type=checkbox]:checked ~ label {
     border-bottom:0;
 }*/
 
 .vertical ul li .content {
-    border-top:0;
+   font-size:16px;
+    color:#ccc;
     float:left;
     width:100%;
     display:none;
-
 }
 /*.vertical [type=radio]:checked ~ label ~ .content, .vertical [type=checkbox]:checked ~ label ~ .content {
     border:1px solid #5090CD;
