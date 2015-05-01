@@ -9,6 +9,19 @@ function openArticleDetails(e) {
 	console.log(e.source.children[1].text);
 	console.error(e.text);
 	console.error(e.articleId);
+	
+	
+	var articledetails_view = Alloy.createController("article_details", {'articleId': e.source.children[1].rowId, 'article': e.source.children[1].text}).getView();
+    // if (OS_IOS) {
+        // $.navGroupWin.openWindow(saudeaz_view);
+    // }
+ 	// if (OS_ANDROID) {
+ 		articledetails_view.addEventListener('open', function(e) {
+   			articledetails_view.activity.actionBar.hide();
+		});
+        articledetails_view.open();
+    // }    
+    
 }
 
 

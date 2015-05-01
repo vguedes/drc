@@ -24,7 +24,7 @@ var args = arguments[0] || {};
 var articleId = args.articleId || false;
 var article = args.article || false;
 
-$.article.text = article;
+//$.article.text = article;
 
 var query = "SELECT" +
 			"  article_details.description as detail, " +
@@ -54,7 +54,7 @@ rs.close();
 
 var convert = new Markdown.getSanitizingConverter().makeHtml;
 var accordionData = [];
-accordionData.push('<html><head><script type="text/javascript" src="jquery.js"></script><script type="text/javascript" src="detailWebView.js"></script><meta name="viewport" content="initial-scale=1.0, user-scalable=no" /><link rel="stylesheet" type="text/css" href="accordion.css"></head><body><div class="placa"><div class="title">Ginecologista</div><span class="menor">Gneco</span></div><div class="accordion vertical"><ul>');
+accordionData.push('<html><head><script type="text/javascript" src="jquery.js"></script><script type="text/javascript" src="detailWebView.js"></script><meta name="viewport" content="initial-scale=1.0, user-scalable=no" /><link rel="stylesheet" type="text/css" href="accordion.css"></head><body><div class="accordion vertical"><ul>');
 
 details_names = Object.keys(details);
 for(var i=0,j=details_names.length; i<j; i++){
@@ -121,7 +121,7 @@ if (related_articles.length) {
 	  Ti.API.log('info', art.articleName);
 	  var ll = $.UI.create('Label', {text: art.articleName, id: art.articleId, classes: ["rel_articles"]});
 	  ll.addEventListener('click', openRelatedArticle);
-	  $.rel_articles_view.add(ll);
+	//  $.rel_articles_view.add(ll);
 	};
 
 } else {

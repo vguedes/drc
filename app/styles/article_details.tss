@@ -15,6 +15,52 @@
 	height: 50
 }
 
+
+"#header_view1": {
+	backgroundColor: "#5090CD",
+	width: Titanium.UI.FILL,
+	height: '250px'
+}
+
+
+".placa": {
+	backgroundColor:"#5090CD",
+	height:"250px",
+	color:"#ffffff",
+	top:'0px', 
+	width:"100%",
+	zIndex:1
+}
+
+".title": {
+	zIndex:4,
+	left:"20px", 
+	color:"#ffffff",
+	font: {
+		fontSize: 25
+	}
+}
+
+".menor": {
+	zIndex:4,
+	color:"#ffffff",
+	font: {
+		fontSize: 15
+	}, top:90,
+	left:"20px"
+	
+}
+
+".imageBt":{
+	backgroundImage: '/buttonDetail.png',
+    top: "230px",
+    width: "58px",
+    height: "56px",
+    right:10,
+    zIndex:9
+}
+
+
 ".separator": {
 	top: 10,
 	width: "10%",

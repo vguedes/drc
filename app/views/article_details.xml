@@ -7,13 +7,18 @@
 			<Label class="separator" text=""></Label>
 		</View>
 
-		<Label id="article" class="article" />
+		<!--<Label id="article" class="article" />
 
 		<View id="rel_articles_view" layout="horizontal">
 			<Label id="rel_articles_label">Artigos relacionados:</Label>
+		</View>--->
+		
+		<Label id="imgbt" class="imageBt"></Label>
+		<View id="header_view1">
+			
+			<Label id="text" class="title">Ginecologista</Label>
+			<Label id="textMenor" class="menor">Gineco</Label>
 		</View>
-		
-		
 		
 		<!--<WebView id="details" width="Titanium.UI.FILL"  enableZoomControls="false"></WebView>-->
 	</Window>
