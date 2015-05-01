@@ -13,9 +13,9 @@
 			<Label id="rel_articles_label">Artigos relacionados:</Label>
 		</View>--->
 		
-		<Label id="imgbt" class="imageBt"></Label>
+		
 		<View id="header_view1">
-			
+			<Label id="imgbt" class="imageBt"></Label>
 			<Label id="text" class="title">Ginecologista</Label>
 			<Label id="textMenor" class="menor">Gineco</Label>
 		</View>

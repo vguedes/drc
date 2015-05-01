@@ -53,7 +53,7 @@
 
 ".imageBt":{
 	backgroundImage: '/buttonDetail.png',
-    top: "230px",
+    top: "220px",
     width: "58px",
     height: "56px",
     right:10,
