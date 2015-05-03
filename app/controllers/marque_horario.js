@@ -73,7 +73,43 @@ var picker1 = Ti.UI.createPicker({
 // picker1.selectionIndicator = true;
 
 
-var picker2 = Ti.UI.createPicker({
+//rESULTS
+
+var minDate = new Date();
+minDate.setFullYear(2000);
+minDate.setMonth(00);
+minDate.setDate(01);
+
+var maxDate = new Date();
+maxDate.setFullYear(2020);
+maxDate.setMonth(10);
+maxDate.setDate(31);
+
+
+var setValue = new Date();
+setValue.setFullYear(2013);
+setValue.setMonth(02);
+setValue.setDate(24);
+
+
+
+//Date picker
+var picker = Ti.UI.createPicker({
+	selectionIndicator:true,
+	type:Ti.UI.PICKER_TYPE_DATE,
+	minDate: minDate,
+	maxDate: maxDate,
+	value: setValue,
+	top:0
+});
+
+
+//event listenner
+picker.addEventListener("change",function(e){
+	
+});
+
+/*var picker2 = Ti.UI.createPicker({
   top:50,
   zIndex:5,
   color: "#666666",
@@ -89,7 +125,7 @@ data1[3]=Ti.UI.createPickerRow({title:'SACOMÃ'});
 
 picker2.add(data1);
 picker2.selectionIndicator = true;
-
+*/
 //	Define border to separate table & title
 var borderSeparatorTable = Ti.UI.createLabel({
 		width:'100%',
@@ -264,7 +300,8 @@ var table = Ti.UI.createTableView({
   	data: tableData,
   	top:"140px",
 	left:"0px",
-	color:"#6e6f71"
+	color:"#6e6f71",
+	top:240
 });
 
 
@@ -273,8 +310,8 @@ win.add(buttonBack);
 
 
 win.add(borderSeparatorTable);
-win.add(picker1);
-win.add(picker2);
+win.add(picker);
+//win.add(picker2);
 win.add(labelTitle);
 win.add(labelSelect);
 win.add(table);

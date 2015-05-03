@@ -93,5 +93,7 @@ function open_exames(){
 }
 
  function open_alert() {
- 	alert("Aguardando integração com tela de detalhes de artigo");
+// 	alert("Aguardando integração com tela de detalhes de artigo");
+ var consultaView = Alloy.createController("marque_horario", {}).getView();
+
  }
