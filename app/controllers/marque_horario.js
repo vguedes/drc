@@ -100,7 +100,17 @@ var picker = Ti.UI.createPicker({
 	minDate: minDate,
 	maxDate: maxDate,
 	value: setValue,
-	top:0
+	top:0,
+	zIndex:6
+});
+
+var bgPicker = Ti.UI.createLabel({
+	width:"100%",
+	height:"200px",
+	backgroundColor:"#000",
+	top:"20px",
+	zIndex:5
+	
 });
 
 
@@ -258,8 +268,7 @@ for (var i=1; i<tableDataLength; i++){
 		    zIndex:12,
 			left:205,
 			color:'#5090cd',
-			font:{fontSize:12},
-			text: 'Confirmar'
+			font:{fontSize:12}
 		});
 		
 		labelModalConfirm.addEventListener('click',function(e){
@@ -311,7 +320,7 @@ win.add(buttonBack);
 
 win.add(borderSeparatorTable);
 win.add(picker);
-//win.add(picker2);
+win.add(bgPicker);
 win.add(labelTitle);
 win.add(labelSelect);
 win.add(table);
