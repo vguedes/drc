@@ -99,16 +99,28 @@ var picker = Ti.UI.createPicker({
 	type:Ti.UI.PICKER_TYPE_DATE,
 	minDate: minDate,
 	maxDate: maxDate,
+	value: setValue, visibleItems:2, useSpinner:false, 
+	top:40,
+	left:40,
+	zIndex:6, width:120,height:130
+});
+
+var picker2 = Ti.UI.createPicker({
+	selectionIndicator:true,
+	type:Ti.UI.PICKER_TYPE_DATE,
+	minDate: minDate,
+	maxDate: maxDate,
 	value: setValue,
-	top:0,
-	zIndex:6
+	top:40,
+	left:175, visibleItems:2, useSpinner:false, 
+	zIndex:6, width:120,height:130
 });
 
 var bgPicker = Ti.UI.createLabel({
 	width:"100%",
 	height:"200px",
-	backgroundColor:"#000",
-	top:"20px",
+	backgroundColor:"#5090cd",
+	top:"50px",
 	zIndex:5
 	
 });
@@ -310,7 +322,7 @@ var table = Ti.UI.createTableView({
   	top:"140px",
 	left:"0px",
 	color:"#6e6f71",
-	top:240
+	top:180
 });
 
 
@@ -319,7 +331,7 @@ win.add(buttonBack);
 
 
 win.add(borderSeparatorTable);
-win.add(picker);
+win.add(picker);win.add(picker2);
 win.add(bgPicker);
 win.add(labelTitle);
 win.add(labelSelect);
