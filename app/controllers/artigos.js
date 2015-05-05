@@ -1,6 +1,7 @@
 var args = arguments[0] || {};
 var articlesSession = args.articlesSession || false;
 var window_title = args.window_title || false;
+// console.debug(articlesSession);
 
 function openArticleDetails(e) {
 	
@@ -110,8 +111,8 @@ var tableJsonData = [];
 var db = Ti.Database.open('_alloy_');
 if (articlesSession) {
 	var query = "SELECT " +
-				"  article.id, " +
-				"  article.name " +
+				"  article.id as id, " +
+				"  article.name as name " +
 				"FROM " +
 				"  article " +
 				"JOIN " +
@@ -137,6 +138,7 @@ while (articlesRS.isValidRow()) {
 }
 articlesRS.close();
 db.close();
+// console.error(tableJsonData);
 
 var tableData = [];
 	

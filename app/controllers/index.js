@@ -98,3 +98,7 @@ function open_exames(){
  var consultaView = Alloy.createController("marque_horario", {}).getView();
 
  }
+ 
+ function open_gineco() {
+ 	var consultaView = Alloy.createController("artigos", {'articlesSession': 'gineco', 'window_title': 'Ginecologista'}).getView();
+ }
