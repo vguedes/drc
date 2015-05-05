@@ -196,7 +196,7 @@ tableData.push(rowCel);
 	  color: '#336699',
 	  top:16,left: 40,
 	  width: 250, height: 50,
-	  hintText:"Lurdes de Almeida",
+	  hintText:"Digite seu nome",
 	  font:{fontSize:12}
 	});
 	
@@ -248,7 +248,7 @@ tableData.push(rowNome);
 	  color: '#336699',
 	  top:16,left: 40,
 	  width: 250, height: 50,
-	  hintText:"lurdes@almeida.com.br",
+	  hintText:"Digite seu e-mail",
 	  font:{fontSize:12}
 	});
 	
@@ -300,7 +300,7 @@ tableData.push(rowEmail);
 	  color: '#336699',
 	  top:16,left: 40,
 	  width: 250, height: 50,
-	  hintText:"19/05/1985",
+	  hintText:"Digite seu ano de nascimento",
 	  font:{fontSize:12}
 	});
 	
