@@ -92,6 +92,27 @@ setValue.setMonth(02);
 setValue.setDate(24);
 
 
+//	Define Date to Start drawnTable()
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1; //January is 0!
+var yyyy = today.getFullYear();
+
+if(dd<10) {
+    dd='0'+dd;
+} 
+
+if(mm<10) {
+    mm='0'+mm;
+} 
+
+today = dd+'-'+mm+'-'+yyyy;
+
+//	Define Data
+function getDataJson(datetime){
+	return '{"TIME":[{"time":"15:15","doctorId":"121","doctorName":"Dr(a).Mirela"}, {"time":"15:15","doctorId":"121","doctorName":"Dr(a).Mirela"}, {"time":"15:15","doctorId":"121","doctorName":"Dr(a).Mirela"}, {"time":"15:15","doctorId":"121","doctorName":"Dr(a).Mirela"}, {"time":"15:15","doctorId":"121","doctorName":"Dr(a).Mirela"}]}';
+	
+}
 
 //Date picker
 var picker = Ti.UI.createPicker({
@@ -101,21 +122,16 @@ var picker = Ti.UI.createPicker({
 	maxDate: maxDate,
 	value: setValue, visibleItems:2, useSpinner:false, 
 	top:40,
-	left:40,
-	zIndex:6, width:120,height:130
+	left:30,
+	zIndex:6, width:240,height:130
 });
 
-var picker2 = Ti.UI.createPicker({
-	selectionIndicator:true,
-	type:Ti.UI.PICKER_TYPE_DATE,
-	minDate: minDate,
-	maxDate: maxDate,
-	value: setValue,
-	top:40,
-	left:175, visibleItems:2, useSpinner:false, 
-	zIndex:6, width:120,height:130
+var pickerLabel = Ti.UI.createLabel({
+	top:70, color:"#ffffff",
+	zIndex:15,  font:{fontSize:22},
+	text:'Mar - 24 - 2013',visible:"false"
 });
-
+  
 var bgPicker = Ti.UI.createLabel({
 	width:"100%",
 	height:"200px",
@@ -126,28 +142,33 @@ var bgPicker = Ti.UI.createLabel({
 });
 
 
-//event listenner
-picker.addEventListener("change",function(e){
+//	Define & Add TableRow Childrens
+	var buttonAction = Ti.UI.createButton({
+	    backgroundImage: '/buttonoOk1.png',
+	    top: 80,
+	    width: '62px',
+	    height: '64px',
+	    right:20,
+	    zIndex:9
+	});
 	
-});
+	buttonAction.addEventListener('click',function(e){
+		drawTable('');
+	    picker.hide();
+	    pickerLabel.show();
+		buttonAction.hide();
+	});
 
-/*var picker2 = Ti.UI.createPicker({
-  top:50,
-  zIndex:5,
-  color: "#666666",
-  backgroundColor: "#666666",
-  width:'100px', right:50
-});
 
-var data1 = [];
-data1[0]=Ti.UI.createPickerRow({title:'SACOMÃ'});
-data1[1]=Ti.UI.createPickerRow({title:'SACOMÃ'});
-data1[2]=Ti.UI.createPickerRow({title:'SACOMÃ'});
-data1[3]=Ti.UI.createPickerRow({title:'SACOMÃ'});
+	pickerLabel.addEventListener('click',function(e){
+	    picker.show();
+	    pickerLabel.hide();
+		buttonAction.show();
+	});
 
-picker2.add(data1);
-picker2.selectionIndicator = true;
-*/
+	
+	
+	
 //	Define border to separate table & title
 var borderSeparatorTable = Ti.UI.createLabel({
 		width:'100%',
@@ -158,51 +179,62 @@ var borderSeparatorTable = Ti.UI.createLabel({
 });
 
 //	Define Data /Parse JSON
-var tableData = [];
-var tableJsonDataClean = '{"consultas":[{"title":"Almoço"},{"title":"Almoço"},{"title":"Almoço"},{"title":"Almoço"},{"title":"Almoço"},{"title":"Almoço"},{"title":"Almoço"},{"title":"Almoço"},{"title":"Almoço"},{"title":"Almoço"},{"title":"Almoço"},{"title":"Beirute"},{"title":"Beirute"},{"title":"Beirute"},{"title":"Beirute"},{"title":"Beirute"},{"title":"Beirute"},{"title":"Beirute"},{"title":"Caldo de Cana"},{"title":"Caldo de Cana"},{"title":"Caldo de Cana"},{"title":"Caldo de Cana"},{"title":"Caldo de Cana"},{"title":"Caldo de Cana"},{"title":"Caldo de Cana"},{"title":"Caldo de Cana"},{"title":"Caldo de Cana"},{"title":"Caldo de Cana"}]}';
-var	tableJsonData = JSON.parse(tableJsonDataClean);
+
+//	Define Table
+var table = Ti.UI.createTableView({
+  	data: '',
+  	top:"140px",
+	left:"0px",
+	color:"#6e6f71",
+	top:180
+});
+
+
+//	Draw Table
+function drawTable(datetime) {
+	var dataJson = getDataJson(datetime);
+//	var tablesData = table.data[0].rows;
 	
-var tableDataLength = tableJsonData.consultas.length;
+	if (table.data[0]){
+		var lengthData = table.data[0].rows; 
 
-var letters = [];
+		//limpa rows
+		 for (var i=table.data[0].rows.length;i>=0;i--){
+	            table.deleteRow(i);
+	    }
+    
+		
+	}
+	
+    //insert novas rows do dataJson
+	var tableJsonDataClean = dataJson;
+  	var	tableJsonData = JSON.parse(tableJsonDataClean);
 
-//	START LOOP INTO DATA ARRAY
-for (var i=1; i<tableDataLength; i++){
+	var len = 0;
+	for (var o in tableJsonData) {
+	    len++;
+	}
+
+	
+		console.log(len);
+		
+		
+		
+		
+		 
+	
+	//	START LOOP INTO DATA ARRAY
+for (var i=0; i<len; i++){
+	console.log(i);
 	
 	//	Define data after parse
-	var rowData = tableJsonData.consultas[i];
+//	var rowData = tableJsonData[i];
 
 	//	Define TableRow
 	var row = Ti.UI.createTableViewRow({
 	    className:'forumEvent'
 	});
 
-
-	//	Define & Add TableRow Childrens
-	var labelDay = Ti.UI.createLabel({
-	    textAlign:'left',
-	    top:8,
-		left:8,
-		width:'60px',
-		color:'#000000',
-	    font:{fontSize:20},
-	    text:'1'+i
-	});
-	
-	row.add(labelDay);
-	
-	
-	var labelMonth = Ti.UI.createLabel({
-	    textAlign:'left',
-	    top:28,
-		left:7,
-		width:'40px',
-		color:'#000000',
-	    font:{fontSize:12},
-	    text:'mar'
-	});
-	
-	row.add(labelMonth);
 	
 	//	Define first hour label
 	var labelTime = Ti.UI.createLabel({
@@ -217,23 +249,29 @@ for (var i=1; i<tableDataLength; i++){
 	row.add(labelTime);
 	
 	//	Define Coaching Meet
+
+	var heightCoach = 55;
+	var lenSec = tableJsonData.TIME.length;
 	
-	var labelCoach = Ti.UI.createLabel({
-	    textAlign:'left',
-	    top:55,
-		left:90,
-		height:25,
-		width:200,
-		color:'#fefffd',
-		backgroundColor:'#5090cd',
-	    font:{fontSize:12},
-	    text:'    15:15 - Dr(a). Mirela dos Santos',
-	    borderRadius:4,
-	    backgroundPaddingLeft: 30,
-    	backgroundPaddingRight: 30
-	});
-	
-	labelCoach.addEventListener('click',function(e){
+	for(ind=0; ind<lenSec; ind++){
+		heightCoach = 55 + (35*ind);
+			console.log('>>>'+heightCoach);
+		var labelCoach = Ti.UI.createLabel({
+		    textAlign:'left',
+		    top:heightCoach,
+			left:90,
+			height:25,
+			width:200,
+			color:'#fefffd',
+			backgroundColor:'#5090cd',
+		    font:{fontSize:12},
+		    text:'    15:15 - Dr(a). Mirela dos Santos',
+		    borderRadius:4,
+		    backgroundPaddingLeft: 30,
+	    	backgroundPaddingRight: 30
+		});
+		
+		labelCoach.addEventListener('click',function(e){
 	    var modalConfirm = Ti.UI.createLabel({
 		    textAlign:'left',
 		    top:108,
@@ -280,7 +318,8 @@ for (var i=1; i<tableDataLength; i++){
 		    zIndex:12,
 			left:205,
 			color:'#5090cd',
-			font:{fontSize:12}
+			font:{fontSize:12},
+			text: 'Confirmar'
 		});
 		
 		labelModalConfirm.addEventListener('click',function(e){
@@ -304,34 +343,38 @@ for (var i=1; i<tableDataLength; i++){
 		
 	
 	});
+		
+		row.add(labelCoach);
+		
+	}
 	
-	row.add(labelCoach);
+
+	
+	
+	
+	
+	
 	
 	
 
 //	Pushing Row
-tableData.push(row);
+table.appendRow(row);
 
 
 }// END LOOP
 
 
-//	Define Table
-var table = Ti.UI.createTableView({
-  	data: tableData,
-  	top:"140px",
-	left:"0px",
-	color:"#6e6f71",
-	top:180
-});
+}//end drawTable()
 
+// DESENHA TABELA INICIAL
+drawTable();	
 
 //	ADD objs to window
 win.add(buttonBack);
-
-
+win.add(pickerLabel);  //pickerLabel.hide();
+win.add(buttonAction);
 win.add(borderSeparatorTable);
-win.add(picker);win.add(picker2);
+win.add(picker);
 win.add(bgPicker);
 win.add(labelTitle);
 win.add(labelSelect);
