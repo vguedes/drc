@@ -1,3 +1,6 @@
+var args = arguments[0] || {};
+var cpf = args['cpf'];
+var tel = args['tel'];
 
 
 //	Create & Define Window
@@ -89,7 +92,7 @@ var letters = [];
 	  color: '#336699',
 	  top:16,left: 40,
 	  width: 250, height: 50,
-	  hintText:"365.854.987-80",
+	  hintText:cpf,
 	  font:{fontSize:12}
 	});
 	
@@ -141,7 +144,7 @@ tableData.push(row);
 	  color: '#336699',
 	  top:16,left: 40,
 	  width: 250, height: 50,
-	  hintText:"(11)9 9956 7503",
+	  hintText:tel,
 	  font:{fontSize:12}
 	});
 	

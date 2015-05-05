@@ -83,7 +83,7 @@ var letters = [];
 	
 	row.add(borderSeparator);
 	
-	var textFieldCel = Ti.UI.createTextField({
+	var textFieldCpf = Ti.UI.createTextField({
 	  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
 	  color: '#336699',
 	  top:0,left: 50,
@@ -92,7 +92,7 @@ var letters = [];
 	  font:{fontSize:14}
 	});
 	
-	row.add(textFieldCel);	
+	row.add(textFieldCpf);	
 	
 //	Pushing Row
 tableData.push(row);
@@ -159,7 +159,8 @@ tableData.push(rowCel);
 	});
 	
 	buttonAction.addEventListener('click',function(e){
-	    var confirmaDadosView = Alloy.createController("conf_dados_paciente",{}).getView();
+		console.log(textFieldCpf.getValue());
+	    var confirmaDadosView = Alloy.createController("conf_dados_paciente",{"tel":textFieldCel.getValue(),"cpf":textFieldCpf.getValue()}).getView();
 	});
 
 
