@@ -112,8 +112,9 @@ setValue.setDate(dd);
 
 //	Define Data
 function getDataJson(datetime){
-	 return '{"DATAS":[{"HORA":"15:00","TIME":[{"time":"15:15","doctorId":"121","doctorName":"Dr(a).Mirela111"}, {"time":"15:15","doctorId":"121","doctorName":"Dr(a).Mirel32a"}, {"time":"15:15","doctorId":"121","doctorName":"Dr(zão).Mirela"}, {"time":"15:15","doctorId":"121","doctorName":"Dr(a).Mirela"}, {"time":"15:15","doctorId":"121","doctorName":"Dr(a).Mirela"}]},{"HORA":"16:00","TIME":[{"time":"16:15","doctorId":"121","doctorName":"Dr(a).Mirela111"}, {"time":"16:25","doctorId":"121","doctorName":"Dr(a).Mirel32a"}, {"time":"16:35","doctorId":"121","doctorName":"Dr(zão).Mirela"}, {"time":"15:15","doctorId":"121","doctorName":"Dr(a).Mirela"}, {"time":"16:55","doctorId":"121","doctorName":"Dr(a).Mirela"}]}]}';
-	
+	  return '{"09:00":[{"time":"09:00","doctorId":8164,"doctorName":"Enfermeiro Sacoma"},{"time":"09:00","doctorId":8221,"doctorName":"Enfermeiro Sao Bernardo"}],"10:00":[{"time":"10:00","doctorId":8164,"doctorName":"Enfermeiro Sacoma"}],"13:00":[{"time":"13:30","doctorId":8221,"doctorName":"Enfermeiro Sao Bernardo"}],"14:00":[{"time":"14:06","doctorId":8221,"doctorName":"Enfermeiro Sao Bernardo"},{"time":"14:42","doctorId":8221,"doctorName":"Enfermeiro Sao Bernardo"}],"15:00":[{"time":"15:18","doctorId":8221,"doctorName":"Enfermeiro Sao Bernardo"},{"time":"15:54","doctorId":8221,"doctorName":"Enfermeiro Sao Bernardo"}]}';
+
+
 }
 
 //Date picker
@@ -233,7 +234,7 @@ function drawTable(datetime) {
 		 
 	
 	//	START LOOP INTO DATA ARRAY
-for (var i=0; i<tableJsonData.DATAS.length; i++){
+for (var i=0; i<len; i++){
 	console.log(i);
 	
 	//	Define data after parse
@@ -253,18 +254,18 @@ for (var i=0; i<tableJsonData.DATAS.length; i++){
 		width:'60px',
 		color:'#666666',
 	    font:{fontSize:12},
-	    text: tableJsonData.DATAS[i].HORA
+	    text: Object.keys(tableJsonData)[i]
 	});
 	row.add(labelTime);
 	
 	//	Define Coaching Meet
 
 	var heightCoach = 55;
-	var lenSec = tableJsonData.DATAS[i].TIME.length;
+	var lenSec = tableJsonData[Object.keys(tableJsonData)[i]].length;
 	
 	
 	for(ind=0; ind<lenSec; ind++){
-		var dataL = tableJsonData.DATAS[i].TIME[ind];
+		var dataL = tableJsonData[Object.keys(tableJsonData)[i]][ind];
 		heightCoach = 55 + (35*ind);
 			console.log('>>>'+heightCoach);
 		var labelCoach = Ti.UI.createLabel({
