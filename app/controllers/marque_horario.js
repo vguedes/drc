@@ -80,7 +80,7 @@ var picker1 = Ti.UI.createPicker({
 //	Define Date to Start drawnTable()
 var today = new Date();
 var dd = today.getDate();
-var mm = today.getMonth()+1; //January is 0!
+var mm = today.getMonth(); //January is 0!
 var yyyy = today.getFullYear();
 
 if(dd<10) {
