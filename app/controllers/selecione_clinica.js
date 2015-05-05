@@ -64,7 +64,7 @@ articlesRS.close();
 db.close();
 
 
-
+console.log(tableData);
 
 
 //	Define Data /Parse JSON
@@ -72,7 +72,7 @@ var tableDataLength = tableData.length;
 
 //	START LOOP INTO DATA ARRAY
 for (var i=1; i<tableDataLength; i++){
-	
+	console.log(tableDataLength);
 	//	Define data after parse
 	var rowData = tableData[i];
 
@@ -91,7 +91,7 @@ for (var i=1; i<tableDataLength; i++){
 	    font:{fontSize:12},
 	    clinic_backend_id:rowData.backend_id,
 	    touchEnabled:false,
-	    text:rowData.name
+	    text:i+' '+rowData.name
 	});
 	
 	row.add(labelClinic);
@@ -134,7 +134,7 @@ for (var i=1; i<tableDataLength; i++){
 	});
 
 //	Pushing Row
-tableData.push(row);
+//tableData.push(row);
 
 
 }// END LOOP
