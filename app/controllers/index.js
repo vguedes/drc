@@ -50,11 +50,12 @@ function load_phone_auth() {
 }
 
 function debug_phone_auth() {
-	var v = Alloy.createController("onboarding_debug", {}).getView();
- 		v.addEventListener('open', function(e) {
-   			v.activity.actionBar.hide();
-		});
-        v.open();
+	// var v = Alloy.createController("onboarding_debug", {}).getView();
+ 		// v.addEventListener('open', function(e) {
+   			// v.activity.actionBar.hide();
+		// });
+        // v.open();
+       var consultaView = Alloy.createController("httpMock", {}).getView();
 }
 
 function load_consulta() {
