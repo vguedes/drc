@@ -157,7 +157,7 @@ var bgPicker = Ti.UI.createLabel({
 	});
 	
 	buttonAction.addEventListener('click',function(e){
-		drawTable('');
+		// drawTable('');
 	    picker.hide();
 	    var pickerVal = picker.getValue();
 	    
@@ -165,6 +165,10 @@ var bgPicker = Ti.UI.createLabel({
 	    pickerLabel.setText(pickerVal.getMonth()+' - '+pickerVal.getDate() +' - '+ pickerVal.getFullYear());
 	    pickerLabel.show();
 		buttonAction.hide();
+		var day = pickerVal.getDate().length == 2 ? pickerVal.getDate() : '0' + pickerVal.getDate();
+		var month = pickerVal.getMonth().length == 2 ? pickerVal.getMonth() : '0' + pickerVal.getMonth();
+		var year = pickerVal.getFullYear();
+		getAvailableSlots(day + '-' + month + '-' + year);
 		
 		//drawTable(datetime)
 	});
@@ -200,9 +204,89 @@ var table = Ti.UI.createTableView({
 });
 
 
+// get the available slots
+function getAvailableSlots(today) {
+    today = '22-05-2015';
+    console.log(today);
+    
+    
+    
+    
+    var base_url = 'https://escaladev.drconsulta.com';
+    var auth_method = '/authenticate';
+    var getAvailableSlots_method = '/schedule/availableslots';
+    var auth_params = {
+        'username': 'gaston',
+        'password': '098765',
+        'grant_type':  'password'
+    };
+
+
+    var client = Ti.Network.createHTTPClient({
+         onload : function(e) {
+             var token = JSON.parse(this.responseText).access_token;
+             console.info(token);
+             var xhr = Ti.Network.createHTTPClient({
+                onload: function(e)  {
+                    var rtrn = {};
+                    var hoursStack = [];
+                    var results = JSON.parse(this.responseText).groupedResults;
+                    console.log(results);
+                    for(var k=0,v=results.length; k<v; k++) {
+                       var groups = results[k]['openSlots'];
+                       for(var a=0,b=groups.length; a<b; a++){
+                         var slot = groups[a];
+                         console.log(slot);
+                         var apptMedicalName = slot['medicalName'];
+                         var apptMedicalId = slot['medicalId'];
+                         var apptTime = slot['dateTime']["time"];
+                         var apptHour = apptTime.split(":")[0];
+                         var apptMinute = apptTime.split(":")[1];
+                         var apptBaseTime = apptHour + ":00";
+                         if (! (apptBaseTime in rtrn)) {
+                            rtrn[apptBaseTime] = [];
+                         };
+                         rtrn[apptBaseTime].push({
+                            'time': apptTime,
+                            'doctorId': apptMedicalId,
+                            'doctorName': apptMedicalName
+                         });
+                         console.log('pushed -> ' + apptMedicalName);
+                       };
+                     };
+                     drawTable(rtrn);
+                },
+                onerror: function(e) {
+                    alert('error');
+                },
+                timeout: 10000
+             });
+             var params = {
+                'startDate': today,
+                'serviceId': '4375',
+                'totalDays': '0',
+                'groupBy': 'UNIT'
+             };
+             xhr.open("GET", base_url + getAvailableSlots_method);
+             xhr.setRequestHeader('Authorization', 'Bearer '  + token);
+             xhr.send(params);
+         },
+         // function called when an error occurs, including a timeout
+         onerror : function(e) {
+             Ti.API.debug(e.error);
+             alert('Erro: ' + e.error);
+         },
+         timeout : 10000  // in milliseconds
+    });
+    client.open("POST", base_url + auth_method);
+    client.send(auth_params);
+};
+
+
+
 //	Draw Table
-function drawTable(datetime) {
-	var dataJson = getDataJson(datetime);
+function drawTable(tableJsonData) {
+	// var dataJson = getDataJson(datetime);
 //	var tablesData = table.data[0].rows;
 	
 	if (table.data[0]){
@@ -217,8 +301,8 @@ function drawTable(datetime) {
 	}
 	
     //insert novas rows do dataJson
-	var tableJsonDataClean = dataJson;
-  	var	tableJsonData = JSON.parse(tableJsonDataClean);
+	// var tableJsonDataClean = dataJson;
+  	// var	tableJsonData = JSON.parse(tableJsonDataClean);
 
 	var len = 0;
 	for (var o in tableJsonData) {
@@ -384,7 +468,7 @@ table.appendRow(row);
 }//end drawTable()
 
 // DESENHA TABELA INICIAL
-drawTable();	
+getAvailableSlots(today);	
 
 //	ADD objs to window
 win.add(buttonBack);
