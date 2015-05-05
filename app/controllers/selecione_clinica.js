@@ -46,6 +46,7 @@ var labelTitle = Ti.UI.createLabel({
 
 
 var tableData = [];
+var tableDataCompleted = [];
 
 
 var db = Ti.Database.open('_alloy_');
@@ -134,7 +135,7 @@ for (var i=1; i<tableDataLength; i++){
 	});
 
 //	Pushing Row
-//tableData.push(row);
+tableDataCompleted.push(row);
 
 
 }// END LOOP
@@ -142,7 +143,7 @@ for (var i=1; i<tableDataLength; i++){
 
 //	Define Table
 var table = Ti.UI.createTableView({
-  	data: tableData,
+  	data: tableDataCompleted,
   	top:"84px",
 	left:"0px",
 	color:"#6e6f71"
