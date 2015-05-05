@@ -75,21 +75,6 @@ var picker1 = Ti.UI.createPicker({
 
 //rESULTS
 
-var minDate = new Date();
-minDate.setFullYear(2000);
-minDate.setMonth(00);
-minDate.setDate(01);
-
-var maxDate = new Date();
-maxDate.setFullYear(2020);
-maxDate.setMonth(10);
-maxDate.setDate(31);
-
-
-var setValue = new Date();
-setValue.setFullYear(2013);
-setValue.setMonth(02);
-setValue.setDate(24);
 
 
 //	Define Date to Start drawnTable()
@@ -108,9 +93,26 @@ if(mm<10) {
 
 today = dd+'-'+mm+'-'+yyyy;
 
+var minDate = new Date();
+minDate.setFullYear(yyyy);
+minDate.setMonth(mm);
+minDate.setDate(dd);
+
+var maxDate = new Date();
+maxDate.setFullYear(2016);
+maxDate.setMonth(10);
+maxDate.setDate(31);
+
+
+var setValue = new Date();
+setValue.setFullYear(yyyy);
+setValue.setMonth(mm);
+setValue.setDate(dd);
+
+
 //	Define Data
 function getDataJson(datetime){
-	return '{"TIME":[{"time":"15:15","doctorId":"121","doctorName":"Dr(a).Mirela"}, {"time":"15:15","doctorId":"121","doctorName":"Dr(a).Mirela"}, {"time":"15:15","doctorId":"121","doctorName":"Dr(a).Mirela"}, {"time":"15:15","doctorId":"121","doctorName":"Dr(a).Mirela"}, {"time":"15:15","doctorId":"121","doctorName":"Dr(a).Mirela"}]}';
+	return '{"TIME":[{"time":"15:15","doctorId":"121","doctorName":"Dr(a).Mirela111"}, {"time":"15:15","doctorId":"121","doctorName":"Dr(a).Mirel32a"}, {"time":"15:15","doctorId":"121","doctorName":"Dr(zão).Mirela"}, {"time":"15:15","doctorId":"121","doctorName":"Dr(a).Mirela"}, {"time":"15:15","doctorId":"121","doctorName":"Dr(a).Mirela"}]}';
 	
 }
 
@@ -129,7 +131,8 @@ var picker = Ti.UI.createPicker({
 var pickerLabel = Ti.UI.createLabel({
 	top:70, color:"#ffffff",
 	zIndex:15,  font:{fontSize:22},
-	text:'Mar - 24 - 2013',visible:"false"
+	text:mm+' - '+dd +' - '+ yyyy,
+	visible:"false"
 });
   
 var bgPicker = Ti.UI.createLabel({
@@ -155,8 +158,14 @@ var bgPicker = Ti.UI.createLabel({
 	buttonAction.addEventListener('click',function(e){
 		drawTable('');
 	    picker.hide();
+	    var pickerVal = picker.getValue();
+	    
+	    console.log(pickerVal);
+	    pickerLabel.setText(pickerVal.getMonth()+' - '+pickerVal.getDate() +' - '+ pickerVal.getFullYear());
 	    pickerLabel.show();
 		buttonAction.hide();
+		
+		//drawTable(datetime)
 	});
 
 
@@ -253,7 +262,9 @@ for (var i=0; i<len; i++){
 	var heightCoach = 55;
 	var lenSec = tableJsonData.TIME.length;
 	
+	
 	for(ind=0; ind<lenSec; ind++){
+		var dataL = tableJsonData.TIME[ind];
 		heightCoach = 55 + (35*ind);
 			console.log('>>>'+heightCoach);
 		var labelCoach = Ti.UI.createLabel({
@@ -265,7 +276,7 @@ for (var i=0; i<len; i++){
 			color:'#fefffd',
 			backgroundColor:'#5090cd',
 		    font:{fontSize:12},
-		    text:'    15:15 - Dr(a). Mirela dos Santos',
+		    text:'    '+dataL.time+' - Dr(a). '+dataL.doctorName,
 		    borderRadius:4,
 		    backgroundPaddingLeft: 30,
 	    	backgroundPaddingRight: 30
