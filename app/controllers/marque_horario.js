@@ -112,7 +112,7 @@ setValue.setDate(dd);
 
 //	Define Data
 function getDataJson(datetime){
-	return '{"TIME":[{"time":"15:15","doctorId":"121","doctorName":"Dr(a).Mirela111"}, {"time":"15:15","doctorId":"121","doctorName":"Dr(a).Mirel32a"}, {"time":"15:15","doctorId":"121","doctorName":"Dr(zão).Mirela"}, {"time":"15:15","doctorId":"121","doctorName":"Dr(a).Mirela"}, {"time":"15:15","doctorId":"121","doctorName":"Dr(a).Mirela"}]}';
+	 return '{"DATAS":[{"HORA":"15:00","TIME":[{"time":"15:15","doctorId":"121","doctorName":"Dr(a).Mirela111"}, {"time":"15:15","doctorId":"121","doctorName":"Dr(a).Mirel32a"}, {"time":"15:15","doctorId":"121","doctorName":"Dr(zão).Mirela"}, {"time":"15:15","doctorId":"121","doctorName":"Dr(a).Mirela"}, {"time":"15:15","doctorId":"121","doctorName":"Dr(a).Mirela"}]},{"HORA":"16:00","TIME":[{"time":"16:15","doctorId":"121","doctorName":"Dr(a).Mirela111"}, {"time":"16:25","doctorId":"121","doctorName":"Dr(a).Mirel32a"}, {"time":"16:35","doctorId":"121","doctorName":"Dr(zão).Mirela"}, {"time":"15:15","doctorId":"121","doctorName":"Dr(a).Mirela"}, {"time":"16:55","doctorId":"121","doctorName":"Dr(a).Mirela"}]}]}';
 	
 }
 
@@ -233,7 +233,7 @@ function drawTable(datetime) {
 		 
 	
 	//	START LOOP INTO DATA ARRAY
-for (var i=0; i<len; i++){
+for (var i=0; i<tableJsonData.DATAS.length; i++){
 	console.log(i);
 	
 	//	Define data after parse
@@ -253,18 +253,18 @@ for (var i=0; i<len; i++){
 		width:'60px',
 		color:'#666666',
 	    font:{fontSize:12},
-	    text:'15:00'
+	    text: tableJsonData.DATAS[i].HORA
 	});
 	row.add(labelTime);
 	
 	//	Define Coaching Meet
 
 	var heightCoach = 55;
-	var lenSec = tableJsonData.TIME.length;
+	var lenSec = tableJsonData.DATAS[i].TIME.length;
 	
 	
 	for(ind=0; ind<lenSec; ind++){
-		var dataL = tableJsonData.TIME[ind];
+		var dataL = tableJsonData.DATAS[i].TIME[ind];
 		heightCoach = 55 + (35*ind);
 			console.log('>>>'+heightCoach);
 		var labelCoach = Ti.UI.createLabel({
@@ -334,6 +334,11 @@ for (var i=0; i<len; i++){
 		});
 		
 		labelModalConfirm.addEventListener('click',function(e){
+			win.remove(modalConfirm);
+			win.remove(labelModalTitle);
+			win.remove(labelModalDesc);
+			win.remove(labelModalEdit);
+			win.remove(labelModalConfirm);
 			var dadosPacienteView = Alloy.createController("dados_paciente",{}).getView();
 		});
 		
