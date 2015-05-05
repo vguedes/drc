@@ -100,5 +100,5 @@ function open_exames(){
  }
  
  function open_gineco() {
- 	var consultaView = Alloy.createController("artigos", {'articlesSession': 'gineco', 'window_title': 'Ginecologista'}).getView();
+ 	var consultaView = Alloy.createController("artigos", {'articlesSession': 'gravidez', 'window_title': 'Ginecologista'}).getView();
  }
