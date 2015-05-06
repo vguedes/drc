@@ -24,6 +24,9 @@ var args = arguments[0] || {};
 var articleId = args.articleId || false;
 var article = args.article || false;
 
+$.text.text = article;
+$.textMenor.text = '';
+
 //$.article.text = article;
 
 var query = "SELECT" +
