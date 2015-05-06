@@ -164,7 +164,7 @@ var bgPicker = Ti.UI.createLabel({
 	    var pickerVal = picker.getValue();
 	    
 	    console.log(pickerVal);
-	    pickerLabel.setText(pickerVal.getMonth()+' - '+pickerVal.getDate() +' - '+ pickerVal.getFullYear());
+	    pickerLabel.setText(pickerVal.getDate()+' - '+pickerVal.getMonth() +' - '+ pickerVal.getFullYear());
 	    pickerLabel.show();
 		buttonAction.hide();
 		var day = pickerVal.getDate().length == 2 ? pickerVal.getDate() : '0' + pickerVal.getDate();
@@ -392,6 +392,8 @@ for (var i=0; i<len; i++){
 			text:'Confirmando'
 		});
 		
+		var pickerVal = picker.getValue();
+		
 		var labelModalDesc = Ti.UI.createLabel({
 		    textAlign:'left',
 		    top:168,
@@ -399,7 +401,7 @@ for (var i=0; i<len; i++){
 			zIndex:12, width:210,
 			color:'#868688',
 			font:{fontSize:12},
-			text: 'Sua consulta de '+speciality_name+' com Dr(a) '+dataL.doctorName+' será Quarta-Feira 11 de Fevereiro as '+nowTime+'hrs na clínica '+clinic_name+'.'
+			text: 'Sua consulta de '+speciality_name+' com Dr(a) '+dataL.doctorName+' será '+pickerVal.getDate()+' - '+pickerVal.getMonth() +' - '+ pickerVal.getFullYear()+' as '+nowTime+'hrs na clínica '+clinic_name+'.'
 		});
 		
 		var labelModalEdit = Ti.UI.createLabel({
@@ -428,7 +430,22 @@ for (var i=0; i<len; i++){
 			win.remove(labelModalDesc);
 			win.remove(labelModalEdit);
 			win.remove(labelModalConfirm);
-			var dadosPacienteView = Alloy.createController("dados_paciente",{}).getView();
+			
+			var pickerVal =  picker.getValue();
+			
+			var especialidade = speciality_name;
+			var doutor = dataL.doctorName;
+			var data = pickerVal.getDate()+' - '+pickerVal.getMonth() +' - '+ pickerVal.getFullYear();
+			var horario = nowTime;
+			var clinica = clinic_name;
+			
+			var dadosPacienteView = Alloy.createController("dados_paciente",{
+				"especialidade": especialidade,
+				"doutor": doutor,
+				"data":data,
+				"horario":horario,
+				"clinica":clinica
+			}).getView();
 		});
 		
 		labelModalEdit.addEventListener('click',function(e){

@@ -1,3 +1,10 @@
+var args = arguments[0] || {};
+
+			var especialidade = args['especialidade'];
+			var doutor = args['doutor'];
+			var data = args['data'];
+			var horario = args['horario'];
+			var clinica = args['clinica'];
 
 
 //	Create & Define Window
@@ -72,12 +79,18 @@ var letters = [];
 	
 	row.add(icoPerson);
 	
+	/*var especialidade = args['especialidade'];
+			var doutor = args['doutor'];
+			var data = args['data'];
+			var horario = args['horario'];
+			var clinica = args['clinica'];*/
+	
 	var labelLetterHTML = Ti.UI.createLabel({
 	    textAlign:'left',
 		left:50, top:18,
 	    font:{fontSize:12},
 	    width:150,
-	    html:'<b>Ginecologista</b><br>Dr(a) Mirela Faria <br> CRM 112459'
+	    html:'<b>'+especialidade+'</b><br>Dr(a) '+doutor+' <br> CRM XXXXX'
 	});
 	
 	row.add(labelLetterHTML);	
@@ -110,7 +123,7 @@ var letters = [];
 		left:50, top:18,
 	    font:{fontSize:12},
 	    width:150,
-	    html:'<b>Quarta, 11 de Fevereiro</b><br> 15:00 hrs'
+	    html:'<b>'+data+'</b><br> '+horario+' hrs'
 	});
 	
 	rowHorario.add(labelLetterHTML);	
@@ -142,7 +155,7 @@ var letters = [];
 		left:50, top:18,
 	    font:{fontSize:12},
 	    width:150,
-	    html:'<b>Clinica Sacomã</b><br>R. Silva Bueno, 2408 - Sacomã<br>Próxima ao terminal Sacomã<br><a href="#">VER NO MAPA</a>'
+	    html:'<b>Clinica '+doutor+'</b><br>R. Silva Bueno, 2408 - Sacomã<br>Próxima ao terminal Sacomã<br><a href="#">VER NO MAPA</a>'
 	});
 	
 	rowEnd.add(labelLetterHTML);	

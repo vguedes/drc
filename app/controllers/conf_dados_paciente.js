@@ -3,6 +3,13 @@ var cpf = args['cpf'];
 var tel = args['tel'];
 
 
+			var especialidade = args['especialidade'];
+			var doutor = args['doutor'];
+			var data = args['data'];
+			var horario = args['horario'];
+			var clinica = args['clinica'];
+
+
 //	Create & Define Window
 Ti.UI.backgroundColor = 'white';
 var win = Ti.UI.createWindow({
@@ -343,7 +350,13 @@ tableData.push(rowNasc);
 	});
 	
 	buttonAction.addEventListener('click',function(e){
-	    var consultaMarcadaView = Alloy.createController("consulta_marcada",{}).getView();
+	    var consultaMarcadaView = Alloy.createController("consulta_marcada",{
+	    	"especialidade": especialidade,
+			"doutor": doutor,
+			"data":data,
+			"horario":horario,
+			"clinica":clinica
+	    }).getView();
 	});
 
 

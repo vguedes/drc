@@ -1,4 +1,10 @@
+var args = arguments[0] || {};
 
+			var especialidade = args['especialidade'];
+			var doutor = args['doutor'];
+			var data = args['data'];
+			var horario = args['horario'];
+			var clinica = args['clinica'];
 
 //	Create & Define Window
 Ti.UI.backgroundColor = 'white';
@@ -160,7 +166,15 @@ tableData.push(rowCel);
 	
 	buttonAction.addEventListener('click',function(e){
 		console.log(textFieldCpf.getValue());
-	    var confirmaDadosView = Alloy.createController("conf_dados_paciente",{"tel":textFieldCel.getValue(),"cpf":textFieldCpf.getValue()}).getView();
+	    var confirmaDadosView = Alloy.createController("conf_dados_paciente",{
+	    	"tel":textFieldCel.getValue(),
+	    	"cpf":textFieldCpf.getValue(),
+	    	"especialidade": especialidade,
+			"doutor": doutor,
+			"data":data,
+			"horario":horario,
+			"clinica":clinica
+	    }).getView();
 	});
 
 
