@@ -1,5 +1,6 @@
 var args = arguments[0] || {};
 var speciality_backend_id = args['speciality_backend_id'];
+var speciality_name = args['speciality_name'];
 
 //	Create & Define Window
 Ti.UI.backgroundColor = 'white';
@@ -92,7 +93,7 @@ for (var i=1; i<tableDataLength; i++){
 	    font:{fontSize:12},
 	    clinic_backend_id:rowData.backend_id,
 	    touchEnabled:false,
-	    text:i+' '+rowData.name
+	    text:rowData.name
 	});
 	
 	row.add(labelClinic);
@@ -131,7 +132,9 @@ for (var i=1; i<tableDataLength; i++){
 	//	LISTENERS NAVIGATE
 	row.addEventListener('click',function(e){
 		var clinic_backend_id = e.source.children[0].clinic_backend_id;
-	    var marqueHorarioView = Alloy.createController("marque_horario",{'speciality_backend_id': speciality_backend_id, 'clinic_backend_id': clinic_backend_id}).getView();
+		var clinic_name = e.source.children[0].text;
+		
+	    var marqueHorarioView = Alloy.createController("marque_horario",{'speciality_backend_id': speciality_backend_id, 'clinic_backend_id': clinic_backend_id, 'clinic_name':clinic_name,'speciality_name':speciality_name}).getView();
 	});
 
 //	Pushing Row

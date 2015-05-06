@@ -1,6 +1,8 @@
 var args = arguments[0] || {};
 var speciality_backend_id = args['speciality_backend_id'];
 var clinic_backend_id = args['clinic_backend_id'];
+var clinic_name = args['clinic_name'];
+var speciality_name = args['speciality_name'];
 
 //	Create & Define Window
 Ti.UI.backgroundColor = 'white';
@@ -340,6 +342,8 @@ for (var i=0; i<len; i++){
 	    font:{fontSize:12},
 	    text: Object.keys(tableJsonData)[i]
 	});
+	
+	var nowTime = Object.keys(tableJsonData)[i];
 	row.add(labelTime);
 	
 	//	Define Coaching Meet
@@ -392,10 +396,10 @@ for (var i=0; i<len; i++){
 		    textAlign:'left',
 		    top:168,
 			left:50,
-			zIndex:12,
+			zIndex:12, width:210,
 			color:'#868688',
 			font:{fontSize:12},
-			text: 'Sua consulta de ginecologista com a Dra.Mirela dos Santos será Quarta-Feira 11 de Fevereiro as 15:00hrs na clínica São Pedro.'
+			text: 'Sua consulta de '+speciality_name+' com Dr(a) '+dataL.doctorName+' será Quarta-Feira 11 de Fevereiro as '+nowTime+'hrs na clínica '+clinic_name+'.'
 		});
 		
 		var labelModalEdit = Ti.UI.createLabel({

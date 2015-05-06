@@ -2,7 +2,8 @@ var args = arguments[0] || {};
 
 function openClinic(e) {
 	var speciality_backend_id = e.source.children[1].backend_id;
-	clinic_view = Alloy.createController("selecione_clinica", {'speciality_backend_id': speciality_backend_id}).getView();
+	var speciality_name= e.source.children[1].text;
+	clinic_view = Alloy.createController("selecione_clinica", {'speciality_backend_id': speciality_backend_id,'speciality_name':speciality_name}).getView();
  }
 
 
