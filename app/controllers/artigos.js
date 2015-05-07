@@ -180,6 +180,7 @@ for (var i=0; i<tableDataLength; i++){
 	    textAlign:'left',
 		left:0,
 	    font:{fontSize:20},
+	    color:"#6e6f71",
 	    width:25,
 	    // touchEnabled: false,
 	    text:rowLetter

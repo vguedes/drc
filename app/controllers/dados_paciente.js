@@ -1,4 +1,10 @@
+var args = arguments[0] || {};
 
+			var especialidade = args['especialidade'];
+			var doutor = args['doutor'];
+			var data = args['data'];
+			var horario = args['horario'];
+			var clinica = args['clinica'];
 
 //	Create & Define Window
 Ti.UI.backgroundColor = 'white';
@@ -144,7 +150,7 @@ tableData.push(rowCel);
 
 	var rowAction = Ti.UI.createTableViewRow({
 	    className:'forumEvent',
-	    height:50
+	    height:100
 	});
 
 
@@ -152,15 +158,23 @@ tableData.push(rowCel);
 	var buttonAction = Ti.UI.createButton({
 	    backgroundImage: '/buttonGo.png',
 	    top: 9,
-	    width: '62px',
-	    height: '64px',
-	    right:20,
+	    width: '82px',
+	    height: '84px',
+	    right:15,
 	    zIndex:9
 	});
 	
 	buttonAction.addEventListener('click',function(e){
 		console.log(textFieldCpf.getValue());
-	    var confirmaDadosView = Alloy.createController("conf_dados_paciente",{"tel":textFieldCel.getValue(),"cpf":textFieldCpf.getValue()}).getView();
+	    var confirmaDadosView = Alloy.createController("conf_dados_paciente",{
+	    	"tel":textFieldCel.getValue(),
+	    	"cpf":textFieldCpf.getValue(),
+	    	"especialidade": especialidade,
+			"doutor": doutor,
+			"data":data,
+			"horario":horario,
+			"clinica":clinica
+	    }).getView();
 	});
 
 

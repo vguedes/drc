@@ -48,7 +48,10 @@
 	width: Titanium.UI.SIZE,
 	height: Titanium.UI.FILL,
 	color: "#6e6f71",
-	left: 65
+	left: 65,
+	font: {
+		fontSize: 16
+	}
 }
 
 ".row_arrow": {
