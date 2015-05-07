@@ -23,10 +23,10 @@ Ti.App.addEventListener("clsAppntStack", function(data) {
 
 // Create & Define BackButton
 var buttonBack = Ti.UI.createButton({
-    backgroundImage: '/left_arrow.png',
-    top: 9,
-    width: 30,
-    height: 20,
+  backgroundImage: '/images/android/common/ic_arrow_back_white_24dp.png',
+    top: 11,
+    width: 36,
+    height: 36,
     left:5,
     zIndex:9
 });
@@ -38,10 +38,10 @@ buttonBack.addEventListener('click',function(e){
 //	Create & Define Title Label
 var labelTitle = Ti.UI.createLabel({
 	width: "100%",
-	height: "65px",
+	height: 58,
 	color: "#fefffd",
 	backgroundColor:"#5090cd",
-	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,font:{fontSize:18},
 	top:"0",
 	text:"5. Consulta marcada"
 });
@@ -276,8 +276,8 @@ var letters = [];
 	var buttonAction = Ti.UI.createButton({
 	    backgroundImage: '/buttonoOk.png',
 	    top: 9,
-    	width: '82px',
-	    height: '84px',
+    	width: '102px',
+	    height: '104px',
 	    right:15,
 	    zIndex:9
 	});

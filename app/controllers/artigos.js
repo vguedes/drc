@@ -96,7 +96,7 @@ var labelPadding = Ti.UI.createLabel({
 //	Create & Define Hidden Label to Fix ScrollEvent StopPropagation **HACK SAFADO
 var labelOverMask = Ti.UI.createLabel({
 	left:"40px",
-	color:"#6e6f71",
+	color:"#cccccc",
 	backgroundColor:'transparent',
 	opacity:1,
 	width:'100%',
@@ -203,7 +203,7 @@ for (var i=0; i<tableDataLength; i++){
 	
 	var labelDetails = Ti.UI.createLabel({
 	    font:{fontSize:18},
-	    left:80,
+	    left:80, color:"#6e6f71",
 	    // width:130,
 	    touchEnabled: false,
 	    rowId:rowData.articleId,
@@ -218,7 +218,7 @@ for (var i=0; i<tableDataLength; i++){
 	    font:{fontSize:22},
 	    touchEnabled: false,
 	    // top:30,
-	    text:'>'
+	    text:'>',color:"#6e6f71"
 	});
 	
 	row.add(labelArrow);
