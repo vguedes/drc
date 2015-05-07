@@ -102,3 +102,20 @@ function open_exames(){
  function open_gineco() {
  	var consultaView = Alloy.createController("artigos", {'articlesSession': 'gravidez', 'window_title': 'Ginecologista'}).getView();
  }
+ 
+ function open_pele_lesada() {
+ 	var v = Alloy.createController("article_details", {'articleId': '122', 'article': 'Pele lesada\npelo sol'}).getView();
+ 		v.addEventListener('open', function(e) {
+   			v.activity.actionBar.hide();
+		});
+        v.open();
+ }
+ 
+function open_exame_medico_geral() {
+ 	var v = Alloy.createController("article_details", {'articleId': '123', 'article': 'Exame médico\ngeral'}).getView();
+ 		v.addEventListener('open', function(e) {
+   			v.activity.actionBar.hide();
+		});
+        v.open();
+ }
+ 

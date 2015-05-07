@@ -2,7 +2,7 @@
 	<Window class="container" layout="vertical">
 		<View class="title">
 			<ImageView class="menu_btn" image="/menu_btn.png"></ImageView>
-			<Label class="label_title">Dicas</Label>
+			<Label class="label_title">Especialidades</Label>
 			<ImageView class="find_btn" image="/find.png"></ImageView>
 		</View>
 		<TableView>
