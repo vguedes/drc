@@ -46,7 +46,7 @@ var labelTitle = Ti.UI.createLabel({
 	color: "#fefffd",
 	backgroundColor:"#5090cd",
 	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
-	top:"0", font:{fontSize:18},
+	top:"0", font:{fontSize:18,fontWeight:'bold'},
 	text:"5. Confirme os dados"
 });
 
@@ -100,7 +100,7 @@ var letters = [];
 	  top:16,left: 40,
 	  width: 250, height: 50,
 	  hintText:cpf,
-	  font:{fontSize:12}
+	  font:{fontSize:14}
 	});
 	
 	row.add(textFieldCel);	
@@ -108,7 +108,7 @@ var letters = [];
 	var labelLetter = Ti.UI.createLabel({
 	    textAlign:'left',
 		left:50,
-	    font:{fontSize:12},
+	    font:{fontSize:14},
 	    width:150,
 	    text:'CPF'
 	});
@@ -152,7 +152,7 @@ tableData.push(row);
 	  top:16,left: 40,
 	  width: 250, height: 50,
 	  hintText:tel,
-	  font:{fontSize:12}
+	  font:{fontSize:14}
 	});
 	
 	rowCel.add(textFieldCel);	
@@ -160,7 +160,7 @@ tableData.push(row);
 	var labelLetter = Ti.UI.createLabel({
 	    textAlign:'left',
 		left:50,
-	    font:{fontSize:12},
+	    font:{fontSize:14},
 	    width:150,
 	    text:'CELULAR'
 	});
@@ -204,7 +204,7 @@ tableData.push(rowCel);
 	  top:16,left: 40,
 	  width: 250, height: 50,
 	  hintText:"Digite seu nome",
-	  font:{fontSize:12}
+	  font:{fontSize:14}
 	});
 	
 	rowNome.add(textFieldCel);	
@@ -212,7 +212,7 @@ tableData.push(rowCel);
 	var labelLetter = Ti.UI.createLabel({
 	    textAlign:'left',
 		left:50,
-	    font:{fontSize:12},
+	    font:{fontSize:14},
 	    width:150,
 	    text:'NOME'
 	});
@@ -256,7 +256,7 @@ tableData.push(rowNome);
 	  top:16,left: 40,
 	  width: 250, height: 50,
 	  hintText:"Digite seu e-mail",
-	  font:{fontSize:12}
+	  font:{fontSize:14}
 	});
 	
 	rowEmail.add(textFieldCel);	
@@ -264,7 +264,7 @@ tableData.push(rowNome);
 	var labelLetter = Ti.UI.createLabel({
 	    textAlign:'left',
 		left:50,
-	    font:{fontSize:12},
+	    font:{fontSize:14},
 	    width:150,
 	    text:'E-MAIL'
 	});
@@ -308,7 +308,7 @@ tableData.push(rowEmail);
 	  top:16,left: 40,
 	  width: 250, height: 50,
 	  hintText:"Digite seu ano de nascimento",
-	  font:{fontSize:12}
+	  font:{fontSize:14}
 	});
 	
 	rowNasc.add(textFieldCel);	
@@ -316,7 +316,8 @@ tableData.push(rowEmail);
 	var labelLetter = Ti.UI.createLabel({
 	    textAlign:'left',
 		left:50,
-	    font:{fontSize:12},
+	    font:{fontSize:14
+	    	},
 	    width:150,
 	    text:'NASCIMENTO'
 	});
@@ -374,7 +375,7 @@ tableData.push(rowAction);
 //	Define Table
 var table = Ti.UI.createTableView({
   	data: tableData,
-  	top:"84px",
+  	top:65,
 	left:"0px",
 	color:"#6e6f71"
 });

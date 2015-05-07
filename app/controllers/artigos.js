@@ -40,7 +40,7 @@ win.addEventListener("open", function() {
 //	Create & Define Title Label
 var labelTitle = Ti.UI.createLabel({
 	width: "100%",
-	height: "65px",
+	height: 58,font:{fontSize:18},zIndex:99,
 	color: "#fefffd",
 	backgroundColor:"#5090cd",
 	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
@@ -73,7 +73,7 @@ var absoluteLabelLetter = Ti.UI.createLabel({
     width:25,
     height:30,
     text:'',
-    top:"91px",
+    top:68,
     left:"40px",
     verticalAlign: 'bottom',
     backgroundColor: 'white',
@@ -87,7 +87,7 @@ var labelPadding = Ti.UI.createLabel({
     width:25,
     height:30,
     text:'',
-    top:"84px",
+    top:58,
     left:"40px",
     backgroundColor:'white',
     zIndex:2
@@ -202,7 +202,7 @@ for (var i=0; i<tableDataLength; i++){
 	
 	
 	var labelDetails = Ti.UI.createLabel({
-	    font:{fontSize:18},
+	    font:{fontSize:18,fontWeight:'bold'},
 	    left:80, color:"#6e6f71",
 	    // width:130,
 	    touchEnabled: false,
@@ -238,7 +238,7 @@ tableData.push(row);
 //	Define Table
 var table = Ti.UI.createTableView({
   	data: tableData,
-  	top:"84px",
+  	top:65,
 	left:"40px",
 	color:"#6e6f71"
 });
@@ -327,7 +327,7 @@ table.addEventListener('scroll',function(e){
 
 var titleView = Ti.UI.createView({
 	width: "100%",
-	height: "65px",
+	height: 58,
 	color: "#fefffd",
 	backgroundColor:"#5090cd",
 	// textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
@@ -335,10 +335,12 @@ var titleView = Ti.UI.createView({
 });
 
 var backArrow = Ti.UI.createImageView({
-	image:"/arrow_back.png",
-	width: 20,
-	height: 20,
-	left: 20
+  backgroundImage: '/images/android/common/ic_arrow_back_white_24dp.png',
+    top: 11,
+    width: 36,
+    height: 36,
+    left:5,
+    zIndex:9
 });
 
 backArrow.addEventListener('click', function(e){

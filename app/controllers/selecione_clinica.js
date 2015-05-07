@@ -39,7 +39,7 @@ var labelTitle = Ti.UI.createLabel({
 	backgroundColor:"#5090cd",
 	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
 	top:"0",
-	font:{fontSize:18},
+	font:{fontSize:18,fontWeight:'bold'},
 	text:"2. Selecione a clínica"
 });
 
@@ -151,7 +151,7 @@ tableDataCompleted.push(row);
 //	Define Table
 var table = Ti.UI.createTableView({
   	data: tableDataCompleted,
-  	top:"84px",
+  	top:58,
 	left:"0px",
 	color:"#6e6f71"
 });

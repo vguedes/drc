@@ -1,9 +1,9 @@
 <Alloy>
 	<Window class="container" layout="vertical">
 		<View class="title">
-			<ImageView class="menu_btn" image="/menu_btn.png"></ImageView>
+			<ImageView class="menu_btn" image="/images/android/common/ic_menu_white_18dp.png"></ImageView>
 			<Label class="label_title">Dicas</Label>
-			<ImageView class="find_btn" image="/find.png"></ImageView>
+			<ImageView class="find_btn" image="/images/android/common/ic_search_white_18dp.png"></ImageView>
 		</View>
 		<TableView>
 			<TableViewRow class="row" onClick="open_articles">

@@ -8,7 +8,7 @@
 
 ".title": {
 	width: Titanium.UI.FILL,
-	height: "65px",
+	height: 58,
  	backgroundColor:"#5090cd",
 	top: 0
 }
@@ -23,7 +23,7 @@
 	width: Titanium.UI.SIZE,
 	height: Titanium.UI.FILL,
  	color: "white",
- 	font: {fontWeight:'bold'},
+ 	font: {fontWeight:'bold',fontSize: 18},
 	left: 60
 }
 

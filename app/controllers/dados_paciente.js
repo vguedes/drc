@@ -38,7 +38,7 @@ buttonBack.addEventListener('click',function(e){
 var labelTitle = Ti.UI.createLabel({
 	width: "100%",
 	height: 58,
-	color: "#fefffd", font:{fontSize:18},
+	color: "#fefffd", font:{fontSize:18,fontWeight:'bold'},
 	backgroundColor:"#5090cd",
 	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
 	top:"0",
@@ -192,7 +192,7 @@ tableData.push(rowAction);
 //	Define Table
 var table = Ti.UI.createTableView({
   	data: tableData,
-  	top:"84px",
+  	top:65,
 	left:"0px",
 	color:"#6e6f71"
 });

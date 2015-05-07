@@ -4,6 +4,23 @@
 	cinza escuro	6E6F71
 	cinza claro		F0F0F2
  */
+
+".menu_btn": {
+    top: 11,
+    width: 36,
+    height: 36,
+    left:5,
+    zIndex:9
+}
+
+".label_title": {
+	width: Titanium.UI.SIZE,
+	height: Titanium.UI.FILL,
+ 	color: "white",
+ 	font: {fontWeight:'bold',fontSize: 18},
+	left: 60
+}
+
 ".container" : {
  	backgroundColor: "#FFF",
  	width: Titanium.UI.FILL
@@ -56,9 +73,9 @@
 
 ".imageBt":{
 	backgroundImage: '/buttonDetail.png',
-    top: "220px",
-    width: "58px",
-    height: "56px",
+    top: "185px",
+    width: "108px",
+    height: "106px",
     right:10,
     zIndex:9
 }

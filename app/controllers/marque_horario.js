@@ -25,12 +25,13 @@ var buttonBack = Ti.UI.createButton({
     width: 36,
     height: 36,
     left:5,
-    zIndex:9
+    zIndex:99
 });
 
 buttonBack.addEventListener('click',function(e){
     win.close();
 });
+
 
 //	Create & Define Title Label
 var labelTitle = Ti.UI.createLabel({
@@ -127,7 +128,7 @@ var picker = Ti.UI.createPicker({
 	maxDate: maxDate,
 	value: setValue, visibleItems:2, useSpinner:false, 
 	top:40,
-	left:30,
+	left:18,
 	zIndex:6, width:240,height:130
 });
 
@@ -140,7 +141,7 @@ var pickerLabel = Ti.UI.createLabel({
   
 var bgPicker = Ti.UI.createLabel({
 	width:"100%",
-	height:"200px",
+	height:150,
 	backgroundColor:"#5090cd",
 	top:"50px",
 	zIndex:5
@@ -151,7 +152,7 @@ var bgPicker = Ti.UI.createLabel({
 //	Define & Add TableRow Childrens
 	var buttonAction = Ti.UI.createButton({
 	    backgroundImage: '/buttonoOk1.png',
-	    top: 80,
+	    top: 70,
 	    width: '82px',
 	    height: '84px',
 	    right:15,
@@ -471,6 +472,7 @@ for (var i=0; i<len; i++){
 	}
 	
 
+	
 	
 	
 	
