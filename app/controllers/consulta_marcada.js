@@ -88,7 +88,7 @@ var letters = [];
 	var labelLetterHTML = Ti.UI.createLabel({
 	    textAlign:'left',
 		left:50, top:18,
-	    font:{fontSize:12},
+	    font:{fontSize:15},
 	    width:150,
 	    html:'<b>'+especialidade+'</b><br>Dr(a) '+doutor+' <br> CRM XXXXX'
 	});
@@ -121,7 +121,7 @@ var letters = [];
 	var labelLetterHTML = Ti.UI.createLabel({
 	    textAlign:'left',
 		left:50, top:18,
-	    font:{fontSize:12},
+	    font:{fontSize:15},
 	    width:150,
 	    html:'<b>'+data+'</b><br> '+horario+' hrs'
 	});
@@ -153,7 +153,7 @@ var letters = [];
 	var labelLetterHTML = Ti.UI.createLabel({
 	    textAlign:'left',
 		left:50, top:18,
-	    font:{fontSize:12},
+	    font:{fontSize:15},
 	    width:150,
 	    html:'<b>Clinica '+doutor+'</b><br>R. Silva Bueno, 2408 - Sacomã<br>Próxima ao terminal Sacomã<br><a href="#">VER NO MAPA</a>'
 	});
@@ -186,7 +186,7 @@ var letters = [];
 	var labelLetterHTML = Ti.UI.createLabel({
 	    textAlign:'left',
 		left:50, top:18,
-	    font:{fontSize:12},
+	    font:{fontSize:15},
 	    width:150,
 	    html:'<b>R$ 90,00</b><br>Parcelamento em até 3x'
 	});
@@ -218,7 +218,7 @@ var letters = [];
 	var labelLetterHTML = Ti.UI.createLabel({
 	    textAlign:'left',
 		left:50, top:18,
-	    font:{fontSize:12},
+	    font:{fontSize:15},
 	    width:150,
 	    html:'<b>Documentos</b><br>Lembre-se de trazer seus medicamentos em uso e documentos de identidade:RG,CPF ou Carteira de Motorista'
 	});
@@ -251,7 +251,7 @@ var letters = [];
 	var labelLetterHTML = Ti.UI.createLabel({
 	    textAlign:'left',
 		left:50, top:18,
-	    font:{fontSize:12},
+	    font:{fontSize:15},
 	    width:150,
 	    html:'<b>Shoppings</b><br>Se sua consulta é em uma unidade, fica próxima ao Shopping'
 	});
@@ -268,7 +268,7 @@ var letters = [];
 
 	var rowAction = Ti.UI.createTableViewRow({
 	    className:'forumEvent',
-	    height:50
+	    height:100
 	});
 
 
@@ -276,9 +276,9 @@ var letters = [];
 	var buttonAction = Ti.UI.createButton({
 	    backgroundImage: '/buttonoOk.png',
 	    top: 9,
-	    width: '62px',
-	    height: '64px',
-	    right:20,
+    	width: '82px',
+	    height: '84px',
+	    right:15,
 	    zIndex:9
 	});
 	

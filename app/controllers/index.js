@@ -7,18 +7,6 @@ $.index.addEventListener('open', function(e) {
 $.index.open();
 
 
-// function load_exames() {
-	// alert("exames");
-// }
-// function load_saude_crianca() {
-	// var articlesView = Alloy.createController("articles", {'articlesSession': 'crianca'}).getView();
- 		// articlesView.addEventListener('open', function(e) {
-   			// articlesView.activity.actionBar.hide();
-		// });
-        // articlesView.open();
-// 
-// }
-
 function load_exame() {
 	 var saudeaz_view = Alloy.createController("articles", {}).getView();
  		 saudeaz_view.addEventListener('open', function(e) {
@@ -33,14 +21,7 @@ function load_gravidez() {
 		saudeaz_view.activity.actionBar.hide();
 	});
 }
-// function load_saude_az() {
-	// var saudeaz_view = Alloy.createController("articles", {}).getView();
- 		// saudeaz_view.addEventListener('open', function(e) {
-   			// saudeaz_view.activity.actionBar.hide();
-		// });
-        // saudeaz_view.open();
-// } 
-// 
+
 function load_phone_auth() {
 	var v = Alloy.createController("onboarding", {}).getView();
  		v.addEventListener('open', function(e) {
@@ -50,11 +31,6 @@ function load_phone_auth() {
 }
 
 function debug_phone_auth() {
-	// var v = Alloy.createController("onboarding_debug", {}).getView();
- 		// v.addEventListener('open', function(e) {
-   			// v.activity.actionBar.hide();
-		// });
-        // v.open();
        var consultaView = Alloy.createController("httpMock", {}).getView();
 }
 
@@ -64,9 +40,6 @@ function load_consulta() {
    			v.activity.actionBar.hide();
 		});
         v.open();
-
-	// var consultaView = Alloy.createController("especialidades", {}).getView();
-
 }
 
 function open_dicas() {
@@ -94,9 +67,7 @@ function open_exames(){
 }
 
  function open_alert() {
-// 	alert("Aguardando integração com tela de detalhes de artigo");
- var consultaView = Alloy.createController("marque_horario", {}).getView();
-
+ 	var consultaView = Alloy.createController("marque_horario", {}).getView();
  }
  
  function open_gineco() {

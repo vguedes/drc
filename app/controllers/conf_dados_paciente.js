@@ -335,7 +335,7 @@ tableData.push(rowNasc);
 
 	var rowAction = Ti.UI.createTableViewRow({
 	    className:'forumEvent',
-	    height:50
+	    height:100
 	});
 
 
@@ -343,9 +343,9 @@ tableData.push(rowNasc);
 	var buttonAction = Ti.UI.createButton({
 	    backgroundImage: '/buttonoOk.png',
 	    top: 9,
-	    width: '62px',
-	    height: '64px',
-	    right:20,
+    	width: '82px',
+	    height: '84px',
+	    right:15,
 	    zIndex:9
 	});
 	

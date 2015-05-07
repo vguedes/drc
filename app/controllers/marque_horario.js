@@ -152,9 +152,9 @@ var bgPicker = Ti.UI.createLabel({
 	var buttonAction = Ti.UI.createButton({
 	    backgroundImage: '/buttonoOk1.png',
 	    top: 80,
-	    width: '62px',
-	    height: '64px',
-	    right:20,
+	    width: '82px',
+	    height: '84px',
+	    right:15,
 	    zIndex:9
 	});
 	
@@ -410,7 +410,7 @@ for (var i=0; i<len; i++){
 		    top:258,
 			left:90,
 			color:'#868688',
-			font:{fontSize:12},
+			font:{fontSize:15},
 			text: 'Alterar'
 		});
 		
@@ -420,7 +420,7 @@ for (var i=0; i<len; i++){
 		    zIndex:12,
 			left:205,
 			color:'#5090cd',
-			font:{fontSize:12},
+			font:{fontSize:15},
 			text: 'Confirmar'
 		});
 		
