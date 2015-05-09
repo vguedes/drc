@@ -15,7 +15,7 @@
 		
 		<View id="header_view1">
 			<Label id="painel1" class="painel"></Label>
-			<Label id="imgbt" class="imageBt"></Label>
+			<Label id="imgbt" class="imageBt" onClick="load_consulta"></Label>
 			<Label id="text" class="title">Ginecologista</Label>
 			<Label id="textMenor" class="menor">Gineco</Label>
 		</View>
