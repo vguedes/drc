@@ -3,6 +3,14 @@ var Markdown = require("Markdown.Sanitizer");
 
 var back = function(e) {$.win.close();};
 
+function load_consulta() {
+	var v = Alloy.createController("especialidades", {}).getView();
+ 		v.addEventListener('open', function(e) {
+   			v.activity.actionBar.hide();
+		});
+        v.open();
+}
+
 var openRelatedArticle = function(e) {
 	var articleId = e['source']['id'];
 	var article = e['source']['text'];
