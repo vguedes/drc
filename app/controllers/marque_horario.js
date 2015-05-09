@@ -79,6 +79,20 @@ var picker1 = Ti.UI.createPicker({
 
 //rESULTS
 
+//	Function FormatDate()
+function FormatDate(dd,mm,yyyy){
+	if(dd<10) {
+	    dd='0'+dd;
+	} 
+	
+	if(mm<10) {
+	    mm='0'+mm;
+	} 
+	today = dd+'-'+mm+'-'+yyyy;
+	
+	return today;
+}
+
 
 
 //	Define Date to Start drawnTable()
@@ -87,13 +101,9 @@ var dd = today.getDate();
 var mm = today.getMonth(); //January is 0!
 var yyyy = today.getFullYear();
 
-if(dd<10) {
-    dd='0'+dd;
-} 
+if(dd<10) { dd='0'+dd;} 
 
-if(mm<10) {
-    mm='0'+mm;
-} 
+if(mm<10) { mm='0'+mm;} 
 
 today = dd+'-'+mm+'-'+yyyy;
 
@@ -166,7 +176,8 @@ var bgPicker = Ti.UI.createLabel({
 	    var pickerVal = picker.getValue();
 	    
 	    console.log(pickerVal);
-	    pickerLabel.setText(pickerVal.getDate()+' - '+pickerVal.getMonth() +' - '+ pickerVal.getFullYear());
+	    pickerLabel.setText(FormatDate(pickerVal.getDate(),pickerVal.getMonth(),pickerVal.getFullYear()));
+	    
 	    pickerLabel.show();
 		buttonAction.hide();
 		var day = pickerVal.getDate().length == 2 ? pickerVal.getDate() : '0' + pickerVal.getDate();
@@ -407,7 +418,7 @@ for (var i=0; i<len; i++){
 			zIndex:12, width:210,
 			color:'#868688',
 			font:{fontSize:12},
-			text: 'Sua consulta de '+speciality_name+' com Dr(a) '+dataL.doctorName+' será '+pickerVal.getDate()+' - '+pickerVal.getMonth() +' - '+ pickerVal.getFullYear()+' as '+nowTime+'hrs na clínica '+clinic_name+'.'
+			text: 'Sua consulta de '+speciality_name+' com Dr(a) '+dataL.doctorName+' será '+FormatDate(pickerVal.getDate(),pickerVal.getMonth(),pickerVal.getFullYear())+' as '+nowTime+'hrs na clínica '+clinic_name+'.'
 		});
 		
 		var labelModalEdit = Ti.UI.createLabel({
