@@ -1,5 +1,5 @@
 <Alloy>
-	<Window class="container" layout="vertical">
+	<Window class="container" layout="vertical" id="win">
 		<View class="title">
 			<ImageView class="menu_btn" image="/images/android/common/ic_menu_white_18dp.png"></ImageView>
 			<Label class="label_title">Especialidades</Label>

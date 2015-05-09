@@ -1,10 +1,14 @@
 var args = arguments[0] || {};
 
 			var especialidade = args['especialidade'];
+			var doutorId = args['doutorId'];
 			var doutor = args['doutor'];
+			var doutorCrm = args['doutorCrm'];
+			var preco = args['preco'];
 			var data = args['data'];
 			var horario = args['horario'];
 			var clinica = args['clinica'];
+			var endereco_clinica = args['endereco_clinica'];
 
 //	Create & Define Window
 Ti.UI.backgroundColor = 'white';
@@ -170,10 +174,14 @@ tableData.push(rowCel);
 	    	"tel":textFieldCel.getValue(),
 	    	"cpf":textFieldCpf.getValue(),
 	    	"especialidade": especialidade,
+	    	"doutorId": doutorId,
 			"doutor": doutor,
+			"doutorCrm": doutorCrm,
 			"data":data,
 			"horario":horario,
-			"clinica":clinica
+			"clinica":clinica,
+			"endereco_clinica":endereco_clinica,
+			"preco": preco
 	    }).getView();
 	});
 

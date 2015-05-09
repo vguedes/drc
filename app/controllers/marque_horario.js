@@ -3,6 +3,7 @@ var speciality_backend_id = args['speciality_backend_id'];
 var clinic_backend_id = args['clinic_backend_id'];
 var clinic_name = args['clinic_name'];
 var speciality_name = args['speciality_name'];
+var clinic_address = args['clinic_address'];
 
 //	Create & Define Window
 Ti.UI.backgroundColor = 'white';
@@ -241,6 +242,8 @@ function getAvailableSlots(today) {
                          var slot = groups[a];
                          console.log(slot);
                          var apptMedicalName = slot['medicalName'];
+                         var apptMedicalCrm = slot['medicalCrm'];
+                         var apptPrice = slot['price'];
                          var apptMedicalId = slot['medicalId'];
                          var apptTime = slot['dateTime']["time"];
                          var apptHour = apptTime.split(":")[0];
@@ -252,7 +255,9 @@ function getAvailableSlots(today) {
                          rtrn[apptBaseTime].push({
                             'time': apptTime,
                             'doctorId': apptMedicalId,
-                            'doctorName': apptMedicalName
+                            'doctorName': apptMedicalName,
+                            'doctorCrm': apptMedicalCrm,
+                            'price': apptPrice
                          });
                          console.log('pushed -> ' + apptMedicalName);
                        };
@@ -436,16 +441,24 @@ for (var i=0; i<len; i++){
 			
 			var especialidade = speciality_name;
 			var doutor = dataL.doctorName;
+			var doutorId = dataL.doctorId;
+			var doutorCrm = dataL.doctorCrm;
+			var preco = dataL.price;
 			var data = pickerVal.getDate()+' - '+pickerVal.getMonth() +' - '+ pickerVal.getFullYear();
 			var horario = nowTime;
 			var clinica = clinic_name;
+			var endereco_clinica = clinic_address;
 			
 			var dadosPacienteView = Alloy.createController("dados_paciente",{
 				"especialidade": especialidade,
 				"doutor": doutor,
+				"doutorId": doutorId,
+				"doutorCrm": doutorCrm,
 				"data":data,
 				"horario":horario,
-				"clinica":clinica
+				"clinica":clinica,
+				"endereco_clinica": endereco_clinica,
+				"preco": preco
 			}).getView();
 		});
 		

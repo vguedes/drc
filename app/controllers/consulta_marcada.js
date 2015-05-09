@@ -1,10 +1,14 @@
 var args = arguments[0] || {};
 
 			var especialidade = args['especialidade'];
+			var doutorId = args['doutorId'];
 			var doutor = args['doutor'];
+			var doutorCrm = args['doutorCrm'];
 			var data = args['data'];
 			var horario = args['horario'];
 			var clinica = args['clinica'];
+			var preco = args['preco'];
+			var endereco_clinica = args['endereco_clinica'];
 
 
 //	Create & Define Window
@@ -22,18 +26,18 @@ Ti.App.addEventListener("clsAppntStack", function(data) {
 });
 
 // Create & Define BackButton
-var buttonBack = Ti.UI.createButton({
-  backgroundImage: '/images/android/common/ic_arrow_back_white_24dp.png',
-    top: 11,
-    width: 36,
-    height: 36,
-    left:5,
-    zIndex:9
-});
-
-buttonBack.addEventListener('click',function(e){
-    win.close();
-});
+// var buttonBack = Ti.UI.createButton({
+  // backgroundImage: '/images/android/common/ic_arrow_back_white_24dp.png',
+    // top: 11,
+    // width: 36,
+    // height: 36,
+    // left:5,
+    // zIndex:9
+// });
+// 
+// buttonBack.addEventListener('click',function(e){
+    // win.close();
+// });
 
 //	Create & Define Title Label
 var labelTitle = Ti.UI.createLabel({
@@ -43,7 +47,7 @@ var labelTitle = Ti.UI.createLabel({
 	backgroundColor:"#5090cd",
 	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,font:{fontSize:18,fontWeight:'bold'},
 	top:"0",
-	text:"5. Consulta marcada"
+	text:"Consulta marcada"
 });
 
 
@@ -90,7 +94,7 @@ var letters = [];
 		left:50, top:18,
 	    font:{fontSize:15},
 	    width:150,
-	    html:'<b>'+especialidade+'</b><br>Dr(a) '+doutor+' <br> CRM XXXXX'
+	    html:'<b>'+especialidade+'</b><br>Dr(a) '+doutor+' <br> CRM ' + doutorCrm
 	});
 	
 	row.add(labelLetterHTML);	
@@ -155,7 +159,7 @@ var letters = [];
 		left:50, top:18,
 	    font:{fontSize:15},
 	    width:150,
-	    html:'<b>Clinica '+doutor+'</b><br>R. Silva Bueno, 2408 - Sacomã<br>Próxima ao terminal Sacomã<br><a href="#">VER NO MAPA</a>'
+	    html:'<b>Clinica '+clinica+'</b><br>' + endereco_clinica
 	});
 	
 	rowEnd.add(labelLetterHTML);	
@@ -188,7 +192,7 @@ var letters = [];
 		left:50, top:18,
 	    font:{fontSize:15},
 	    width:150,
-	    html:'<b>R$ 90,00</b><br>Parcelamento em até 3x'
+	    html:'<b>R$ ' + preco + '</b><br>Parcelamento em até 3x'
 	});
 	
 	rowPag.add(labelLetterHTML);	
@@ -312,7 +316,7 @@ var table = Ti.UI.createTableView({
 
 
 //	ADD objs to window
-win.add(buttonBack);
+// win.add(buttonBack);
 win.add(labelTitle);
 win.add(table);
 win.open();

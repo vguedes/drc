@@ -7,6 +7,9 @@ function openClinic(e) {
  }
 
 
+Ti.App.addEventListener("clsAppntStack", function(data) {
+	$.win.close();
+});
 
 
 // 

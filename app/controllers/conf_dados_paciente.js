@@ -4,10 +4,14 @@ var tel = args['tel'];
 
 
 			var especialidade = args['especialidade'];
+			var doutorId = args['doutorId'];
 			var doutor = args['doutor'];
+			var doutorCrm = args['doutorCrm'];
 			var data = args['data'];
 			var horario = args['horario'];
 			var clinica = args['clinica'];
+			var endereco_clinica = args['endereco_clinica'];
+			var preco = args['preco'];
 
 
 //	Create & Define Window
@@ -353,10 +357,14 @@ tableData.push(rowNasc);
 	buttonAction.addEventListener('click',function(e){
 	    var consultaMarcadaView = Alloy.createController("consulta_marcada",{
 	    	"especialidade": especialidade,
+	    	"doutorId": doutorId,
 			"doutor": doutor,
+			"doutorCrm": doutorCrm,
 			"data":data,
 			"horario":horario,
-			"clinica":clinica
+			"clinica":clinica,
+			"endereco_clinica": endereco_clinica,
+			"preco": preco
 	    }).getView();
 	});
 

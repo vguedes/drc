@@ -94,6 +94,7 @@ for (var i=1; i<tableDataLength; i++){
 		color: "#6e6f71",
 	    font:{fontSize:16},
 	    clinic_backend_id:rowData.backend_id,
+	    clinic_address:rowData.address,
 	    touchEnabled:false,
 	    text:rowData.name
 	});
@@ -136,9 +137,10 @@ for (var i=1; i<tableDataLength; i++){
 	//	LISTENERS NAVIGATE
 	row.addEventListener('click',function(e){
 		var clinic_backend_id = e.source.children[0].clinic_backend_id;
+		var clinic_address = e.source.children[0].clinic_address;
 		var clinic_name = e.source.children[0].text;
 		
-	    var marqueHorarioView = Alloy.createController("marque_horario",{'speciality_backend_id': speciality_backend_id, 'clinic_backend_id': clinic_backend_id, 'clinic_name':clinic_name,'speciality_name':speciality_name}).getView();
+	    var marqueHorarioView = Alloy.createController("marque_horario",{'speciality_backend_id': speciality_backend_id, 'clinic_backend_id': clinic_backend_id, 'clinic_name':clinic_name, 'clinic_address': clinic_address, 'speciality_name':speciality_name}).getView();
 	});
 
 //	Pushing Row
