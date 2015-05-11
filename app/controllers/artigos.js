@@ -214,11 +214,10 @@ for (var i=0; i<tableDataLength; i++){
 	
 	var labelArrow = Ti.UI.createLabel({
 	   	right:0,
-	    width:30,
-	    font:{fontSize:22},
-	    touchEnabled: false,
-	    // top:30,
-	    text:'>',color:"#151515"
+	    width:36,height:36,
+		 backgroundImage: '/images/android/common/ic_chevron_right_grey600_36dp.png',
+	    font:{fontSize:18},
+	    touchEnabled: false,color:"#151515"
 	});
 	
 	row.add(labelArrow);

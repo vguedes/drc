@@ -52,8 +52,8 @@
 }
 
 ".row_arrow": {
-	width: Titanium.UI.SIZE,
-	height: Titanium.UI.FILL,
+	width:36,height:36,
+	backgroundImage: '/images/android/common/ic_chevron_right_grey600_36dp.png',
 	right: 20,
 	color: "#151515",
 	font: {

@@ -9,47 +9,47 @@
 			<TableViewRow class="row" onClick="open_articles">
 				<ImageView touchEnabled="false" image="/gravidez_icon.png" class="row_icon"></ImageView>
 				<Label touchEnabled="false" class="row_label">Testa</Label>
-				<Label touchEnabled="false" text=">" class="row_arrow"></Label>
+				<Label touchEnabled="false" text="" class="row_arrow"></Label>
 			</TableViewRow>
 			<TableViewRow class="row" onClick="open_articles">
 				<ImageView touchEnabled="false" image="/gravidez_icon.png" class="row_icon"></ImageView>
 				<Label touchEnabled="false" class="row_label">Olhos</Label>
-				<Label touchEnabled="false" text=">" class="row_arrow"></Label>
+				<Label touchEnabled="false" text="" class="row_arrow"></Label>
 			</TableViewRow>
 			<TableViewRow class="row" onClick="open_articles">
 				<ImageView touchEnabled="false" image="/gravidez_icon.png" class="row_icon"></ImageView>
 				<Label touchEnabled="false" class="row_label">Ouvido, nariz, boca e garganta</Label>
-				<Label touchEnabled="false" text=">" class="row_arrow"></Label>
+				<Label touchEnabled="false" text="" class="row_arrow"></Label>
 			</TableViewRow>
 			<TableViewRow class="row" onClick="open_articles">
 				<ImageView touchEnabled="false" image="/gravidez_icon.png" class="row_icon"></ImageView>
 				<Label touchEnabled="false" class="row_label">Pescoço</Label>
-				<Label touchEnabled="false" text=">" class="row_arrow"></Label>
+				<Label touchEnabled="false" text="" class="row_arrow"></Label>
 			</TableViewRow>
 			<TableViewRow class="row" onClick="open_articles">
 				<ImageView touchEnabled="false" image="/gravidez_icon.png" class="row_icon"></ImageView>
 				<Label touchEnabled="false" class="row_label">Peito e costas</Label>
-				<Label touchEnabled="false" text=">" class="row_arrow"></Label>
+				<Label touchEnabled="false" text="" class="row_arrow"></Label>
 			</TableViewRow>
 			<TableViewRow class="row" onClick="open_articles">
 				<ImageView touchEnabled="false" image="/gravidez_icon.png" class="row_icon"></ImageView>
 				<Label touchEnabled="false" class="row_label">Braços e mãos</Label>
-				<Label touchEnabled="false" text=">" class="row_arrow"></Label>
+				<Label touchEnabled="false" text="" class="row_arrow"></Label>
 			</TableViewRow>
 			<TableViewRow class="row" onClick="open_articles">
 				<ImageView touchEnabled="false" image="/gravidez_icon.png" class="row_icon"></ImageView>
 				<Label touchEnabled="false" class="row_label">Virília</Label>
-				<Label touchEnabled="false" text=">" class="row_arrow"></Label>
+				<Label touchEnabled="false" text="" class="row_arrow"></Label>
 			</TableViewRow>
 			<TableViewRow class="row" onClick="open_articles">
 				<ImageView touchEnabled="false" image="/gravidez_icon.png" class="row_icon"></ImageView>
 				<Label touchEnabled="false" class="row_label">Pernas e pés</Label>
-				<Label touchEnabled="false" text=">" class="row_arrow"></Label>
+				<Label touchEnabled="false" text="" class="row_arrow"></Label>
 			</TableViewRow>
 			<TableViewRow class="row" onClick="open_articles">
 				<ImageView touchEnabled="false" image="/gravidez_icon.png" class="row_icon"></ImageView>
 				<Label touchEnabled="false" class="row_label">Corpo inteiro</Label>
-				<Label touchEnabled="false" text=">" class="row_arrow"></Label>
+				<Label touchEnabled="false" text="" class="row_arrow"></Label>
 			</TableViewRow>
 		</TableView>
 	</Window>
