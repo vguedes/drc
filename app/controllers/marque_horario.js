@@ -274,9 +274,11 @@ function getAvailableSlots(today) {
                        };
                      };
                      drawTable(rtrn);
+                      win.remove(modalLoad);
                 },
                 onerror: function(e) {
                     alert('error');
+                    win.remove(modalLoad);
                 },
                 timeout: 10000
              });
@@ -297,6 +299,24 @@ function getAvailableSlots(today) {
          },
          timeout : 10000  // in milliseconds
     });
+    
+     var modalLoad = Ti.UI.createLabel({
+		    textAlign:'left',
+		    top:0,
+			left:0,
+			height:"100%",
+			width:"100%",
+			zIndex:11,
+			backgroundColor:'#000000',
+			opacity:0.5,textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+			text:"Aguarde...", color:"#ffffff"
+		});
+		
+		win.add(modalLoad);
+    
+    
+    
+    
     client.open("POST", base_url + auth_method);
     client.send(auth_params);
 };
