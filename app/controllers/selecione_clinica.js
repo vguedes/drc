@@ -82,7 +82,7 @@ for (var i=1; i<tableDataLength; i++){
 	//	Define TableRow
 	var row = Ti.UI.createTableViewRow({
 	    className:'forumEvent',
-	    height:89
+	    height:70
 	});
 
 
@@ -91,7 +91,7 @@ for (var i=1; i<tableDataLength; i++){
 	    textAlign:'left',
 	    top:8,
 		left:15,
-		color: "#6e6f71",
+		color: "#191819",
 	    font:{fontSize:16},
 	    clinic_backend_id:rowData.backend_id,
 	    clinic_address:rowData.address,
@@ -104,10 +104,10 @@ for (var i=1; i<tableDataLength; i++){
 	var labelClinicDetail = Ti.UI.createLabel({
 	    textAlign:'left',
 		left:15,
-		top:25,
+		top:28,
 		width:"90%",
-		color: "#6e6f71",
-	    font:{fontSize:16},
+		color: "#7c7c7c",
+	    font:{fontSize:14},
 	    touchEnabled:false,
 	    text:rowData.address
 	});
@@ -127,7 +127,7 @@ for (var i=1; i<tableDataLength; i++){
 		width:'100%',
 		height:'1px',
 		backgroundColor:'#cccccc',
-		top:79
+		top:69
 	});
 	
 	row.add(borderSeparator);

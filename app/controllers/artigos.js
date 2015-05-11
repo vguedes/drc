@@ -202,8 +202,8 @@ for (var i=0; i<tableDataLength; i++){
 	
 	
 	var labelDetails = Ti.UI.createLabel({
-	    font:{fontSize:18,fontWeight:'bold'},
-	    left:80, color:"#6e6f71",
+	    font:{fontSize:16},
+	    left:80, color:"#151515",
 	    // width:130,
 	    touchEnabled: false,
 	    rowId:rowData.articleId,
@@ -218,7 +218,7 @@ for (var i=0; i<tableDataLength; i++){
 	    font:{fontSize:22},
 	    touchEnabled: false,
 	    // top:30,
-	    text:'>',color:"#6e6f71"
+	    text:'>',color:"#151515"
 	});
 	
 	row.add(labelArrow);
