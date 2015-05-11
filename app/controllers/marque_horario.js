@@ -377,7 +377,7 @@ for (var i=0; i<len; i++){
 		    textAlign:'left',
 		    top:heightCoach,
 			left:90,
-			height:25,
+			// height:25,
 			width:200,
 			color:'#fefffd',
 			backgroundColor:'#5090cd',
