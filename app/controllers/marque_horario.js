@@ -277,8 +277,8 @@ function getAvailableSlots(today) {
                       win.remove(modalLoad);
                 },
                 onerror: function(e) {
+                	win.remove(modalLoad);
                     alert('error');
-                    win.remove(modalLoad);
                 },
                 timeout: 10000
              });
