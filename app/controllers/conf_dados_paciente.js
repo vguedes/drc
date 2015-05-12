@@ -214,6 +214,7 @@ tableData.push(rowCel);
 	rowNome.add(textFieldCel);	
 	
 	var labelLetter = Ti.UI.createLabel({
+		touchEnabled: false,
 	    textAlign:'left',
 		left:50,
 	    font:{fontSize:14},
@@ -266,6 +267,7 @@ tableData.push(rowNome);
 	rowEmail.add(textFieldCel);	
 	
 	var labelLetter = Ti.UI.createLabel({
+		touchEnabled: false,
 	    textAlign:'left',
 		left:50,
 	    font:{fontSize:14},
@@ -318,6 +320,7 @@ tableData.push(rowEmail);
 	rowNasc.add(textFieldCel);	
 	
 	var labelLetter = Ti.UI.createLabel({
+		touchEnabled: false,
 	    textAlign:'left',
 		left:50,
 	    font:{fontSize:14
