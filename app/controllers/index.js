@@ -22,17 +22,17 @@ function load_gravidez() {
 	});
 }
 
-function load_phone_auth() {
-	var v = Alloy.createController("onboarding", {}).getView();
- 		v.addEventListener('open', function(e) {
-   			v.activity.actionBar.hide();
-		});
-        v.open();
-}
+// function load_phone_auth() {
+	// var v = Alloy.createController("onboarding", {}).getView();
+ 		// v.addEventListener('open', function(e) {
+   			// v.activity.actionBar.hide();
+		// });
+        // v.open();
+// }
 
-function debug_phone_auth() {
-       var consultaView = Alloy.createController("httpMock", {}).getView();
-}
+// function debug_phone_auth() {
+       // var consultaView = Alloy.createController("httpMock", {}).getView();
+// }
 
 function load_consulta() {
 	var v = Alloy.createController("especialidades", {}).getView();

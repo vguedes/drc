@@ -4,8 +4,8 @@
 			<View class="title">
 				<ImageView class="menu_btn" image="/images/android/common/ic_menu_white_18dp.png"></ImageView>
 				<Label class="label_title">dr.consulta</Label>
-				<ImageView class="bell_btn" image="/images/android/common/flat_icon_bell_18dp.png" onClick="load_phone_auth"></ImageView>
-				<ImageView class="find_btn" image="/images/android/common/ic_search_white_18dp.png" onClick="debug_phone_auth"></ImageView>
+				<!-- <ImageView class="bell_btn" image="/images/android/common/flat_icon_bell_18dp.png" onClick="load_phone_auth"></ImageView> -->
+				<!-- <ImageView class="find_btn" image="/images/android/common/ic_search_white_18dp.png" onClick="debug_phone_auth"></ImageView> -->
 			</View>
 			<Label class="apponitment_btn" onClick="load_consulta">MARQUE UMA CONSULTA OU EXAME</Label>
 			<ScrollView id="content_view" class="content_view" layout="vertical">
