@@ -68,38 +68,59 @@ var letters = [];
 	//	Define TableRow
 	var row = Ti.UI.createTableViewRow({
 	    className:'forumEvent',
-	    height:50
+	    height:"72dp",
+	    // backgroundColor: "#9a9a9a"
 	});
 
 
 	//	Define & Add TableRow Childrens
 	var icoPerson = Ti.UI.createImageView({
 	  image:'/iconPerson.png',
-	  width:'27px',
-	  height:'37px',
-	  left:20,
-	  top:10
+	  width:'24dp',
+	  // height:'37px',
+	  left:"16dp",
+	  // top:10
 	});
 	
 	row.add(icoPerson);
+	
+	
+	
+	var CPFLabel= Ti.UI.createLabel({
+		width: Ti.UI.SIZE,
+		height: Ti.UI.SIZE,
+		// backgroundColor:'#cccccc',
+		left: "72dp", 
+		top: "5dp",
+		text: "CPF",
+		font:{fontSize:"16SP"},
+		color: '#336699',
+	});
+	
+	row.add(CPFLabel);
+
+	
+	
 	
 	var borderSeparator = Ti.UI.createLabel({
 		width:'100%',
 		height:'1px',
 		backgroundColor:'#cccccc',
 		left: 50, width: 250, 
-		top:44
+		bottom: 0
 	});
 	
-	row.add(borderSeparator);
+	// row.add(borderSeparator);
 	
 	var textFieldCpf = Ti.UI.createTextField({
 	  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
 	  color: '#336699',
-	  top:0,left: 50,
+	  bottom:"5dp",
+	  left: "72dp",
 	  width: 250, height: 60,
 	  hintText:"CPF",
-	  font:{fontSize:14}
+	  verticalAlign: Titanium.UI.TEXT_VERTICAL_ALIGNMENT_BOTTOM,
+	  font:{fontSize:"14SP"}
 	});
 	
 	row.add(textFieldCpf);	
@@ -110,19 +131,36 @@ tableData.push(row);
 	//	Define TableRow CEL
 	var rowCel = Ti.UI.createTableViewRow({
 	    className:'forumEvent',
-	    height:50
+	    height:"72dp"
 	});
 
 
 	//	Define & Add TableRow Childrens
 	var icoCel = Ti.UI.createImageView({
 	  image:'/iconCel.png',
-	  width:'27px',
-	  height:'37px',
-	  left:20
+	  width:'24dp',
+	  left:"16dp",
 	});
 	
 	rowCel.add(icoCel);
+	
+	
+	var CellLabel= Ti.UI.createLabel({
+		width: Ti.UI.SIZE,
+		height: Ti.UI.SIZE,
+		// backgroundColor:'#cccccc',
+		left: "72dp", 
+		top: "5dp",
+		text: "Celular",
+		font:{fontSize:"16SP"},
+		color: '#336699',
+	});
+	
+	rowCel.add(CellLabel);
+
+	
+	
+	
 	
 	var borderSeparator = Ti.UI.createLabel({
 		width:'100%',
@@ -132,16 +170,17 @@ tableData.push(row);
 		top:44
 	});
 	
-	rowCel.add(borderSeparator);
+	// rowCel.add(borderSeparator);
 	
 	var textFieldCel = Ti.UI.createTextField({
 	  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
 	  color: '#336699',
-	  top:0,
-	  left: 50,
+	  bottom:"5dp",
+	  left: "72dp",
 	  width: 250, height: 60,
-	  hintText:"CELULAR",
-	   font:{fontSize:14}
+	  hintText:"Celular",
+	  verticalAlign: Titanium.UI.TEXT_VERTICAL_ALIGNMENT_BOTTOM,
+	  font:{fontSize:"14SP"}
 	});
 	
 	rowCel.add(textFieldCel);	
@@ -169,20 +208,38 @@ tableData.push(rowCel);
 	});
 	
 	buttonAction.addEventListener('click',function(e){
-		console.log(textFieldCpf.getValue());
-	    var confirmaDadosView = Alloy.createController("conf_dados_paciente",{
-	    	"tel":textFieldCel.getValue(),
-	    	"cpf":textFieldCpf.getValue(),
-	    	"especialidade": especialidade,
-	    	"doutorId": doutorId,
-			"doutor": doutor,
-			"doutorCrm": doutorCrm,
-			"data":data,
-			"horario":horario,
-			"clinica":clinica,
-			"endereco_clinica":endereco_clinica,
-			"preco": preco
-	    }).getView();
+		
+		var valid = true;
+		var cpf = textFieldCpf.value;
+		var cel = textFieldCel.value;
+		
+		
+		if (cel.length != 11) {
+			valid = false;
+			alert('Digite o celular com ddd somente números');
+		};
+		if (cpf.length != 11) {
+			valid = false;
+			alert('Digite o cpf somente números');
+		};
+		
+		
+		if (valid) {
+		    var confirmaDadosView = Alloy.createController("conf_dados_paciente",{
+		    	"tel":textFieldCel.getValue(),
+		    	"cpf":textFieldCpf.getValue(),
+		    	"especialidade": especialidade,
+		    	"doutorId": doutorId,
+				"doutor": doutor,
+				"doutorCrm": doutorCrm,
+				"data":data,
+				"horario":horario,
+				"clinica":clinica,
+				"endereco_clinica":endereco_clinica,
+				"preco": preco
+		    }).getView();
+		    
+	    };
 	});
 
 
