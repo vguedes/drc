@@ -449,7 +449,7 @@ for (var i=0; i<len; i++){
 			left:90,
 			color:'#868688',
 			font:{fontSize:15},
-			text: 'Alterar'
+			text: 'Cancelar'
 		});
 		
 		var labelModalConfirm = Ti.UI.createLabel({
