@@ -418,7 +418,6 @@ for (var i=0; i<len; i++){
 			
 		    var modalConfirm = Ti.UI.createView ({
 			    textAlign:'left',
-			    top:108,
 				height:181,
 				width:276,
 				zIndex:98
