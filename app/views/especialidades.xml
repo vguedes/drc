@@ -11,47 +11,47 @@
 			<TableViewRow class="row" onClick="openClinic">
 				<ImageView touchEnabled="false" image="/gravidez_icon.png" class="row_icon"></ImageView>
 				<Label touchEnabled="false" class="row_label" backend_id="4375">Gastroenterologista</Label>
-				<Label touchEnabled="false" text=">" class="row_arrow"></Label>
+				<Label touchEnabled="false" text="" class="row_arrow"></Label>
 			</TableViewRow>
 			<TableViewRow class="row" onClick="openClinic">
 				<ImageView touchEnabled="false" image="/gravidez_icon.png" class="row_icon"></ImageView>
 				<Label touchEnabled="false" class="row_label" backend_id="4375">Geriatra</Label>
-				<Label touchEnabled="false" text=">" class="row_arrow"></Label>
+				<Label touchEnabled="false" text="" class="row_arrow"></Label>
 			</TableViewRow>
 			<TableViewRow class="row" onClick="openClinic">
 				<ImageView touchEnabled="false" image="/gravidez_icon.png" class="row_icon"></ImageView>
 				<Label touchEnabled="false" class="row_label" backend_id="4375">Ginecologista</Label>
-				<Label touchEnabled="false" text=">" class="row_arrow"></Label>
+				<Label touchEnabled="false" text="" class="row_arrow"></Label>
 			</TableViewRow>
 			<TableViewRow class="row" onClick="openClinic">
 				<ImageView touchEnabled="false" image="/gravidez_icon.png" class="row_icon"></ImageView>
 				<Label touchEnabled="false" class="row_label" backend_id="4375">Infectologista</Label>
-				<Label touchEnabled="false" text=">" class="row_arrow"></Label>
+				<Label touchEnabled="false" text="" class="row_arrow"></Label>
 			</TableViewRow>
 			<TableViewRow class="row" onClick="openClinic">
 				<ImageView touchEnabled="false" image="/gravidez_icon.png" class="row_icon"></ImageView>
 				<Label touchEnabled="false" class="row_label" backend_id="4375">Mastologista</Label>
-				<Label touchEnabled="false" text=">" class="row_arrow"></Label>
+				<Label touchEnabled="false" text="" class="row_arrow"></Label>
 			</TableViewRow>
 			<TableViewRow class="row" onClick="openClinic">
 				<ImageView touchEnabled="false" image="/gravidez_icon.png" class="row_icon"></ImageView>
 				<Label touchEnabled="false" class="row_label" backend_id="4375">Nefrologista</Label>
-				<Label touchEnabled="false" text=">" class="row_arrow"></Label>
+				<Label touchEnabled="false" text="" class="row_arrow"></Label>
 			</TableViewRow>
 			<TableViewRow class="row" onClick="openClinic">
 				<ImageView touchEnabled="false" image="/gravidez_icon.png" class="row_icon"></ImageView>
 				<Label touchEnabled="false" class="row_label" backend_id="4375">Neurologista</Label>
-				<Label touchEnabled="false" text=">" class="row_arrow"></Label>
+				<Label touchEnabled="false" text="" class="row_arrow"></Label>
 			</TableViewRow>
 			<TableViewRow class="row" onClick="openClinic">
 				<ImageView touchEnabled="false" image="/gravidez_icon.png" class="row_icon"></ImageView>
 				<Label touchEnabled="false" class="row_label" backend_id="4375">Nutricionista</Label>
-				<Label touchEnabled="false" text=">" class="row_arrow"></Label>
+				<Label touchEnabled="false" text="" class="row_arrow"></Label>
 			</TableViewRow>
 			<TableViewRow class="row" onClick="openClinic">
 				<ImageView touchEnabled="false" image="/gravidez_icon.png" class="row_icon"></ImageView>
 				<Label touchEnabled="false" class="row_label" backend_id="4375">Oftalmologista</Label>
-				<Label touchEnabled="false" text=">" class="row_arrow"></Label>
+				<Label touchEnabled="false" text="" class="row_arrow"></Label>
 			</TableViewRow>
 		</TableView>
 	</Window>

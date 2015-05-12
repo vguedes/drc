@@ -309,7 +309,7 @@ function getAvailableSlots(today) {
 			zIndex:11,
 			backgroundColor:'#000000',zIndex:999,
 			opacity:0.5,textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
-			text:"Aguarde...", color:"#ffffff"
+			text:"Aguarde...", color:"#ffffff", font:{fontSize:16}
 		});
 		
 		win.add(modalLoad);
