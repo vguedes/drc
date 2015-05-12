@@ -13,18 +13,26 @@
 	top: 0
 }
 
-".menu_btn": {
-	left: 10,
-	width: 25,
-	height: 20
+".back_btn": {
+	// left: "16dp",
+	width: "24dp",
+	touchEnabled: false
+	// height: 20
 }
+
+".clickable_area": {
+	width: "48dp",
+	height: "48dp",
+	left: "16dp",
+}
+
 
 ".label_title": {
 	width: Titanium.UI.SIZE,
 	height: Titanium.UI.FILL,
  	color: "white",
  	font: {fontWeight:'bold',fontSize: 18},
-	left: 60
+	left: "72dp"
 }
 
 ".find_btn": {

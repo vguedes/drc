@@ -11,6 +11,10 @@ Ti.App.addEventListener("clsAppntStack", function(data) {
 	$.win.close();
 });
 
+function close_window() {
+	$.win.close();
+}
+
 
 // 
 // 
