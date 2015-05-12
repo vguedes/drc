@@ -410,20 +410,48 @@ for (var i=0; i<len; i++){
 		});
 		
 		labelCoach.addEventListener('click',function(e){
-	    var modalConfirm = Ti.UI.createLabel({
-		    textAlign:'left',
-		    top:108,
-			left:30,
-			height:218,
-			width:276,
-			zIndex:11,
-			backgroundColor:'#fafafa'
-		});
+			
+			
+			console.log(Ti.Platform.displayCaps.platformWidth);
+			
+			var widthModal = 276;
+			
+		    var modalConfirm = Ti.UI.createView ({
+			    textAlign:'left',
+			    top:108,
+				height:181,
+				width:276,
+				zIndex:98
+			});
+			
+			var modalConfirmLabel = Ti.UI.createLabel({
+			    textAlign:'left',
+				height:179,
+				width:274,
+				left:0,
+				zIndex:5,
+				backgroundColor:'#fafafa'
+			});
+			
+			var modalConfirmBg = Ti.UI.createLabel({
+			    textAlign:'left',
+			    top:10,
+			    right:0,
+				height:178,
+				width:276,
+				zIndex:4,
+				backgroundColor:'#000000',
+				opacity:0.3
+			});
+			
+			modalConfirm.add(modalConfirmLabel);
+			modalConfirm.add(modalConfirmBg);
+		
 		
 		var labelModalTitle = Ti.UI.createLabel({
 		    textAlign:'left',
-		    top:128,
-			left:50,
+		    top:18,
+			left:25,
 			color:'#868688',
 			font:{fontSize:25},
 			zIndex:12,
@@ -434,8 +462,8 @@ for (var i=0; i<len; i++){
 		
 		var labelModalDesc = Ti.UI.createLabel({
 		    textAlign:'left',
-		    top:168,
-			left:50,
+		    top:58,
+			left:25,
 			zIndex:12, width:210,
 			color:'#868688',
 			font:{fontSize:12},
@@ -445,8 +473,8 @@ for (var i=0; i<len; i++){
 		var labelModalEdit = Ti.UI.createLabel({
 		    textAlign:'left',
 		    zIndex:12,
-		    top:258,
-			left:90,
+		    top:138,
+			left:25,
 			color:'#868688',
 			font:{fontSize:15},
 			text: 'Cancelar'
@@ -454,9 +482,9 @@ for (var i=0; i<len; i++){
 		
 		var labelModalConfirm = Ti.UI.createLabel({
 		    textAlign:'left',
-		    top:258,
+		    top:138,
 		    zIndex:12,
-			left:205,
+			left:145,
 			color:'#5090cd',
 			font:{fontSize:15},
 			text: 'Confirmar'
@@ -464,10 +492,7 @@ for (var i=0; i<len; i++){
 		
 		labelModalConfirm.addEventListener('click',function(e){
 			win.remove(modalConfirm);
-			win.remove(labelModalTitle);
-			win.remove(labelModalDesc);
-			win.remove(labelModalEdit);
-			win.remove(labelModalConfirm);
+
 			
 			var pickerVal =  picker.getValue();
 			
@@ -496,17 +521,15 @@ for (var i=0; i<len; i++){
 		
 		labelModalEdit.addEventListener('click',function(e){
 			win.remove(modalConfirm);
-			win.remove(labelModalTitle);
-			win.remove(labelModalDesc);
-			win.remove(labelModalEdit);
-			win.remove(labelModalConfirm);
 		});
 		
+		
+		modalConfirm.add(labelModalTitle);
+		modalConfirm.add(labelModalDesc);
+		modalConfirm.add(labelModalEdit);
+		modalConfirm.add(labelModalConfirm);
+		
 		win.add(modalConfirm);
-		win.add(labelModalTitle);
-		win.add(labelModalDesc);
-		win.add(labelModalEdit);
-		win.add(labelModalConfirm);
 		
 		
 	
@@ -514,17 +537,7 @@ for (var i=0; i<len; i++){
 		
 		row.add(labelCoach);
 		
-	}
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
+	}	
 
 //	Pushing Row
 table.appendRow(row);
