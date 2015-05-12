@@ -89,4 +89,10 @@ function open_exame_medico_geral() {
 		});
         v.open();
  }
- 
+ function open_lista_especialidades() {
+ 	var v = Alloy.createController("lista_especialidades", {}).getView();
+ 		v.addEventListener('open', function(e) {
+   			v.activity.actionBar.hide();
+		});
+        v.open();
+ }
