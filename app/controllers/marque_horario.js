@@ -232,7 +232,7 @@ function getAvailableSlots(today) {
     var getAvailableSlots_method = '/schedule/availableslots';
     var auth_params = {
         'username': 'gaston',
-        'password': '098765',
+        'password': 'teste098765',
         'grant_type':  'password'
     };
 
@@ -294,6 +294,7 @@ function getAvailableSlots(today) {
          },
          // function called when an error occurs, including a timeout
          onerror : function(e) {
+         	win.remove(modalLoad);
              Ti.API.debug(e.error);
              alert('Erro: ' + e.error);
          },
