@@ -1,5 +1,14 @@
 var args = arguments[0] || {};
 
+
+function open_especialidade(e) {
+	var backend_id = e.source.children[1].backendId;
+	var id = e.source.children[1].id;
+	var name = e.source.children[1].name;
+	var icon = e.source.children[1].icon;
+	
+}
+
 function openClinic(e) {
 	var speciality_backend_id = e.source.children[1].backend_id;
 	var speciality_name= e.source.children[1].text;
@@ -40,6 +49,8 @@ for (var i=0; i < tableData.length; i++) {
   	width: Titanium.UI.FILL,
 	height: "72dp"
   });
+  
+  row.addEventListener("click", open_especialidade);
   
   var row_icon = Ti.UI.createImageView({
 	width: "24dp",
