@@ -11,6 +11,11 @@ function load_consulta() {
         v.open();
 }
 
+function close_window() {
+	$.win.close();
+}
+
+
 var openRelatedArticle = function(e) {
 	var articleId = e['source']['id'];
 	var article = e['source']['text'];

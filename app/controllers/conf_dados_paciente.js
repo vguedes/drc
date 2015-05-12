@@ -29,18 +29,26 @@ Ti.App.addEventListener("clsAppntStack", function(data) {
 	win.close();
 });
 
-// Create & Define BackButton
-var buttonBack = Ti.UI.createButton({
-  backgroundImage: '/images/android/common/ic_arrow_back_white_24dp.png',
-    top: 11,
-    width: 36,
-    height: 36,
-    left:5,
-    zIndex:9
+var clickable_area = Ti.UI.createView({
+    top: 5,
+    width: 48,
+    height: 48,
+    left:"5dp",
+    zIndex:99
 });
 
-buttonBack.addEventListener('click',function(e){
-    win.close();
+var backArrow = Ti.UI.createImageView({
+  backgroundImage: '/images/android/common/ic_arrow_back_white_24dp.png',
+    width: 24,
+    height: 24,touchEnabled: false,
+    left:"14dp",
+    zIndex:99
+});
+
+clickable_area.add(backArrow);
+
+clickable_area.addEventListener('click', function(e){
+	win.close();
 });
 
 //	Create & Define Title Label
@@ -393,7 +401,7 @@ var table = Ti.UI.createTableView({
 
 
 //	ADD objs to window
-win.add(buttonBack);
+win.add(clickable_area);
 
 
 

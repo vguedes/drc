@@ -45,7 +45,7 @@ var labelTitle = Ti.UI.createLabel({
 	height: "56dp",
 	color: "#fefffd",
 	backgroundColor:"#5090cd",
-	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,font:{fontSize:"20p",fontWeight:'bold'},
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,font:{fontSize:"20dp",fontWeight:'bold'},
 	top:"0",
 	text:"Consulta marcada"
 });

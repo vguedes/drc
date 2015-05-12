@@ -40,7 +40,7 @@ win.addEventListener("open", function() {
 //	Create & Define Title Label
 var labelTitle = Ti.UI.createLabel({
 	width: "100%",
-	height: '56dp',font:{fontSize:"20dp"},zIndex:99,
+	height: '56dp',font:{fontSize:"20dp",fontWeight:"bold"},zIndex:99,
 	color: "#fefffd",
 	backgroundColor:"#5090cd",
 	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,

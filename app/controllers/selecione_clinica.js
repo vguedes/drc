@@ -100,7 +100,7 @@ for (var i=1; i<tableDataLength; i++){
 	var labelClinic = Ti.UI.createLabel({
 	    textAlign:'left',
 	    top:8,
-		left:15,
+		left:20,
 		color: "#191819",
 	    font:{fontSize:16},
 	    clinic_backend_id:rowData.backend_id,
@@ -113,7 +113,7 @@ for (var i=1; i<tableDataLength; i++){
 	
 	var labelClinicDetail = Ti.UI.createLabel({
 	    textAlign:'left',
-		left:15,
+		left:20,
 		top:28,
 		width:"90%",
 		color: "#7c7c7c",

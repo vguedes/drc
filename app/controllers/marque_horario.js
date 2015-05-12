@@ -20,17 +20,26 @@ Ti.App.addEventListener("clsAppntStack", function(data) {
 });
 
 // Create & Define BackButton
-var buttonBack = Ti.UI.createButton({
-    backgroundImage: '/images/android/common/ic_arrow_back_white_24dp.png',
-    top: 11,
-    width: 36,
-    height: 36,
-    left:5,
+var clickable_area = Ti.UI.createView({
+    top: 5,
+    width: 48,
+    height: 48,
+    left:"5dp",
     zIndex:99
 });
 
-buttonBack.addEventListener('click',function(e){
-    win.close();
+var backArrow = Ti.UI.createImageView({
+  backgroundImage: '/images/android/common/ic_arrow_back_white_24dp.png',
+    width: 24,
+    height: 24,touchEnabled: false,
+    left:"14dp",
+    zIndex:99
+});
+
+clickable_area.add(backArrow);
+
+clickable_area.addEventListener('click', function(e){
+	win.close();
 });
 
 
@@ -41,7 +50,7 @@ var labelTitle = Ti.UI.createLabel({
 	color: "#fefffd",
 	backgroundColor:"#5090cd",
 	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
-	top:"0", font:{fontSize:"20dp"},zIndex:50,
+	top:"0", font:{fontSize:"20dp", fontWeight:"bold"},zIndex:50,
 	text:"3. Marque o dia e horário"
 });
 
@@ -307,7 +316,6 @@ function getAvailableSlots(today) {
 			left:0,
 			height:"100%",
 			width:"100%",
-			zIndex:11,
 			backgroundColor:'#000000',zIndex:999,
 			opacity:0.5,textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
 			text:"Aguarde...", color:"#ffffff", font:{fontSize:16}
@@ -551,7 +559,7 @@ table.appendRow(row);
 getAvailableSlots(today);	
 
 //	ADD objs to window
-win.add(buttonBack);
+win.add(clickable_area);
 win.add(pickerLabel);  //pickerLabel.hide();
 win.add(buttonAction);
 win.add(borderSeparatorTable);
