@@ -15,6 +15,79 @@ function close_window() {
 	$.win.close();
 }
 
+var tableData = [];
+var db = Ti.Database.open('_alloy_');
+var query = 'SELECT * FROM speciality ORDER BY name';
+var articlesRS = db.execute(query);
+while (articlesRS.isValidRow()) {
+	tableData.push({
+		'id': articlesRS.fieldByName('id'),
+		'backend_id': articlesRS.fieldByName('backend_id'),
+		'name': articlesRS.fieldByName('name'),
+		'icon': articlesRS.fieldByName('icon')
+	});
+  articlesRS.next();
+}
+articlesRS.close();
+db.close();
+
+var tableDataCompleted = [];
+
+for (var i=0; i < tableData.length; i++) {
+  var rowData = tableData[i];
+  
+  var row = Ti.UI.createTableViewRow({
+  	width: Titanium.UI.FILL,
+	height: "72dp"
+  });
+  
+  var row_icon = Ti.UI.createImageView({
+	width: "24dp",
+	left: "16dp",
+  	touchEnabled: false,
+  	image: rowData.icon
+  });
+  
+  var row_label = Ti.UI.createLabel({
+	width: Titanium.UI.SIZE,
+	height: Titanium.UI.SIZE,
+	color: "#151515",
+	left: "72dp",
+	font: {
+		fontSize: "16sp"
+	},
+  	touchEnabled: false,
+  	backendId: rowData.backend_id,
+  	text: rowData.name
+  });
+  
+  var row_arrow_containner = Ti.UI.createView({
+  	width: "48dp",
+  	height: "48dp",
+  	right: "16dp",
+  	touchEnabled: false
+  });
+  
+  var row_arrow = Ti.UI.createImageView({
+  	image: '/images/android/common/ic_chevron_right_grey600_36dp.png',
+  	width: "24dp",
+  	touchEnabled: false
+  });
+  
+  row_arrow_containner.add(row_arrow);
+  
+  row.add(row_icon);
+  row.add(row_label);
+  row.add(row_arrow_containner);
+  
+  $.table.appendRow(row);
+  
+  // tableDataCompleted.push(row);
+};
+
+
+
+
 
 // 
 // 
