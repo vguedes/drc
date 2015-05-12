@@ -16,14 +16,15 @@
 ".back_btn": {
 	// left: "16dp",
 	width: "24dp",
-	touchEnabled: false
+	touchEnabled: false,
+	left: "14dp"
 	// height: 20
 }
 
 ".clickable_area": {
 	width: "48dp",
 	height: "48dp",
-	left: "16dp",
+	left: "5dp",
 }
 
 
@@ -31,7 +32,7 @@
 	width: Titanium.UI.SIZE,
 	height: Titanium.UI.FILL,
  	color: "white",
- 	font: {fontWeight:'bold',fontSize: 18},
+ 	font: {fontWeight:'bold',fontSize: "20dp"},
 	left: "72dp"
 }
 

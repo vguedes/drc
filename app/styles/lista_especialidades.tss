@@ -8,7 +8,7 @@
 
 ".title": {
 	width: Titanium.UI.FILL,
-	height: 58,
+	height: "56dp",
  	backgroundColor:"#5090cd",
 	top: 0
 }

@@ -40,7 +40,7 @@ win.addEventListener("open", function() {
 //	Create & Define Title Label
 var labelTitle = Ti.UI.createLabel({
 	width: "100%",
-	height: 58,font:{fontSize:18},zIndex:99,
+	height: '56dp',font:{fontSize:"20dp"},zIndex:99,
 	color: "#fefffd",
 	backgroundColor:"#5090cd",
 	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
@@ -333,20 +333,30 @@ var titleView = Ti.UI.createView({
 	top:"0",
 });
 
-var backArrow = Ti.UI.createImageView({
-  backgroundImage: '/images/android/common/ic_arrow_back_white_24dp.png',
-    top: 11,
-    width: 36,
-    height: 36,
-    left:5,
+var clickable_area = Ti.UI.createView({
+    top: 5,
+    width: 48,
+    height: 48,
+    left:"5dp",
     zIndex:9
 });
 
-backArrow.addEventListener('click', function(e){
+var backArrow = Ti.UI.createImageView({
+  backgroundImage: '/images/android/common/ic_arrow_back_white_24dp.png',
+    width: 24,
+    height: 24,touchEnabled: false,
+    left:"14dp",
+    zIndex:9
+});
+
+clickable_area.add(backArrow);
+
+clickable_area.addEventListener('click', function(e){
 	win.close();
 });
 
-titleView.add(backArrow);
+
+titleView.add(clickable_area);
 titleView.add(labelTitle);
 
 

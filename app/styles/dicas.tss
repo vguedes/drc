@@ -23,7 +23,7 @@
 	width: Titanium.UI.SIZE,
 	height: Titanium.UI.FILL,
  	color: "white",
- 	font: {fontWeight:'bold',fontSize: 18},
+ 	font: {fontWeight:'bold',fontSize: "20dp"},
 	left: 60
 }
 

@@ -41,8 +41,8 @@ buttonBack.addEventListener('click',function(e){
 //	Create & Define Title Label
 var labelTitle = Ti.UI.createLabel({
 	width: "100%",
-	height: 58,
-	color: "#fefffd", font:{fontSize:18,fontWeight:'bold'},
+	height: 56,
+	color: "#fefffd", font:{fontSize:"20p",fontWeight:'bold'},
 	backgroundColor:"#5090cd",
 	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
 	top:"0",

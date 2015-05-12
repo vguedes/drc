@@ -17,8 +17,21 @@
 	width: Titanium.UI.SIZE,
 	height: Titanium.UI.FILL,
  	color: "white",
- 	font: {fontWeight:'bold',fontSize: 18},
+ 	font: {fontWeight:'bold',fontSize: "20dp"},
 	left: 60
+}
+".back_btn": {
+	// left: "16dp",
+	width: "24dp",
+	touchEnabled: false,
+	left: "14dp"
+	// height: 20
+}
+
+".clickable_area": {
+	width: "48dp",
+	height: "48dp",
+	left: "5dp",
 }
 
 ".container" : {
@@ -29,7 +42,7 @@
 "#header_view": {
 	backgroundColor: "#5090CD",
 	width: Titanium.UI.FILL,
-	height: 50
+	height: "56dp"
 }
 
 ".container":{

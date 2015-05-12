@@ -18,28 +18,38 @@ win.addEventListener("open", function() {
 
 
 // Create & Define BackButton
-var buttonBack = Ti.UI.createButton({
-    backgroundImage: '/images/android/common/ic_arrow_back_white_24dp.png',
-    top: 11,
-    width: 36,
-    height: 36,
-    left:5,
+var clickable_area = Ti.UI.createView({
+    top: 5,
+    width: 48,
+    height: 48,
+    left:"5dp",
     zIndex:9
 });
 
-buttonBack.addEventListener('click',function(e){
-    win.close();
+var backArrow = Ti.UI.createImageView({
+  backgroundImage: '/images/android/common/ic_arrow_back_white_24dp.png',
+    width: 24,
+    height: 24,touchEnabled: false,
+    left:"14dp",
+    zIndex:9
 });
+
+clickable_area.add(backArrow);
+
+clickable_area.addEventListener('click', function(e){
+	win.close();
+});
+
 
 //	Create & Define Title Label
 var labelTitle = Ti.UI.createLabel({
 	width: "100%",
-	height: 58,
+	height: "56dp",
 	color: "#fefffd",
 	backgroundColor:"#5090cd",
 	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
 	top:"0",
-	font:{fontSize:18,fontWeight:'bold'},
+	font:{fontSize:"20dp",fontWeight:'bold'},
 	text:"2. Selecione a clínica"
 });
 
@@ -160,7 +170,7 @@ var table = Ti.UI.createTableView({
 
 
 //	ADD objs to window
-win.add(buttonBack);
+win.add(clickable_area);
 
 
 

@@ -37,11 +37,11 @@ buttonBack.addEventListener('click',function(e){
 //	Create & Define Title Label
 var labelTitle = Ti.UI.createLabel({
 	width: "100%",
-	height: 58,
+	height: "56dp",
 	color: "#fefffd",
 	backgroundColor:"#5090cd",
 	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
-	top:"0", font:{fontSize:18},zIndex:50,
+	top:"0", font:{fontSize:"20dp"},zIndex:50,
 	text:"3. Marque o dia e horário"
 });
 
