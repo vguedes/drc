@@ -125,8 +125,8 @@ var letters = [];
 	var textFieldCpf = Ti.UI.createTextField({
 	  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
 	  color: '#336699',
-	  bottom:"5dp",
-	  left: "72dp",
+	  bottom:"16dp",
+	  left: "61dp",
 	  width: 250, height: 60,
 	  hintText:"CPF",
 	  verticalAlign: Titanium.UI.TEXT_VERTICAL_ALIGNMENT_BOTTOM,
@@ -185,8 +185,8 @@ tableData.push(row);
 	var textFieldCel = Ti.UI.createTextField({
 	  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
 	  color: '#336699',
-	  bottom:"5dp",
-	  left: "72dp",
+	  bottom:"16dp",
+	  left: "61dp",
 	  width: 250, height: 60,
 	  hintText:"Celular",
 	  verticalAlign: Titanium.UI.TEXT_VERTICAL_ALIGNMENT_BOTTOM,
