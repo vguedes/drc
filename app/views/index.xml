@@ -59,23 +59,3 @@
 			</View>
 		</Window>
 </Alloy>
-
-			<!-- <View id="header_view">
-				<Label id="title_label">dr.consulta</Label>
-			</View>
-			<View class="search_bar_view">
-				<ImageView class="search_icon" image="/search_icon.png" />
-				<Label class="search_hint" onClick="load_saude_az">O que você está sentindo?</Label>
-			</View>
-			<ImageView id="plus_img" image="/plus.png" width="30" height="30" top="20" />
-			<Label id="plus_label" top="7">Confira nossos preços de</Label>
-			<Label id="plus_label">consultas e exames</Label>
-			<Label id="agendamento_label">Agende agora na clínica mais próxima</Label>
-			<View class="btns_columns" top="40">
-				<ImageView class="menu_img" image="/exames.png" onClick="load_exames" />
-				<ImageView image="/saude_crianca.png" class="menu_img" left="1" onClick="load_saude_crianca" />
-			</View>
-			<View class="btns_columns">
-				<ImageView image="/saude_az.png" class="menu_img" top="1" onClick="load_saude_az" />
-				<ImageView image="/gravidez.png" class="menu_img" top="1" left="1" onClick="load_gravidez" />
-			</View> -->
