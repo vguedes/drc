@@ -75,10 +75,10 @@ var letters = [];
 	//	Define & Add TableRow Childrens
 	var icoPerson = Ti.UI.createImageView({
 	  image:'/iconPerson.png',
-	  width:'27px',
-	  height:'37px',
-	  left:20,
-	  top:5
+	  width:'27dp',
+	  height:'37dp',
+	  left:"20dp",
+	  top:"5dp"
 	});
 	
 	row.add(icoPerson);
@@ -91,9 +91,9 @@ var letters = [];
 	
 	var labelLetterHTML = Ti.UI.createLabel({
 	    textAlign:'left',
-		left:50, top:18,
-	    font:{fontSize:15},
-	    width:150,
+		left:"50dp", top:"18dp",
+	    font:{fontSize:"15dp"},
+	    width:"150dp",
 	    html:'<b>'+especialidade+'</b><br>Dr(a) '+doutor+' <br> CRM ' + doutorCrm
 	});
 	
@@ -114,19 +114,19 @@ var letters = [];
 	//	Define & Add TableRow Childrens
 	var icoPerson = Ti.UI.createImageView({
 	  image:'/iconPerson.png',
-	  width:'27px',
-	  height:'37px',
-	  left:20,
-	  top:5
+	  width:'27dp',
+	  height:'37dp',
+	  left:"20dp",
+	  top:"5dp"
 	});
 	
 	rowHorario.add(icoPerson);
 	
 	var labelLetterHTML = Ti.UI.createLabel({
 	    textAlign:'left',
-		left:50, top:18,
-	    font:{fontSize:15},
-	    width:150,
+		left:"50dp", top:"18dp",
+	    font:{fontSize:"15dp"},
+	    width:"150dp",
 	    html:'<b>'+data+'</b><br> '+horario+' hrs'
 	});
 	
@@ -146,19 +146,19 @@ var letters = [];
 	//	Define & Add TableRow Childrens
 	var icoPerson = Ti.UI.createImageView({
 	  image:'/iconPerson.png',
-	  width:'27px',
-	  height:'37px',
-	  left:20,
-	  top:5
+	  width:'27dp',
+	  height:'37dp',
+	  left:"20dp",
+	  top:"5dp"
 	});
 	
 	rowEnd.add(icoPerson);
 	
 	var labelLetterHTML = Ti.UI.createLabel({
 	    textAlign:'left',
-		left:50, top:18,
-	    font:{fontSize:15},
-	    width:150,
+		left:"50dp", top:"18dp",
+	    font:{fontSize:"15dp"},
+	    width:"150dp",
 	    html:'<b>Clinica '+clinica+'</b><br>' + endereco_clinica
 	});
 	
@@ -179,19 +179,19 @@ var letters = [];
 	//	Define & Add TableRow Childrens
 	var icoPerson = Ti.UI.createImageView({
 	  image:'/iconPerson.png',
-	  width:'27px',
-	  height:'37px',
-	  left:20,
-	  top:5
+	  width:'27dp',
+	  height:'37dp',
+	  left:"20dp",
+	  top:"5dp"
 	});
 	
 	rowPag.add(icoPerson);
 	
 	var labelLetterHTML = Ti.UI.createLabel({
 	    textAlign:'left',
-		left:50, top:18,
-	    font:{fontSize:15},
-	    width:150,
+		left:"50dp", top:"18dp",
+	    font:{fontSize:"15dp"},
+	    width:"150dp",
 	    html:'<b>R$ ' + preco + '</b><br>Parcelamento em até 3x'
 	});
 	
@@ -211,19 +211,19 @@ var letters = [];
 	//	Define & Add TableRow Childrens
 	var icoPerson = Ti.UI.createImageView({
 	  image:'/iconPerson.png',
-	  width:'27px',
-	  height:'37px',
-	  left:20,
-	  top:5
+	  width:'27dp',
+	  height:'37dp',
+	  left:"20dp",
+	  top:"5dp"
 	});
 	
 	rowDoc.add(icoPerson);
 	
 	var labelLetterHTML = Ti.UI.createLabel({
 	    textAlign:'left',
-		left:50, top:18,
-	    font:{fontSize:15},
-	    width:150,
+		left:"50dp", top:"18dp",
+	    font:{fontSize:"15dp"},
+	    width:"150dp",
 	    html:'<b>Documentos</b><br>Lembre-se de trazer seus medicamentos em uso e documentos de identidade:RG,CPF ou Carteira de Motorista'
 	});
 	
@@ -246,17 +246,17 @@ var letters = [];
 	  image:'/iconPerson.png',
 	  width:'27px',
 	  height:'37px',
-	  left:20,
-	  top:5
+	  left:"20dp",
+	  top:"5dp"
 	});
 	
 	rowShop.add(icoPerson);
 	
 	var labelLetterHTML = Ti.UI.createLabel({
 	    textAlign:'left',
-		left:50, top:18,
-	    font:{fontSize:15},
-	    width:150,
+		left:"50dp", top:"18dp",
+	    font:{fontSize:"15dp"},
+	    width:"150dp",
 	    html:'<b>Shoppings</b><br>Se sua consulta é em uma unidade, fica próxima ao Shopping'
 	});
 	
@@ -272,7 +272,7 @@ var letters = [];
 
 	var rowAction = Ti.UI.createTableViewRow({
 	    className:'forumEvent',
-	    height:100
+	    height:"100dp"
 	});
 
 
@@ -280,9 +280,9 @@ var letters = [];
 	var buttonAction = Ti.UI.createButton({
 	    backgroundImage: '/buttonoOk.png',
 	    top: 9,
-    	width: '102px',
-	    height: '104px',
-	    right:15,
+    	width: '56dp',
+	    height: '56dp',
+	    right:"16dp",
 	    zIndex:9
 	});
 	
@@ -309,7 +309,7 @@ tableData.push(rowAction);
 //	Define Table
 var table = Ti.UI.createTableView({
   	data: tableData,
-  	top:65,
+  	top:"65dp",
 	left:"0px",
 	color:"#6e6f71"
 });

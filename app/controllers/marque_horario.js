@@ -21,17 +21,17 @@ Ti.App.addEventListener("clsAppntStack", function(data) {
 
 // Create & Define BackButton
 var clickable_area = Ti.UI.createView({
-    top: 5,
-    width: 48,
-    height: 48,
+    top: "5dp",
+    width: "48dp",
+    height: "48dp",
     left:"5dp",
     zIndex:99
 });
 
 var backArrow = Ti.UI.createImageView({
   backgroundImage: '/images/android/common/ic_arrow_back_white_24dp.png',
-    width: 24,
-    height: 24,touchEnabled: false,
+    width: "24dp",
+    height: "24dp",touchEnabled: false,
     left:"14dp",
     zIndex:99
 });
@@ -56,34 +56,21 @@ var labelTitle = Ti.UI.createLabel({
 
 var labelSelect = Ti.UI.createLabel({
 	width: "100%",
-	height: "75px",
+	height: "75dp",
 	color: "#fefffd",
 	backgroundColor:"#ffffff",
 	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
-	top:"65",
+	top:"65dp",
 	text:""
 });
 
 // Create & Define Picke/Selectbox
 var picker1 = Ti.UI.createPicker({
   type:"Ti.UI.PICKER_TYPE_DATE",
-  // minDate:"2014,4,1",
-  // maxDate:"May 1, 2014 12:00:00",
-  // value:"2014-04-15T12:00:00",
-  top:50,
-  zIndex:5,
-  // backgroundColor: "#666666",
-  // width:'100px',left:50
+  top:"50dp",
+  zIndex:5
 });
 
-// var data = [];
-// data[0]=Ti.UI.createPickerRow({title:'18 MAR'});
-// data[1]=Ti.UI.createPickerRow({title:'19 MAR'});
-// data[2]=Ti.UI.createPickerRow({title:'20 MAR'});
-// data[3]=Ti.UI.createPickerRow({title:'30 MAR'});
-// 
-// picker1.add(data);
-// picker1.selectionIndicator = true;
 
 
 //rESULTS
@@ -136,8 +123,6 @@ setValue.setDate(dd);
 //	Define Data
 function getDataJson(datetime){
 	  return '{"09:00":[{"time":"09:00","doctorId":8164,"doctorName":"Enfermeiro Sacoma"},{"time":"09:00","doctorId":8221,"doctorName":"Enfermeiro Sao Bernardo"}],"10:00":[{"time":"10:00","doctorId":8164,"doctorName":"Enfermeiro Sacoma"}],"13:00":[{"time":"13:30","doctorId":8221,"doctorName":"Enfermeiro Sao Bernardo"}],"14:00":[{"time":"14:06","doctorId":8221,"doctorName":"Enfermeiro Sao Bernardo"},{"time":"14:42","doctorId":8221,"doctorName":"Enfermeiro Sao Bernardo"}],"15:00":[{"time":"15:18","doctorId":8221,"doctorName":"Enfermeiro Sao Bernardo"},{"time":"15:54","doctorId":8221,"doctorName":"Enfermeiro Sao Bernardo"}]}';
-
-
 }
 
 //Date picker
@@ -147,23 +132,23 @@ var picker = Ti.UI.createPicker({
 	minDate: minDate,
 	maxDate: maxDate,
 	value: setValue, visibleItems:2, useSpinner:false, 
-	top:40,
-	left:18,
-	zIndex:6, width:240,height:130
+	top:"40dp",
+	left:"18dp",
+	zIndex:6, width:"240dp",height:"130dp"
 });
 
 var pickerLabel = Ti.UI.createLabel({
-	top:70, color:"#ffffff",
-	zIndex:15,  font:{fontSize:22},
+	top:"70dp", color:"#ffffff",
+	zIndex:15,  font:{fontSize:"22dp"},
 	text:mm+' - '+dd +' - '+ yyyy,
 	visible:"false"
 });
   
 var bgPicker = Ti.UI.createLabel({
 	width:"100%",
-	height:150,
+	height:"150dp",
 	backgroundColor:"#5090cd",
-	top:"50px",
+	top:"50dp",
 	zIndex:5
 	
 });
@@ -172,10 +157,10 @@ var bgPicker = Ti.UI.createLabel({
 //	Define & Add TableRow Childrens
 	var buttonAction = Ti.UI.createButton({
 	    backgroundImage: '/buttonoOk1.png',
-	    top: 70,
-	    width: '82px',
-	    height: '84px',
-	    right:15,
+	    top: "70dp",
+	    width: '56dp',
+	    height: '56dp',
+	    right:"16dp",
 	    zIndex:9
 	});
 	
@@ -212,7 +197,7 @@ var borderSeparatorTable = Ti.UI.createLabel({
 		width:'100%',
 		height:'1px',
 		backgroundColor:'#cccccc',
-		top:'140px',
+		top:'140dp',
 		zIndex:5
 });
 
@@ -221,10 +206,10 @@ var borderSeparatorTable = Ti.UI.createLabel({
 //	Define Table
 var table = Ti.UI.createTableView({
   	data: '',
-  	top:"140px",
-	left:"0px",
+  	top:"140dp",
+	left:"0dp",
 	color:"#6e6f71",
-	top:180
+	top:"180dp"
 });
 
 
@@ -318,7 +303,7 @@ function getAvailableSlots(today) {
 			width:"100%",
 			backgroundColor:'#000000',zIndex:999,
 			opacity:0.5,textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
-			text:"Aguarde...", color:"#ffffff", font:{fontSize:16}
+			text:"Aguarde...", color:"#ffffff", font:{fontSize:"16dp"}
 		});
 		
 		win.add(modalLoad);
@@ -405,16 +390,16 @@ for (var i=0; i<len; i++){
 		var labelCoach = Ti.UI.createLabel({
 		    textAlign:'left',
 		    top:heightCoach,
-			left:90,
+			left:"90dp",
 			// height:25,
-			width:200,
+			width:"200dp",
 			color:'#fefffd',
 			backgroundColor:'#5090cd',
-		    font:{fontSize:12},
+		    font:{fontSize:"12dp"},
 		    text:'    '+dataL.time+' - Dr(a). '+dataL.doctorName,
 		    borderRadius:4,
-		    backgroundPaddingLeft: 30,
-	    	backgroundPaddingRight: 30
+		    backgroundPaddingLeft: "30dp",
+	    	backgroundPaddingRight: "30dp"
 		});
 		
 		labelCoach.addEventListener('click',function(e){
@@ -426,15 +411,15 @@ for (var i=0; i<len; i++){
 			
 		    var modalConfirm = Ti.UI.createView ({
 			    textAlign:'left',
-				height:181,
-				width:276,
+				height:"181dp",
+				width:"276dp",
 				zIndex:98
 			});
 			
 			var modalConfirmLabel = Ti.UI.createLabel({
 			    textAlign:'left',
-				height:179,
-				width:274,
+				height:"179dp",
+				width:"274dp",
 				left:0,
 				zIndex:5,
 				backgroundColor:'#fafafa'
@@ -442,10 +427,10 @@ for (var i=0; i<len; i++){
 			
 			var modalConfirmBg = Ti.UI.createLabel({
 			    textAlign:'left',
-			    top:10,
+			    top:"10dp",
 			    right:0,
-				height:178,
-				width:276,
+				height:"178dp",
+				width:"276dp",
 				zIndex:4,
 				backgroundColor:'#000000',
 				opacity:0.3
@@ -457,10 +442,10 @@ for (var i=0; i<len; i++){
 		
 		var labelModalTitle = Ti.UI.createLabel({
 		    textAlign:'left',
-		    top:18,
-			left:25,
+		    top:"18dp",
+			left:"25dp",
 			color:'#868688',
-			font:{fontSize:25},
+			font:{fontSize:"25dp"},
 			zIndex:12,
 			text:'Confirmando'
 		});
@@ -469,31 +454,31 @@ for (var i=0; i<len; i++){
 		
 		var labelModalDesc = Ti.UI.createLabel({
 		    textAlign:'left',
-		    top:58,
-			left:25,
-			zIndex:12, width:210,
+		    top:"58dp",
+			left:"25dp",
+			zIndex:12, width:"210dp",
 			color:'#868688',
-			font:{fontSize:12},
+			font:{fontSize:"12dp"},
 			text: 'Sua consulta de '+speciality_name+' com Dr(a) '+dataL.doctorName+' será '+FormatDate(pickerVal.getDate(),pickerVal.getMonth(),pickerVal.getFullYear())+' as '+nowTime+'hrs na clínica '+clinic_name+'.'
 		});
 		
 		var labelModalEdit = Ti.UI.createLabel({
 		    textAlign:'left',
 		    zIndex:12,
-		    top:138,
-			left:25,
+		    top:"138dp",
+			left:"25dp",
 			color:'#868688',
-			font:{fontSize:15},
+			font:{fontSize:"15dp"},
 			text: 'Cancelar'
 		});
 		
 		var labelModalConfirm = Ti.UI.createLabel({
 		    textAlign:'left',
-		    top:138,
+		    top:"138dp",
 		    zIndex:12,
-			left:145,
+			left:"145dp",
 			color:'#5090cd',
-			font:{fontSize:15},
+			font:{fontSize:"15dp"},
 			text: 'Confirmar'
 		});
 		
