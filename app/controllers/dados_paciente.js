@@ -89,8 +89,7 @@ var letters = [];
 	var icoPerson = Ti.UI.createImageView({
 	  image:'/iconPerson.png',
 	  width:'24dp',
-	  left:"16dp",
-	  // top:10
+	  left:"16dp"
 	});
 	
 	row.add(icoPerson);
@@ -111,17 +110,6 @@ var letters = [];
 	row.add(CPFLabel);
 
 	
-	
-	
-	var borderSeparator = Ti.UI.createLabel({
-		width:'100%',
-		height:'1px',
-		backgroundColor:'#cccccc',
-		left: "50dp", width: "250dp", 
-		bottom: 0
-	});
-	
-	// row.add(borderSeparator);
 	
 	var textFieldCpf = Ti.UI.createTextField({
 	  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,

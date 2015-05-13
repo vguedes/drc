@@ -83,48 +83,41 @@ var letters = [];
 	//	Define TableRow
 	var row = Ti.UI.createTableViewRow({
 	    className:'forumEvent',
-	    height:50
+	    height:"72dp"
 	});
 
 
 	//	Define & Add TableRow Childrens
 	var icoPerson = Ti.UI.createImageView({
 	  image:'/iconPerson.png',
-	  width:'27px',
-	  height:'37px',
-	  left:20,
-	  top:30
+	  width:'24dp',
+	  left:"16dp"
 	});
 	
 	row.add(icoPerson);
-	
-	var borderSeparator = Ti.UI.createLabel({
-		width:'100%',
-		height:'1px',
-		backgroundColor:'#cccccc',
-		left: 50, width: 250, 
-		top:48
-	});
-	
-	row.add(borderSeparator);
-	
+		
 	var textFieldCel = Ti.UI.createTextField({
 	  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
 	  color: '#336699',
-	  top:16,left: 40,
-	  width: 250, height: 50,
+	  bottom:"16dp",
+	  left: "60dp",
+	  width: "250dp", height: "60dp",
 	  hintText:cpf,
-	  font:{fontSize:14}
+	  verticalAlign: Titanium.UI.TEXT_VERTICAL_ALIGNMENT_BOTTOM,
+	  font:{fontSize:"14SP"}
 	});
 	
 	row.add(textFieldCel);	
 	
 	var labelLetter = Ti.UI.createLabel({
-	    textAlign:'left',
-		left:50,
-	    font:{fontSize:14},
-	    width:150,
-	    text:'CPF'
+		width: Ti.UI.SIZE,
+		height: Ti.UI.SIZE,
+		// backgroundColor:'#cccccc',
+		left: "72dp", 
+		top: "5dp",
+		text: "CPF",
+		font:{fontSize:"16SP"},
+		color: '#336699'
 	});
 	
 	row.add(labelLetter);	
@@ -135,48 +128,41 @@ tableData.push(row);
 	//	Define TableRow cel
 	var rowCel = Ti.UI.createTableViewRow({
 	    className:'forumEvent',
-	    height:50
+	    height:"72dp"
 	});
 
 
 	//	Define & Add TableRow Childrens
 	var icoPerson = Ti.UI.createImageView({
 	  image:'/iconPerson.png',
-	  width:'27px',
-	  height:'37px',
-	  left:20,
-	  top:30
+	  width:'24dp',
+	  left:"16dp"
 	});
 	
 	rowCel.add(icoPerson);
 	
-	var borderSeparator = Ti.UI.createLabel({
-		width:'100%',
-		height:'1px',
-		backgroundColor:'#cccccc',
-		left: 50, width: 250, 
-		top:48
-	});
-	
-	rowCel.add(borderSeparator);
-	
 	var textFieldCel = Ti.UI.createTextField({
 	  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
 	  color: '#336699',
-	  top:16,left: 40,
-	  width: 250, height: 50,
+	  bottom:"16dp",
+	  left: "60dp",
+	  width: "250dp", height: "60dp",
 	  hintText:tel,
-	  font:{fontSize:14}
+	  verticalAlign: Titanium.UI.TEXT_VERTICAL_ALIGNMENT_BOTTOM,
+	  font:{fontSize:"14SP"}
 	});
 	
 	rowCel.add(textFieldCel);	
 	
 	var labelLetter = Ti.UI.createLabel({
-	    textAlign:'left',
-		left:50,
-	    font:{fontSize:14},
-	    width:150,
-	    text:'CELULAR'
+		width: Ti.UI.SIZE,
+		height: Ti.UI.SIZE,
+		// backgroundColor:'#cccccc',
+		left: "72dp", 
+		top: "5dp",
+		text: "CELULAR",
+		font:{fontSize:"16SP"},
+		color: '#336699'
 	});
 	
 	rowCel.add(labelLetter);	
@@ -187,49 +173,41 @@ tableData.push(rowCel);
 	//	Define TableRow Nome
 	var rowNome = Ti.UI.createTableViewRow({
 	    className:'forumEvent',
-	    height:50
+	    height:"72dp"
 	});
 
 
 	//	Define & Add TableRow Childrens
 	var icoPerson = Ti.UI.createImageView({
 	  image:'/iconPerson.png',
-	  width:'27px',
-	  height:'37px',
-	  left:20,
-	  top:30
+	  width:'24dp',
+	  left:"16dp"
 	});
 	
 	rowNome.add(icoPerson);
 	
-	var borderSeparator = Ti.UI.createLabel({
-		width:'100%',
-		height:'1px',
-		backgroundColor:'#cccccc',
-		left: 50, width: 250, 
-		top:48
-	});
-	
-	rowNome.add(borderSeparator);
-	
 	var textFieldNome = Ti.UI.createTextField({
 	  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
 	  color: '#336699',
-	  top:16,left: 40,
-	  width: 250, height: 50,
+	  bottom:"16dp",
+	  left: "60dp",
+	  width: "250dp", height: "60dp",
 	  hintText:"Digite seu nome",
-	  font:{fontSize:14}
+	  verticalAlign: Titanium.UI.TEXT_VERTICAL_ALIGNMENT_BOTTOM,
+	  font:{fontSize:"14SP"}
 	});
 	
 	rowNome.add(textFieldNome);	
 	
 	var labelLetter = Ti.UI.createLabel({
-		touchEnabled: false,
-	    textAlign:'left',
-		left:50,
-	    font:{fontSize:14},
-	    width:150,
-	    text:'NOME'
+		width: Ti.UI.SIZE,
+		height: Ti.UI.SIZE,
+		// backgroundColor:'#cccccc',
+		left: "72dp", 
+		top: "5dp",
+		text: "NOME",
+		font:{fontSize:"16SP"},
+		color: '#336699'
 	});
 	
 	rowNome.add(labelLetter);	
@@ -240,49 +218,42 @@ tableData.push(rowNome);
 	//	Define TableRow Email
 	var rowEmail = Ti.UI.createTableViewRow({
 	    className:'forumEvent',
-	    height:50
+	    height:"72dp"
 	});
 
 
 	//	Define & Add TableRow Childrens
 	var icoPerson = Ti.UI.createImageView({
 	  image:'/iconPerson.png',
-	  width:'27px',
-	  height:'37px',
-	  left:20,
-	  top:30
+	  width:'24dp',
+	  left:"16dp"
 	});
 	
 	rowEmail.add(icoPerson);
 	
-	var borderSeparator = Ti.UI.createLabel({
-		width:'100%',
-		height:'1px',
-		backgroundColor:'#cccccc',
-		left: 50, width: 250, 
-		top:48
-	});
-	
-	rowEmail.add(borderSeparator);
 	
 	var textFieldEmail = Ti.UI.createTextField({
 	  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
 	  color: '#336699',
-	  top:16,left: 40,
-	  width: 250, height: 50,
+	  bottom:"16dp",
+	  left: "60dp",
+	  width: "250dp", height: "60dp",
 	  hintText:"Digite seu e-mail",
-	  font:{fontSize:14}
+	  verticalAlign: Titanium.UI.TEXT_VERTICAL_ALIGNMENT_BOTTOM,
+	  font:{fontSize:"14SP"}
 	});
 	
 	rowEmail.add(textFieldEmail);	
 	
 	var labelLetter = Ti.UI.createLabel({
-		touchEnabled: false,
-	    textAlign:'left',
-		left:50,
-	    font:{fontSize:14},
-	    width:150,
-	    text:'E-MAIL'
+		width: Ti.UI.SIZE,
+		height: Ti.UI.SIZE,
+		// backgroundColor:'#cccccc',
+		left: "72dp", 
+		top: "5dp",
+		text: "E-MAIL",
+		font:{fontSize:"16SP"},
+		color: '#336699'
 	});
 	
 	rowEmail.add(labelLetter);	
@@ -293,50 +264,43 @@ tableData.push(rowEmail);
 	//	Define TableRow Nascimento
 	var rowNasc = Ti.UI.createTableViewRow({
 	    className:'forumEvent',
-	    height:50
+	    height:"72dp"
 	});
 
 
 	//	Define & Add TableRow Childrens
 	var icoPerson = Ti.UI.createImageView({
 	  image:'/iconPerson.png',
-	  width:'27px',
-	  height:'37px',
-	  left:20,
-	  top:30
+	  width:'24dp',
+	  left:"16dp"
 	});
 	
 	rowNasc.add(icoPerson);
-	
-	var borderSeparator = Ti.UI.createLabel({
-		width:'100%',
-		height:'1px',
-		backgroundColor:'#cccccc',
-		left: 50, width: 250, 
-		top:48
-	});
-	
-	rowNasc.add(borderSeparator);
+
 	
 	var textFieldNacimento = Ti.UI.createTextField({
+
 	  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
 	  color: '#336699',
-	  top:16,left: 40,
-	  width: 250, height: 50,
-	  hintText:"Digite seu ano de nascimento",
-	  font:{fontSize:14}
+	  bottom:"16dp",
+	  left: "60dp",
+	  width: "250dp", height: "60dp",
+	  hintText:"Digite seu ano de nasci",
+	  verticalAlign: Titanium.UI.TEXT_VERTICAL_ALIGNMENT_BOTTOM,
+	  font:{fontSize:"14SP"}
 	});
 	
 	rowNasc.add(textFieldNacimento);	
 	
 	var labelLetter = Ti.UI.createLabel({
-		touchEnabled: false,
-	    textAlign:'left',
-		left:50,
-	    font:{fontSize:14
-	    	},
-	    width:150,
-	    text:'NASCIMENTO'
+		width: Ti.UI.SIZE,
+		height: Ti.UI.SIZE,
+		// backgroundColor:'#cccccc',
+		left: "72dp", 
+		top: "5dp",
+		text: "NASCIMENTO",
+		font:{fontSize:"16SP"},
+		color: '#336699'
 	});
 	
 	rowNasc.add(labelLetter);	
@@ -361,8 +325,8 @@ tableData.push(rowNasc);
 	var buttonAction = Ti.UI.createButton({
 	    backgroundImage: '/buttonoOk.png',
 	    top: 9,
-    	width: '102px',
-	    height: '104px',
+    	width: '56dp',
+	    height: '56dp',
 	    right:15,
 	    zIndex:9
 	});
