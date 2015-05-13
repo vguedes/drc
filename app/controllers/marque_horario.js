@@ -226,7 +226,7 @@ function getAvailableSlots(today) {
     var getAvailableSlots_method = '/schedule/availableslots';
     var auth_params = {
         'username': 'gaston',
-        'password': 'teste098765',
+        'password': '098765',
         'grant_type':  'password'
     };
 
@@ -281,10 +281,11 @@ function getAvailableSlots(today) {
              var params = {
                 'startDate': today,
                 //TODO deixar passar o serviceId
-                'serviceId': '4375',
+                'serviceId': '43',
                 'totalDays': '0',
                 'groupBy': 'UNIT'
              };
+             console.log(params);
              xhr.open("GET", base_url + getAvailableSlots_method);
              xhr.setRequestHeader('Authorization', 'Bearer '  + token);
              xhr.send(params);
