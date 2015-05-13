@@ -240,6 +240,7 @@ function getAvailableSlots(today) {
                     var rtrn = {};
                     var hoursStack = [];
                     var results = JSON.parse(this.responseText).groupedResults;
+                     console.log('results');
                     console.log(results);
                     for(var k=0,v=results.length; k<v; k++) {
                        var groups = results[k]['openSlots'];
@@ -388,6 +389,7 @@ for (var i=0; i<len; i++){
 	
 	for(ind=0; ind<lenSec; ind++){
 		var dataL = tableJsonData[Object.keys(tableJsonData)[i]][ind];
+		console.log(dataL);
 		heightCoach = 55 + (35*ind);
 			console.log('>>>'+heightCoach);
 		var labelCoach = Ti.UI.createLabel({
