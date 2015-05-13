@@ -29,17 +29,17 @@ Ti.App.addEventListener("clsAppntStack", function(data) {
 // Create & Define BackButton
 // Create & Define BackButton
 var clickable_area = Ti.UI.createView({
-    top: 5,
-    width: 48,
-    height: 48,
+    top: "5dp",
+    width: "48dp",
+    height: "48dp",
     left:"5dp",
     zIndex:99
 });
 
 var backArrow = Ti.UI.createImageView({
   backgroundImage: '/images/android/common/ic_arrow_back_white_24dp.png',
-    width: 24,
-    height: 24,touchEnabled: false,
+    width: "24dp",
+    height: "24dp",touchEnabled: false,
     left:"14dp",
     zIndex:99
 });
@@ -53,7 +53,7 @@ clickable_area.addEventListener('click', function(e){
 //	Create & Define Title Label
 var labelTitle = Ti.UI.createLabel({
 	width: "100%",
-	height: 56,
+	height: "56dp",
 	color: "#fefffd", font:{fontSize:"20dp",fontWeight:'bold'},
 	backgroundColor:"#5090cd",
 	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
@@ -89,7 +89,6 @@ var letters = [];
 	var icoPerson = Ti.UI.createImageView({
 	  image:'/iconPerson.png',
 	  width:'24dp',
-	  // height:'37px',
 	  left:"16dp",
 	  // top:10
 	});
@@ -118,7 +117,7 @@ var letters = [];
 		width:'100%',
 		height:'1px',
 		backgroundColor:'#cccccc',
-		left: 50, width: 250, 
+		left: "50dp", width: "250dp", 
 		bottom: 0
 	});
 	
@@ -127,9 +126,9 @@ var letters = [];
 	var textFieldCpf = Ti.UI.createTextField({
 	  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
 	  color: '#336699',
-	  bottom:"5dp",
-	  left: "72dp",
-	  width: 250, height: 60,
+	  bottom:"16dp",
+	  left: "60dp",
+	  width: "250dp", height: "60dp",
 	  hintText:"CPF",
 	  verticalAlign: Titanium.UI.TEXT_VERTICAL_ALIGNMENT_BOTTOM,
 	  font:{fontSize:"14SP"}
@@ -178,7 +177,7 @@ tableData.push(row);
 		width:'100%',
 		height:'1px',
 		backgroundColor:'#cccccc',
-		left: 50, width: 250, 
+		left: "50dp", width: "250dp", 
 		top:44
 	});
 	
@@ -187,9 +186,9 @@ tableData.push(row);
 	var textFieldCel = Ti.UI.createTextField({
 	  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
 	  color: '#336699',
-	  bottom:"5dp",
-	  left: "72dp",
-	  width: 250, height: 60,
+	  bottom:"16dp",
+	  left: "60dp",
+	  width: "250dp", height: "60dp",
 	  hintText:"Celular",
 	  verticalAlign: Titanium.UI.TEXT_VERTICAL_ALIGNMENT_BOTTOM,
 	  font:{fontSize:"14SP"}
@@ -205,17 +204,17 @@ tableData.push(rowCel);
 
 	var rowAction = Ti.UI.createTableViewRow({
 	    className:'forumEvent',
-	    height:100
+	    height:"100dp"
 	});
 
 
 	//	Define & Add TableRow Childrens
 	var buttonAction = Ti.UI.createButton({
 	    backgroundImage: '/buttonGo.png',
-	    top: 9,
-	    width: '102px',
-	    height: '104px',
-	    right:15,
+	    top: "9dp",
+	    width: '56dp',
+	    height: '56dp',
+	    right:"16dp",
 	    zIndex:9
 	});
 	
@@ -271,8 +270,8 @@ tableData.push(rowAction);
 //	Define Table
 var table = Ti.UI.createTableView({
   	data: tableData,
-  	top:65,
-	left:"0px",
+  	top:"65dp",
+	left:"0dp",
 	color:"#6e6f71"
 });
 
