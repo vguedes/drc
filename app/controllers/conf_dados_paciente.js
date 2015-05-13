@@ -285,7 +285,7 @@ tableData.push(rowEmail);
 	  bottom:"16dp",
 	  left: "60dp",
 	  width: "250dp", height: "60dp",
-	  hintText:"Digite seu ano de nasci",
+	  hintText:"Digite seu ano de nascimento",
 	  verticalAlign: Titanium.UI.TEXT_VERTICAL_ALIGNMENT_BOTTOM,
 	  font:{fontSize:"14SP"}
 	});
