@@ -12,6 +12,8 @@ var tel = args['tel'];
 			var clinica = args['clinica'];
 			var endereco_clinica = args['endereco_clinica'];
 			var preco = args['preco'];
+			var slotId = args['slotId'];
+			var speciality_backend_id = args['speciality_backend_id'];
 
 
 //	Create & Define Window
@@ -210,7 +212,7 @@ tableData.push(rowCel);
 	
 	rowNome.add(borderSeparator);
 	
-	var textFieldCel = Ti.UI.createTextField({
+	var textFieldNome = Ti.UI.createTextField({
 	  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
 	  color: '#336699',
 	  top:16,left: 40,
@@ -219,7 +221,7 @@ tableData.push(rowCel);
 	  font:{fontSize:14}
 	});
 	
-	rowNome.add(textFieldCel);	
+	rowNome.add(textFieldNome);	
 	
 	var labelLetter = Ti.UI.createLabel({
 		touchEnabled: false,
@@ -263,7 +265,7 @@ tableData.push(rowNome);
 	
 	rowEmail.add(borderSeparator);
 	
-	var textFieldCel = Ti.UI.createTextField({
+	var textFieldEmail = Ti.UI.createTextField({
 	  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
 	  color: '#336699',
 	  top:16,left: 40,
@@ -272,7 +274,7 @@ tableData.push(rowNome);
 	  font:{fontSize:14}
 	});
 	
-	rowEmail.add(textFieldCel);	
+	rowEmail.add(textFieldEmail);	
 	
 	var labelLetter = Ti.UI.createLabel({
 		touchEnabled: false,
@@ -316,7 +318,7 @@ tableData.push(rowEmail);
 	
 	rowNasc.add(borderSeparator);
 	
-	var textFieldCel = Ti.UI.createTextField({
+	var textFieldNacimento = Ti.UI.createTextField({
 	  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
 	  color: '#336699',
 	  top:16,left: 40,
@@ -325,7 +327,7 @@ tableData.push(rowEmail);
 	  font:{fontSize:14}
 	});
 	
-	rowNasc.add(textFieldCel);	
+	rowNasc.add(textFieldNacimento);	
 	
 	var labelLetter = Ti.UI.createLabel({
 		touchEnabled: false,
@@ -365,18 +367,87 @@ tableData.push(rowNasc);
 	    zIndex:9
 	});
 	
-	buttonAction.addEventListener('click',function(e){
-	    var consultaMarcadaView = Alloy.createController("consulta_marcada",{
-	    	"especialidade": especialidade,
-	    	"doutorId": doutorId,
-			"doutor": doutor,
-			"doutorCrm": doutorCrm,
-			"data":data,
-			"horario":horario,
-			"clinica":clinica,
-			"endereco_clinica": endereco_clinica,
-			"preco": preco
-	    }).getView();
+	
+	
+	
+	buttonAction.addEventListener('click',function(btn_action){
+		
+		
+		// Aqui faz o request pra marcar
+		
+		
+	    var base_url = 'https://escaladev.drconsulta.com';
+	    var auth_method = '/authenticate';
+	    var getAvailableSlots_method = '/schedule/availableslots';
+	    var auth_params = {
+	        'username': 'gaston',
+	        'password': 'teste098765',
+	        'grant_type':  'password'
+	    };
+		
+		var client = Ti.Network.createHTTPClient({
+			onload: function(e) {
+				console.log(this.responseText);
+				var token = JSON.parse(this.responseText).access_token;
+				var xhr = Ti.Network.createHTTPClient({
+					onload: function(e) {
+						var results = JSON.parse(this.responseText);
+						console.log(results);
+					},
+					onerror: function(e) {
+						console.error(e.error);
+					},
+					timeout: 10000
+				});
+				
+				// var birthDate = textFieldNacimento
+				
+				console.log(speciality_backend_id);
+				
+				var params = {
+					'patient': {
+		                'name': textFieldNome.value,
+		                'cpf': cpf,
+		                'cellPhoneDdd': tel.slice(0, 2),
+		                'cellPhone': tel.slice(2),
+		                'mail': textFieldEmail.value,
+		                'birthDate': {'date': '04-01-2010', 'gmt': '-03:00', 'time': '00:00'}, 
+		                'origin': 1,
+					},
+	                'slotId': slotId,
+					'serviceId': speciality_backend_id
+	             };
+	             console.log(params);
+	             xhr.open("POST", base_url + '/schedule');
+	             xhr.setRequestHeader('Authorization', 'Bearer '  + token);
+	             xhr.send(params);
+				
+				
+			},
+			onerror: function(e) {
+				console.log(e.error);
+				console.log(arguments);
+			},
+			timeout : 10000  // in milliseconds
+		});
+		
+		client.open("POST", base_url + auth_method);
+    	client.send(auth_params);
+		
+		
+		
+		
+	    // var consultaMarcadaView = Alloy.createController("consulta_marcada",{
+	    	// "especialidade": especialidade,
+	    	// "doutorId": doutorId,
+			// "doutor": doutor,
+			// "doutorCrm": doutorCrm,
+			// "data":data,
+			// "horario":horario,
+			// "clinica":clinica,
+			// "endereco_clinica": endereco_clinica,
+			// "preco": preco
+	    // }).getView();
 	});
 
 

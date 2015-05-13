@@ -10,7 +10,7 @@
 		<TableView>
 			<TableViewRow class="row" onClick="openClinic">
 				<ImageView touchEnabled="false" image="/gravidez_icon.png" class="row_icon"></ImageView>
-				<Label touchEnabled="false" class="row_label" backend_id="4375">Gastroenterologista</Label>
+				<Label touchEnabled="false" class="row_label" backend_id="43">Psiquiatra</Label>
 				<Label touchEnabled="false" text="" class="row_arrow"></Label>
 			</TableViewRow>
 			<TableViewRow class="row" onClick="openClinic">

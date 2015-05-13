@@ -230,7 +230,7 @@ var table = Ti.UI.createTableView({
 
 // get the available slots
 function getAvailableSlots(today) {
-    today = '22-05-2015';
+    // today = '22-05-2015';
     console.log(today);
     
     
@@ -261,6 +261,7 @@ function getAvailableSlots(today) {
                        for(var a=0,b=groups.length; a<b; a++){
                          var slot = groups[a];
                          console.log(slot);
+                         var apptSlotId = slot['id'];
                          var apptMedicalName = slot['medicalName'];
                          var apptMedicalCrm = slot['medicalCrm'];
                          var apptPrice = slot['price'];
@@ -277,7 +278,8 @@ function getAvailableSlots(today) {
                             'doctorId': apptMedicalId,
                             'doctorName': apptMedicalName,
                             'doctorCrm': apptMedicalCrm,
-                            'price': apptPrice
+                            'price': apptPrice,
+                            'slotId': apptSlotId
                          });
                          console.log('pushed -> ' + apptMedicalName);
                        };
@@ -293,6 +295,7 @@ function getAvailableSlots(today) {
              });
              var params = {
                 'startDate': today,
+                //TODO deixar passar o serviceId
                 'serviceId': '4375',
                 'totalDays': '0',
                 'groupBy': 'UNIT'
@@ -512,6 +515,7 @@ for (var i=0; i<len; i++){
 			var horario = nowTime;
 			var clinica = clinic_name;
 			var endereco_clinica = clinic_address;
+			var slotId = dataL.slotId;
 			
 			var dadosPacienteView = Alloy.createController("dados_paciente",{
 				"especialidade": especialidade,
@@ -522,7 +526,9 @@ for (var i=0; i<len; i++){
 				"horario":horario,
 				"clinica":clinica,
 				"endereco_clinica": endereco_clinica,
-				"preco": preco
+				"preco": preco,
+				"slotId": slotId,
+				"speciality_backend_id": speciality_backend_id
 			}).getView();
 		});
 		
