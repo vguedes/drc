@@ -96,3 +96,7 @@ function open_exame_medico_geral() {
 		});
         v.open();
  }
+
+function toggle_menu() {
+	$.side_menu.visible = ! ($.side_menu.visible);
+}

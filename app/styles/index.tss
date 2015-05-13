@@ -31,7 +31,7 @@
 	height: Titanium.UI.FILL,
  	color: "white",
  	font: {fontWeight:'bold',fontSize: 18},
-	left: 60
+	left: "72dp"
 }
 
 ".bell_btn": {
@@ -117,6 +117,16 @@
 	font: {
 		fontSize: 16
 	}
+}
+
+".menu": {
+	top: "56dp",
+	left: 0,
+	right: "56dp",
+	height: Titanium.UI.FILL,
+	backgroundColor: "#c7c7c7",
+	zIndex: 99,
+	visible: false
 }
 
 // "Label": {
