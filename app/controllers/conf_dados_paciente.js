@@ -381,7 +381,7 @@ tableData.push(rowNasc);
 	    var getAvailableSlots_method = '/schedule/availableslots';
 	    var auth_params = {
 	        'username': 'gaston',
-	        'password': 'teste098765',
+	        'password': '098765',
 	        'grant_type':  'password'
 	    };
 		
@@ -395,37 +395,40 @@ tableData.push(rowNasc);
 						console.log(results);
 					},
 					onerror: function(e) {
-						console.error(e.error);
+						console.error(e);
+						// alert(e.error);
 					},
 					timeout: 10000
 				});
 				
 				// var birthDate = textFieldNacimento
 				
-				console.log(speciality_backend_id);
+				//console.log(speciality_backend_id);
 				
 				var params = {
-					'patient': {
-		                'name': textFieldNome.value,
-		                'cpf': cpf,
-		                'cellPhoneDdd': tel.slice(0, 2),
-		                'cellPhone': tel.slice(2),
-		                'mail': textFieldEmail.value,
-		                'birthDate': {'date': '04-01-2010', 'gmt': '-03:00', 'time': '00:00'}, 
-		                'origin': 1,
+					patient: {
+		                name: textFieldNome.value,
+		                cpf: cpf,
+		                cellPhoneDdd: tel.slice(0, 2),
+		                cellPhone: tel.slice(2),
+		                mail: textFieldEmail.value,
+		                birthDate: {date: '04-01-2010', gmt: '-03:00', time: '00:00'}, 
+		                origin: 1
 					},
-	                'slotId': slotId,
-					'serviceId': speciality_backend_id
+	                slotId: slotId,
+					serviceId: speciality_backend_id
 	             };
-	             console.log(params);
+	             params = JSON.stringify(params);
+	             params = JSON.parse(params);
 	             xhr.open("POST", base_url + '/schedule');
 	             xhr.setRequestHeader('Authorization', 'Bearer '  + token);
-	             xhr.send(params);
+	             xhr.setRequestHeader('Content-Type', 'application/json');
+	             xhr.send(JSON.stringify(params));
 				
 				
 			},
 			onerror: function(e) {
-				console.log(e.error);
+				console.log(this.getAllResponseHeaders( ));
 				console.log(arguments);
 			},
 			timeout : 10000  // in milliseconds
