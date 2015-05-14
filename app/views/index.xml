@@ -1,10 +1,54 @@
 <Alloy>
 	<!-- <NavigationWindow id="navGroupWin" platform="ios"> -->
 		<Window class="container" title="dr.consulta">
-			<View class="menu" id="side_menu"></View>
+			<View class="menu" id="side_menu">
+				<View class="menuBack" id="side_menu2" onClick="toggle_menu"></View>
+				<View class="menuTop" id="side_menu1">
+					
+					
+					
+				  <TableView id="table2">
+					<TableViewRow  class="botao_menu_top" onClick="toggle_menu">
+							<ImageView class="menu_btn" image="/images/android/common/icon_menu/01.png"></ImageView>
+							<Label class="label_title_selected">Início</Label>
+					</TableViewRow>
+					
+					<TableViewRow class="botao_menu"><Label class="label_title_menu_desc">Consultas e exames</Label></TableViewRow>
+					
+					<TableViewRow class="botao_menu" onClick="load_consulta">
+							<ImageView class="menu_btn" image="/images/android/common/icon_menu/02.png"></ImageView>
+							<Label class="label_title_menu">Marcar</Label>
+					</TableViewRow>
+					
+					<TableViewRow class="botao_menu">
+							<ImageView class="menu_btn" image="/images/android/common/icon_menu/03.png"></ImageView>
+							<Label class="label_title_menu">Marcados</Label>
+							<Label class="label_title_number">2</Label>
+					</TableViewRow>
+					
+					<TableViewRow class="botao_menu"><Label class="label_title_menu_desc">Dicas do dr.</Label></TableViewRow>
+					
+					<TableViewRow class="botao_menu" onClick="open_dicas">
+							<ImageView class="menu_btn" image="/images/android/common/icon_menu/04.png"></ImageView>
+							<Label class="label_title_menu">Dicas</Label>
+					</TableViewRow>
+					
+					<TableViewRow class="botao_menu" onClick="open_partes_corpo">
+							<ImageView class="menu_btn" image="/images/android/common/icon_menu/05.png"></ImageView>
+							<Label class="label_title_menu">Partes do corpo</Label>
+					</TableViewRow>
+					
+					<TableViewRow class="botao_menu" onClick="open_lista_especialidades">
+							<ImageView class="menu_btn" image="/images/android/common/icon_menu/06.png"></ImageView>
+							<Label class="label_title_menu">Especialidades</Label>
+					</TableViewRow>
+				 </TableView>
+				 
+				 </View>
+			</View>
 			<View layout="vertical">
 				<View class="title">
-					<ImageView class="menu_btn" image="/images/android/common/ic_menu_white_18dp.png" onClick="toggle_menu"></ImageView>
+					<ImageView id="menu_btn" image="/images/android/common/ic_menu_white_18dp.png" onClick="toggle_menu"></ImageView>
 					<Label class="label_title">dr.consulta</Label>
 					<!-- <ImageView class="bell_btn" image="/images/android/common/flat_icon_bell_18dp.png" onClick="load_phone_auth"></ImageView> -->
 					<!-- <ImageView class="find_btn" image="/images/android/common/ic_search_white_18dp.png" onClick="debug_phone_auth"></ImageView> -->

@@ -20,10 +20,10 @@
 	top: 0
 }
 
-".menu_btn": {
-	left: 10,
-	width: 18,
-	height: 18
+"#menu_btn": {
+	left: "16dp",
+	width: "18",
+	height: "18dp"
 }
 
 ".label_title": {
@@ -119,12 +119,89 @@
 	}
 }
 
-".menu": {
-	top: "56dp",
+
+/*menu styles*/
+
+".menu":{
+	visible: false,
+	width: Titanium.UI.FILL,height:"100%",
+	height: Titanium.UI.FILL,
+	zIndex: 99
+}
+
+".menuBack": {
+	width: "100%",height:"100%",
+	height: Titanium.UI.FILL,
+	backgroundColor: "#000000",right:"0dp",
+	zIndex: 99,opacity:0.7,
+	visible: true
+}
+
+".menuTop": {
+	top: "0dp",
 	left: 0,
 	right: "56dp",
 	height: Titanium.UI.FILL,
-	backgroundColor: "#c7c7c7",
-	zIndex: 99,
-	visible: false
+	backgroundColor: "#fafafa",
+	zIndex: 100,
+	visible: true
 }
+
+"#table2": {
+	left:"16dp"
+}
+
+".botao_menu": {
+	width:"270dp",
+	height:"50dp",
+	color:"#858687"
+}
+
+".botao_menu_top": {
+	width:"270dp",
+	height:"66dp", top:"16dp",
+	color:"#858687"
+}
+
+	
+".menu_btn":{
+	width:"20dp",
+	height:"20dp", 
+	left:0,,
+	touchEnable:false
+}
+
+".label_title_menu": {
+	left:"52dp",touchEnable:false,
+	width:"190dp",color:"#858687",
+	font: {
+		fontSize: "12dp"
+	}
+}
+
+".label_title_selected": {
+	left:"52dp",touchEnable:false,color:"#5091cd",
+	width:"190dp",
+	font: {
+		fontSize: "12dp"
+	}
+}
+
+".label_title_menu_desc": {
+	left:"0",touchEnable:false,
+	font: {
+		fontSize: "12dp",
+	}
+}
+
+".label_title_number": {
+	backgroundColor:"#f15a31",
+	width:"24dp", right:"16dp",
+	height:"24dp",
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	color:"#fff",
+	font: {
+		fontSize: "12dp"
+	}
+}
+

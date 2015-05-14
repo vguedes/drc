@@ -74,9 +74,9 @@ var letters = [];
 
 	//	Define & Add TableRow Childrens
 	var icoPerson = Ti.UI.createImageView({
-	  image:'/iconPerson.png',
-	  width:'27dp',
-	  height:'37dp',
+	  image:'/images/android/common/icon_consulta_marcada/01.png',
+	  width:'28dp',
+	  height:'28dp',
 	  left:"20dp",
 	  top:"5dp"
 	});
@@ -113,9 +113,9 @@ var letters = [];
 
 	//	Define & Add TableRow Childrens
 	var icoPerson = Ti.UI.createImageView({
-	  image:'/iconPerson.png',
-	  width:'27dp',
-	  height:'37dp',
+	  image:'/images/android/common/icon_consulta_marcada/02.png',
+	  width:'28dp',
+	  height:'28dp',
 	  left:"20dp",
 	  top:"5dp"
 	});
@@ -145,9 +145,9 @@ var letters = [];
 
 	//	Define & Add TableRow Childrens
 	var icoPerson = Ti.UI.createImageView({
-	  image:'/iconPerson.png',
-	  width:'27dp',
-	  height:'37dp',
+	  image:'/images/android/common/icon_consulta_marcada/03.png',
+	  width:'28dp',
+	  height:'28dp',
 	  left:"20dp",
 	  top:"5dp"
 	});
@@ -178,9 +178,9 @@ var letters = [];
 
 	//	Define & Add TableRow Childrens
 	var icoPerson = Ti.UI.createImageView({
-	  image:'/iconPerson.png',
-	  width:'27dp',
-	  height:'37dp',
+	  image:'/images/android/common/icon_consulta_marcada/04.png',
+	  width:'28dp',
+	  height:'28dp',
 	  left:"20dp",
 	  top:"5dp"
 	});
@@ -210,9 +210,9 @@ var letters = [];
 
 	//	Define & Add TableRow Childrens
 	var icoPerson = Ti.UI.createImageView({
-	  image:'/iconPerson.png',
-	  width:'27dp',
-	  height:'37dp',
+	  image:'/images/android/common/icon_consulta_marcada/05.png',
+	  width:'28dp',
+	  height:'28dp',
 	  left:"20dp",
 	  top:"5dp"
 	});
@@ -243,9 +243,9 @@ var letters = [];
 
 	//	Define & Add TableRow Childrens
 	var icoPerson = Ti.UI.createImageView({
-	  image:'/iconPerson.png',
-	  width:'27px',
-	  height:'37px',
+	  image:'/images/android/common/icon_consulta_marcada/06.png',
+	  width:'28px',
+	  height:'28px',
 	  left:"20dp",
 	  top:"5dp"
 	});

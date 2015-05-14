@@ -134,7 +134,7 @@ tableData.push(row);
 
 	//	Define & Add TableRow Childrens
 	var icoPerson = Ti.UI.createImageView({
-	  image:'/iconPerson.png',
+	  image:'/iconCel.png',
 	  width:'24dp',
 	  left:"16dp"
 	});
@@ -179,7 +179,7 @@ tableData.push(rowCel);
 
 	//	Define & Add TableRow Childrens
 	var icoPerson = Ti.UI.createImageView({
-	  image:'/iconPerson.png',
+	  image:'/images/android/common/icon_confirme/01.png',
 	  width:'24dp',
 	  left:"16dp"
 	});
@@ -224,7 +224,7 @@ tableData.push(rowNome);
 
 	//	Define & Add TableRow Childrens
 	var icoPerson = Ti.UI.createImageView({
-	  image:'/iconPerson.png',
+	  image:'/images/android/common/icon_confirme/03.png',
 	  width:'24dp',
 	  left:"16dp"
 	});
@@ -295,7 +295,6 @@ tableData.push(rowEmail);
 	var labelLetter = Ti.UI.createLabel({
 		width: Ti.UI.SIZE,
 		height: Ti.UI.SIZE,
-		// backgroundColor:'#cccccc',
 		left: "72dp", 
 		top: "5dp",
 		text: "NASCIMENTO",
