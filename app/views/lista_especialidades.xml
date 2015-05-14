@@ -4,7 +4,7 @@
 			<View class="clickable_area" onClick="close_window">
 				<ImageView class="back_btn" image="/images/android/common/ic_arrow_back_white_24dp.png"></ImageView>
 			</View>
-			<Label class="label_title">Especialidades</Label>
+			<Label class="label_title" id="title">Especialidades</Label>
 			<!-- <ImageView class="find_btn" image="/images/android/common/ic_search_white_18dp.png"></ImageView> -->
 		</View>
 		<TableView id="table" />
