@@ -57,7 +57,7 @@
 	width: Titanium.UI.SIZE,
 	height: Titanium.UI.FILL,
 	color: "#151515",
-	left: 65,
+	left: "72dp",
 	font: {
 		fontSize: 16
 	}
