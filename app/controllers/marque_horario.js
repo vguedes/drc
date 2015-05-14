@@ -94,7 +94,7 @@ function FormatDate(dd,mm,yyyy){
 //	Define Date to Start drawnTable()
 var today = new Date();
 var dd = today.getDate();
-var mm = today.getMonth(); //January is 0!
+var mm = today.getMonth()+1; //January is 0!
 var yyyy = today.getFullYear();
 
 if(dd<10) { dd='0'+dd;} 
@@ -116,7 +116,7 @@ maxDate.setDate(31);
 
 var setValue = new Date();
 setValue.setFullYear(yyyy);
-setValue.setMonth(mm);
+setValue.setMonth(mm-1);
 setValue.setDate(dd);
 
 
@@ -169,13 +169,13 @@ var bgPicker = Ti.UI.createLabel({
 	    picker.hide();
 	    var pickerVal = picker.getValue();
 	    
-	    console.log(pickerVal);
 	    pickerLabel.setText(FormatDate(pickerVal.getDate(),pickerVal.getMonth()+1,pickerVal.getFullYear()));
 	    
 	    pickerLabel.show();
 		buttonAction.hide();
-		var day = pickerVal.getDate().length == 2 ? pickerVal.getDate() : '0' + pickerVal.getDate();
-		var month = pickerVal.getMonth().length == 2 ? pickerVal.getMonth() : '0' + pickerVal.getMonth();
+		var day = pickerVal.getDate() > 9 ? pickerVal.getDate() : '0' + pickerVal.getDate();
+		var month = pickerVal.getMonth() + 1;
+		month = month > 9 ? month : '0' + month;
 		var year = pickerVal.getFullYear();
 		getAvailableSlots(day + '-' + month + '-' + year);
 		
@@ -215,12 +215,6 @@ var table = Ti.UI.createTableView({
 
 // get the available slots
 function getAvailableSlots(today) {
-    // today = '22-05-2015';
-    console.log(today);
-    
-    
-    
-    
     var base_url = 'https://escaladev.drconsulta.com';
     var auth_method = '/authenticate';
     var getAvailableSlots_method = '/schedule/availableslots';
@@ -240,13 +234,10 @@ function getAvailableSlots(today) {
                     var rtrn = {};
                     var hoursStack = [];
                     var results = JSON.parse(this.responseText).groupedResults;
-                     console.log('results');
-                    console.log(results);
                     for(var k=0,v=results.length; k<v; k++) {
                        var groups = results[k]['openSlots'];
                        for(var a=0,b=groups.length; a<b; a++){
                          var slot = groups[a];
-                         console.log(slot);
                          var apptSlotId = slot['id'];
                          var apptMedicalName = slot['medicalName'];
                          var apptMedicalCrm = slot['medicalCrm'];
@@ -286,7 +277,6 @@ function getAvailableSlots(today) {
                 'totalDays': '0',
                 'groupBy': 'UNIT'
              };
-             console.log(params);
              xhr.open("GET", base_url + getAvailableSlots_method);
              xhr.setRequestHeader('Authorization', 'Bearer '  + token);
              xhr.send(params);
@@ -346,18 +336,9 @@ function drawTable(tableJsonData) {
 	for (var o in tableJsonData) {
 	    len++;
 	}
-
-	
-		console.log(len);
-		
-		
-		
-		
-		 
 	
 	//	START LOOP INTO DATA ARRAY
 for (var i=0; i<len; i++){
-	console.log(i);
 	
 	//	Define data after parse
 //	var rowData = tableJsonData[i];
@@ -390,9 +371,7 @@ for (var i=0; i<len; i++){
 	
 	for(ind=0; ind<lenSec; ind++){
 		var dataL = tableJsonData[Object.keys(tableJsonData)[i]][ind];
-		console.log(dataL);
 		heightCoach = 55 + (35*ind);
-			console.log('>>>'+heightCoach);
 		var labelCoach = Ti.UI.createLabel({
 		    textAlign:'left',
 		    top:heightCoach,
@@ -409,10 +388,6 @@ for (var i=0; i<len; i++){
 		});
 		
 		labelCoach.addEventListener('click',function(e){
-			
-			
-			console.log(Ti.Platform.displayCaps.platformWidth);
-			
 			var widthModal = 276;
 			
 		    var modalConfirm = Ti.UI.createView ({
