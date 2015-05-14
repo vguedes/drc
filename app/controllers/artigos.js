@@ -45,7 +45,7 @@ var labelTitle = Ti.UI.createLabel({
 	backgroundColor:"#5090cd",
 	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
 	top:"0",
-	left: 60,
+	left: "72dp",
 	text:window_title
 });
 

@@ -20,11 +20,11 @@
 							<Label class="label_title_menu">Marcar</Label>
 					</TableViewRow>
 					
-					<TableViewRow class="botao_menu">
+					<!--<TableViewRow class="botao_menu">
 							<ImageView class="menu_btn" image="/images/android/common/icon_menu/03.png"></ImageView>
 							<Label class="label_title_menu">Marcados</Label>
 							<Label class="label_title_number">2</Label>
-					</TableViewRow>
+					</TableViewRow>-->
 					
 					<TableViewRow class="botao_menu"><Label class="label_title_menu_desc">Dicas do dr.</Label></TableViewRow>
 					

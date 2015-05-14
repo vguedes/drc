@@ -23,8 +23,8 @@
 	width: Titanium.UI.SIZE,
 	height: Titanium.UI.FILL,
  	color: "white",
- 	font: {fontWeight:'bold'},
-	left: 60
+ 	font: {fontWeight:'bold',fontSize: "20dp"},
+	left: "72dp"
 }
 
 ".find_btn": {
@@ -48,7 +48,7 @@
 	width: "60%",
 	height: Titanium.UI.FILL,
 	color: "#151515",
-	left: 65,
+	left: "72dp",
 	font: {
 		fontSize: 16
 	}

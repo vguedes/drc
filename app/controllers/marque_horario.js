@@ -46,7 +46,7 @@ clickable_area.addEventListener('click', function(e){
 //	Create & Define Title Label
 var labelTitle = Ti.UI.createLabel({
 	width: "100%",
-	height: "56dp",
+	height: "56dp",left:"72dp",
 	color: "#fefffd",
 	backgroundColor:"#5090cd",
 	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
@@ -170,7 +170,7 @@ var bgPicker = Ti.UI.createLabel({
 	    var pickerVal = picker.getValue();
 	    
 	    console.log(pickerVal);
-	    pickerLabel.setText(FormatDate(pickerVal.getDate(),pickerVal.getMonth(),pickerVal.getFullYear()));
+	    pickerLabel.setText(FormatDate(pickerVal.getDate(),pickerVal.getMonth()+1,pickerVal.getFullYear()));
 	    
 	    pickerLabel.show();
 		buttonAction.hide();

@@ -24,7 +24,7 @@
 	height: Titanium.UI.FILL,
  	color: "white",
  	font: {fontWeight:'bold',fontSize: "20dp"},
-	left: 60
+	left: "72dp"
 }
 
 ".find_btn": {
@@ -48,11 +48,14 @@
 	width: Titanium.UI.SIZE,
 	height: Titanium.UI.FILL,
 	color: "#151515",
-	left: 65
+	left: "72dp",
+		font: {
+		fontSize: 16
+	}
 }
 
 ".row_arrow": {
-	width:36,height:36,
+width:36,height:36,
 	backgroundImage: '/images/android/common/ic_chevron_right_grey600_36dp.png',
 	right: 20,
 	color: "#151515",
