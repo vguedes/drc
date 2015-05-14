@@ -150,7 +150,14 @@ for (var i=1; i<tableDataLength; i++){
 		var clinic_address = e.source.children[0].clinic_address;
 		var clinic_name = e.source.children[0].text;
 		
-	    var marqueHorarioView = Alloy.createController("marque_horario",{'speciality_backend_id': speciality_backend_id, 'clinic_backend_id': clinic_backend_id, 'clinic_name':clinic_name, 'clinic_address': clinic_address, 'speciality_name':speciality_name}).getView();
+	    var marqueHorarioView = Alloy.createController("marque_horario",{
+	    	'speciality_backend_id': speciality_backend_id,
+	    	'speciality_name': speciality_name,
+	    	'clinic_backend_id': clinic_backend_id,
+	    	'clinic_name':clinic_name,
+	    	'clinic_address': clinic_address
+	    }).getView();
+	    
 	});
 
 //	Pushing Row

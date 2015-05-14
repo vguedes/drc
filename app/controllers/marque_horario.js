@@ -1,8 +1,8 @@
 var args = arguments[0] || {};
 var speciality_backend_id = args['speciality_backend_id'];
+var speciality_name = args['speciality_name'];
 var clinic_backend_id = args['clinic_backend_id'];
 var clinic_name = args['clinic_name'];
-var speciality_name = args['speciality_name'];
 var clinic_address = args['clinic_address'];
 
 //	Create & Define Window
