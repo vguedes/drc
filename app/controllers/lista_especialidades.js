@@ -1,15 +1,19 @@
 var args = arguments[0] || {};
+var appointment = args['appointment'];
 
 
 function open_especialidade(e) {
-	var backend_id = e.source.children[1].backendId;
-	var id = e.source.children[1].id;
-	var name = e.source.children[1].name;
-	var icon = e.source.children[1].icon;
-	
+	var sp_backend_id = e.source.children[1].sp_backend_id;
+	var sp_id = e.source.children[1].sp_id;
+	var sp_name = e.source.children[1].text;
+	var sp_icon = e.source.children[1].sp_icon;
+	console.log(sp_backend_id);
+	console.log(sp_id);
+	console.log(sp_name);
+	console.log(sp_icon);
 }
 
-function openClinic(e) {
+function open_clinic(e) {
 	var speciality_backend_id = e.source.children[1].backend_id;
 	var speciality_name= e.source.children[1].text;
 	clinic_view = Alloy.createController("selecione_clinica", {'speciality_backend_id': speciality_backend_id,'speciality_name':speciality_name}).getView();
@@ -23,6 +27,13 @@ Ti.App.addEventListener("clsAppntStack", function(data) {
 function close_window() {
 	$.win.close();
 }
+
+if (appointment) {
+	$.title.setText('Escolha a especialidade');
+	Ti.App.addEventListener("clsAppntStack", function(data) {
+		$.win.close();
+	});
+};
 
 var tableData = [];
 var db = Ti.Database.open('_alloy_');
@@ -50,7 +61,12 @@ for (var i=0; i < tableData.length; i++) {
 	height: "72dp"
   });
   
-  row.addEventListener("click", open_especialidade);
+  if (appointment) {
+  	row.addEventListener("click", open_clinic);
+  } else{
+	row.addEventListener("click", open_especialidade);  	
+  };
+ 
   
   var row_icon = Ti.UI.createImageView({
 	width: "24dp",
@@ -68,8 +84,10 @@ for (var i=0; i < tableData.length; i++) {
 		fontSize: "16sp"
 	},
   	touchEnabled: false,
-  	backendId: rowData.backend_id,
-  	text: rowData.name
+  	sp_backend_id: rowData.backend_id,
+  	text: rowData.name,
+  	sp_icon: rowData.icon,
+  	sp_id: rowData.id
   });
   
   var row_arrow_containner = Ti.UI.createView({

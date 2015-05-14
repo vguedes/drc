@@ -35,7 +35,7 @@ function load_gravidez() {
 // }
 
 function load_consulta() {
-	var v = Alloy.createController("especialidades", {}).getView();
+ 	var v = Alloy.createController("lista_especialidades", {'appointment': true}).getView();
  		v.addEventListener('open', function(e) {
    			v.activity.actionBar.hide();
 		});
@@ -90,7 +90,7 @@ function open_exame_medico_geral() {
         v.open();
  }
  function open_lista_especialidades() {
- 	var v = Alloy.createController("lista_especialidades", {}).getView();
+ 	var v = Alloy.createController("lista_especialidades", {'appointment': false}).getView();
  		v.addEventListener('open', function(e) {
    			v.activity.actionBar.hide();
 		});
