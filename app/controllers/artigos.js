@@ -73,7 +73,7 @@ var absoluteLabelLetter = Ti.UI.createLabel({
     width:"25dp",
     height:"50dp",
     text:'',
-    top:"63dp",
+    top:"63dp",color:"#151515",
     left:"18dp",
     verticalAlign: 'bottom',
     backgroundColor: 'white',
@@ -95,7 +95,7 @@ var labelPadding = Ti.UI.createLabel({
 //	Create & Define Hidden Label to Fix ScrollEvent StopPropagation **HACK SAFADO
 var labelOverMask = Ti.UI.createLabel({
 	left:"40dp",
-	color:"#cccccc",
+	color:"#151515",
 	backgroundColor:'transparent',
 	opacity:1,
 	width:'100%',
@@ -179,7 +179,7 @@ for (var i=0; i<tableDataLength; i++){
 	    textAlign:'left',
 		left:"18dp",
 	    font:{fontSize:"20dp"},
-	    color:"#6e6f71",
+	    color:"#151515",
 	    width:25,
 	    // touchEnabled: false,
 	    text:rowLetter
@@ -245,7 +245,7 @@ var table = Ti.UI.createTableView({
   	data: tableData,
   	top:65,
 	left:"0dp",
-	color:"#6e6f71"
+	color:"#151515"
 });
 
 //	SETTING OFFSET POS
@@ -332,8 +332,8 @@ table.addEventListener('scroll',function(e){
 
 var titleView = Ti.UI.createView({
 	width: "100%",
-	height: 58,
-	color: "#fefffd",
+	height: "56dp",
+	color: "#151515",
 	backgroundColor:"#5090cd",
 	// textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
 	top:"0",
@@ -341,8 +341,8 @@ var titleView = Ti.UI.createView({
 
 var clickable_area = Ti.UI.createView({
     top: 5,
-    width: 48,
-    height: 48,
+    width: "48dp",
+    height: "48dp",
     left:"0dp",
     zIndex:9
 });
