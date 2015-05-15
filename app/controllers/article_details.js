@@ -6,7 +6,8 @@ var back = function(e) {$.win.close();};
 function load_consulta() {
 	var v = Alloy.createController("especialidades", {}).getView();
  		v.addEventListener('open', function(e) {
-   			v.activity.actionBar.hide();
+   			v.activity.actionBar.hide();	
+
 		});
         v.open();
 }
