@@ -10,7 +10,7 @@
 				  <TableView id="table2">
 					<TableViewRow  class="botao_menu_top" onClick="toggle_menu">
 							<ImageView class="menu_btn" image="/images/android/common/icon_menu/01.png"></ImageView>
-							<Label class="label_title_selected">Início</Label>
+						
 					</TableViewRow>
 					
 					<TableViewRow class="botao_menu"><Label class="label_title_menu_desc">Consultas e exames</Label></TableViewRow>
@@ -50,6 +50,7 @@
 				<View class="title">
 					<ImageView id="menu_btn" image="/images/android/common/ic_menu_white_18dp.png" onClick="toggle_menu"></ImageView>
 					<Label class="label_title">dr.consulta</Label>
+						<Label class="label_title_selected" onClick="load_consulta_pacient">aa</Label>
 					<!-- <ImageView class="bell_btn" image="/images/android/common/flat_icon_bell_18dp.png" onClick="load_phone_auth"></ImageView> -->
 					<!-- <ImageView class="find_btn" image="/images/android/common/ic_search_white_18dp.png" onClick="debug_phone_auth"></ImageView> -->
 				</View>

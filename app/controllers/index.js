@@ -42,6 +42,11 @@ function load_consulta() {
         v.open();
 }
 
+function load_consulta_pacient() {
+ 	var v = Alloy.createController("dados_paciente", {'appointment': true}).getView();
+        v.open();
+}
+
 function open_dicas() {
 	var v = Alloy.createController("dicas", {}).getView();
  		v.addEventListener('open', function(e) {

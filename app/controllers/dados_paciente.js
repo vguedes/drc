@@ -26,22 +26,27 @@ Ti.App.addEventListener("clsAppntStack", function(data) {
 	win.close();
 });
 
-// Create & Define BackButton
+var viewTitle = Ti.UI.createView({
+	width: Titanium.UI.FILL,
+	height: "56dp",
+ 	backgroundColor:"#5090cd",
+	top: 0
+});	
+
 // Create & Define BackButton
 var clickable_area = Ti.UI.createView({
     top: "5dp",
     width: "48dp",
     height: "48dp",
-    left:"5dp",
-    zIndex:99
+    left:"0dp",
+    zIndex:999
 });
 
 var backArrow = Ti.UI.createImageView({
   backgroundImage: '/images/android/common/ic_arrow_back_white_24dp.png',
     width: "24dp",
     height: "24dp",touchEnabled: false,
-    left:"14dp",
-    zIndex:99
+    left:"16dp"
 });
 
 clickable_area.add(backArrow);
@@ -50,16 +55,19 @@ clickable_area.addEventListener('click', function(e){
 	win.close();
 });
 
-//	Create & Define Title Label
-var labelTitle = Ti.UI.createLabel({
-	width: "100%",
-	height: "56dp",
-	color: "#fefffd", font:{fontSize:"20dp",fontWeight:'bold'},
-	backgroundColor:"#5090cd",
-	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
-	top:"0",
-	text:"4. Dados do paciente"
+
+var labelTitleText = Ti.UI.createLabel({
+	height: Titanium.UI.FILL,
+ 	color: "white",
+ 	font: {fontWeight:'bold',fontSize: "20dp"},
+	left: "72dp",zIndex:999, text:"4 .Dados do paciente"
 });
+
+
+
+viewTitle.add(labelTitleText);
+viewTitle.add(clickable_area);
+
 
 
 //	Define Data /Parse JSON
@@ -265,10 +273,10 @@ var table = Ti.UI.createTableView({
 
 
 //	ADD objs to window
-win.add(clickable_area);
 
 
 
-win.add(labelTitle);
+
+win.add(viewTitle);
 win.add(table);
 win.open();
