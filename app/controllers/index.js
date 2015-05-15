@@ -3,9 +3,18 @@ db.close();
 
 $.index.addEventListener('open', function(e) {
     $.index.activity.actionBar.hide();
+    var screenWidth = Ti.Platform.displayCaps.platformWidth / (Ti.Platform.displayCaps.dpi / 160);
+	var ciWidth = ((screenWidth - 40) / 2) + 'dp';
+	console.log(ciWidth);
+	$.ci1.setWidth(ciWidth);
+	$.ci2.setWidth(ciWidth);
+	$.ci3.setWidth(ciWidth);
+	$.ci4.setWidth(ciWidth);
 });
 $.index.open();
 
+console.log(Ti.Platform.displayCaps.density, "-------------->>>>>");
+console.log(Ti.Platform.displayCaps.platformWidth, "-------------->>>>>");
 
 function load_exame() {
 	 var saudeaz_view = Alloy.createController("articles", {}).getView();
@@ -100,3 +109,14 @@ function open_exame_medico_geral() {
 function toggle_menu() {
 	$.side_menu.visible = ! ($.side_menu.visible);
 }
+
+function open_menu_teste() {
+ 	var consultaView = Alloy.createController("TESTE_menu", {}).getView();
+}
+ 
+
+
+
+
+
+
