@@ -1,0 +1,163 @@
+/**
+	azul escuro		5090CD
+	azul claro		DDE9F5
+	cinza escuro	6E6F71
+	cinza claro		F0F0F2
+ */
+
+".title": {
+	width: Titanium.UI.FILL,
+	height: "56dp",
+ 	backgroundColor:"#5090cd",
+	top: 0
+}
+
+".back_btn": {
+	left: "0dp",
+	width: "24dp",
+	touchEnabled: false
+}
+
+".clickable_area": {
+	width: "48dp",
+	height: "48dp",
+	left: "16dp",
+}
+
+
+".label_title": {
+	width: Titanium.UI.SIZE,
+	height: Titanium.UI.FILL,
+ 	color: "white",
+ 	font: {fontWeight:'bold',fontSize: "20dp"},
+	left: "72dp"
+}
+
+".container":{
+	backgroundColor:"#FFF"
+}
+
+"#header_view1": {
+	width: Titanium.UI.FILL,
+	height: '180dp'
+}
+
+".painel": {
+	backgroundColor:"#5090CD",
+	height:"145dp",
+	color:"#ffffff",
+	top:'0px', 
+	width:"100%",
+	zIndex:1
+}
+
+".title4": {
+	zIndex:4,
+	left:"72dp", 
+	color:"#ffffff",
+	font: {
+		fontSize: "25dp"
+	}
+}
+
+".menor": {
+	zIndex:4,
+	color:"#ffffff",
+	font: {
+		fontSize: "15dp"
+	}, top:"110dp",
+	left:"72dp"
+	
+}
+
+".imageBt":{
+	backgroundImage: '/buttonDetail.png',
+    top: "115dp",
+    width: "56dp",
+    height: "56dp",
+    right:10,
+    zIndex:9
+}
+
+".details": {
+	width: Titanium.UI.FILL,
+	height: Ti.UI.FILL,
+	layout: "vertical"
+}
+
+".sp_description": {
+	left: "16dp",
+	right: "16dp",
+	font: {
+		fontSize: "14dp"
+	}
+}
+
+".hr": {
+	top: "8dp",
+	width: Titanium.UI.FILL,
+	height: "1px",
+	backgroundColor: "#6E6F71"
+}
+
+".symptoms_view": {
+	left: 0,
+	width: Titanium.UI.FILL,
+	height: "72dp",
+}
+
+".symptoms_view_icon_click_area": {
+	width: "48dp",
+	height: "48dp",
+	left: "16dp"
+}
+
+".symptoms_view_icon": {
+	width: "24dp",
+	height: "24dp",
+	touchEnabled: false,
+	image: "/images/android/common/ic_info_grey600_24dp.png"
+}
+
+".symptoms_view_label": {
+	left: "72dp",
+	font: {
+		fontSize: "16dp"
+	}
+}
+
+".symptoms_view_arrow_click_area": {
+	right: "16dp",
+	width: "48dp",
+	height: "48dp"
+}
+
+".symptoms_view_arrow": {
+	left: "16dp",
+	width: "24dp",
+	height: "24dp",
+	image: "/images/android/common/ic_chevron_right_grey600_36dp.png",
+}
+
+".symptoms_description": {
+	left: "16dp",
+	right: "16dp",
+	font: {
+		fontSize: "14dp"
+	}
+}
+
+".exams_view_icon": {
+	width: "24dp",
+	height: "24dp",
+	touchEnabled: false,
+	image: "/exame_geral_icon.png"
+}
+
+
+
+
+
+
+
+

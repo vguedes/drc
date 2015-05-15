@@ -48,8 +48,8 @@
 			</View>
 			<View layout="vertical">
 				<View class="title">
-					<View class="click_area">
-						<ImageView id="menu_btn" image="/images/android/common/ic_menu_white_24dp.png" onClick="toggle_menu"></ImageView>
+					<View class="click_area" onClick="toggle_menu">
+						<ImageView id="menu_btn" image="/images/android/common/ic_menu_white_24dp.png"></ImageView>
 					</View>
 					<Label class="label_title">dr.consulta</Label>
 					<!-- <ImageView class="bell_btn" image="/images/android/common/flat_icon_bell_18dp.png" onClick="open_menu_teste"></ImageView> -->

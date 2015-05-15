@@ -3,15 +3,17 @@ var appointment = args['appointment'];
 
 
 function open_especialidade(e) {
-	var sp_backend_id = e.source.children[1].sp_backend_id;
+	// var sp_backend_id = e.source.children[1].sp_backend_id;
 	var sp_id = e.source.children[1].sp_id;
-	var sp_name = e.source.children[1].text;
-	var sp_icon = e.source.children[1].sp_icon;
-	console.log(sp_backend_id);
-	console.log(sp_id);
-	console.log(sp_name);
-	console.log(sp_icon);
-}
+	// var sp_name = e.source.children[1].text;
+	// var sp_icon = e.source.children[1].sp_icon;
+	var v = Alloy.createController("speciality_details", {'speciality_id': sp_id}).getView();
+ 		v.addEventListener('open', function(e) {
+   			v.activity.actionBar.hide();	
+
+	});
+    v.open();
+}	
 
 function open_clinic(e) {
 	var speciality_backend_id = e.source.children[1].backend_id;
@@ -44,7 +46,7 @@ while (articlesRS.isValidRow()) {
 		'id': articlesRS.fieldByName('id'),
 		'backend_id': articlesRS.fieldByName('backend_id'),
 		'name': articlesRS.fieldByName('name'),
-		'icon': articlesRS.fieldByName('icon')
+		'icon': articlesRS.fieldByName('icon'),
 	});
   articlesRS.next();
 }

@@ -1,0 +1,47 @@
+<Alloy>
+	<Window id="win" class="container" layout="vertical">		
+		<View class="title">
+			<View class="clickable_area" onClick="close_window">
+				<ImageView class="back_btn" image="/images/android/common/ic_arrow_back_white_24dp.png"></ImageView>
+			</View>
+			<Label class="label_title" id="title1">Especialidade</Label>
+			<!-- <ImageView class="find_btn" image="/images/android/common/ic_search_white_18dp.png"></ImageView> -->
+		</View>
+		<View id="header_view1">
+			<Label id="painel1" class="painel"></Label>
+			<Label id="imgbt" class="imageBt" onClick="load_consulta"></Label>
+			<Label id="text" class="title4">Ginecologista</Label>
+			<Label id="textMenor" class="menor">Gineco</Label>
+		</View>
+		<ScrollView class="details">
+			<Label id="sp_description" class="sp_description" />
+			<View class="hr" />
+			<View class="symptoms_view">
+				<View class="symptoms_view_icon_click_area">
+					<ImageView class="symptoms_view_icon" />
+				</View>
+				<Label class="symptoms_view_label">Simtomas</Label>
+				<View class="symptoms_view_arrow_click_area">
+					<ImageView class="symptoms_view_arrow" />
+				</View>
+			</View>
+			<Label id="symptoms" class="symptoms_description" />
+			<View class="hr" />
+			
+			<View class="symptoms_view">
+				<View class="symptoms_view_icon_click_area">
+					<ImageView class="exams_view_icon" />
+				</View>
+				<Label class="symptoms_view_label">Exames</Label>
+				<View class="symptoms_view_arrow_click_area">
+					<ImageView class="symptoms_view_arrow" />
+				</View>
+			</View>
+			<Label id="exams" class="symptoms_description" />
+			
+			
+			
+		</ScrollView>
+	</Window>
+</Alloy>
+

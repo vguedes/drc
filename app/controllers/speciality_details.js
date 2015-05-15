@@ -1,110 +1,186 @@
 var args = arguments[0] || {};
+var speciality_id = args.speciality_id || false;
 
-var win = Ti.UI.createWindow({
-	 backgroundColor: '#F0F0F2',
-	 width: Ti.UI.FILL,
-	 height: Ti.UI.FILL
-});
+var back = function(e) {$.win.close();};
 
-win.addEventListener("open", function() {
-	win.activity.actionBar.hide();
-});
+function load_consulta() {
+	var v = Alloy.createController("especialidades", {'appointment': true}).getView();
+ 		v.addEventListener('open', function(e) {
+   			v.activity.actionBar.hide();	
 
-var header = Ti.UI.createView({
-	width: Ti.UI.FILL,
-	height: "56dp",
-	top: "0dp",
-	backgroundColor: "#5090CD"
-});
+		});
+        v.open();
+}
 
-var menu_btn = Ti.UI.createImageView({
-	image: "/images/android/common/ic_menu_white_18dp.png",
-	width: "24dp",
-	touchEnable: false
-});
+function close_window() {
+	$.win.close();
+}
 
-var menu_btn_clk_area = Ti.UI.createView({
-	width: "48dp",
-	height: "48dp",
-	left: "16dp"
-});
+var tableData = [];
+var db = Ti.Database.open('_alloy_');
+var query = 'SELECT * FROM speciality WHERE id=' + speciality_id;
+var articlesRS = db.execute(query);
 
-menu_btn_clk_area.add(menu_btn);
+var sp = {
+	'id': articlesRS.fieldByName('id'),
+	'backend_id': articlesRS.fieldByName('backend_id'),
+	'name': articlesRS.fieldByName('name'),
+	'icon': articlesRS.fieldByName('icon'),
+	'synonym': articlesRS.fieldByName('synonym'),
+	'description': articlesRS.fieldByName('description'),
+	'symptoms': articlesRS.fieldByName('symptoms'),
+	'exams': articlesRS.fieldByName('exams')
+};
 
-var header_title = Ti.UI.createLabel({
-	left: "72dp",
-	text: "dr.consulta",
-	color: "white",
-	font: {
-		fontSize: "20dp",
-	}
-});
-header.add(menu_btn_clk_area);
-header.add(header_title);
-win.add(header);
+$.text.text = sp.name;
+$.textMenor.text = sp.synonym;
+$.sp_description.text = sp.description;
+$.symptoms.text = sp.symptoms;
+$.exams.text = sp.exams;
 
-var appointment_btn = Ti.UI.createLabel({
-	height: "72dp",
-	top: "64dp",
-	left: "16dp",
-	right: "16dp",
-	color: "white",
-	backgroundColor: "#E7B00F",
-	borderColor: '#aaa',
-	borderWidth: 1,
-	text: "MARQUE UMA CONSULTA OU EXAME",
-	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
-	font: {
-		fontSize: "20dp"
-	}
-});
-appointment_btn.addEventListener("click", function(e){
-	alert('Marcado');
-});
-win.add(appointment_btn);
+// while (articlesRS.isValidRow()) {
+	// tableData.push({
+		// 'id': articlesRS.fieldByName('id'),
+		// 'backend_id': articlesRS.fieldByName('backend_id'),
+		// 'name': articlesRS.fieldByName('name'),
+		// 'icon': articlesRS.fieldByName('icon'),
+		// 'synonym': articlesRS.fieldByName('synonym'),
+		// 'description': articlesRS.fieldByName('description'),
+		// 'symptoms': articlesRS.fieldByName('symptoms'),
+		// 'exams': articlesRS.fieldByName('exams')
+	// });
+  // articlesRS.next();
+// }
+// articlesRS.close();
+// db.close();
 
 
-// var aptt = Ti.UI.createView({
-	// right: "16dp",
-	// left: "16dp",
-	// height: "200dp",
-	// layout: "horizontal"
-// });
+console.log(sp);
 
-var screenWidth = Ti.Platform.displayCaps.platformWidth / (Ti.Platform.displayCaps.dpi / 160);
+// var openRelatedArticle = function(e) {
+	// var articleId = e['source']['id'];
+	// var article = e['source']['text'];
+	// var articledetails_view = Alloy.createController("article_details", {'articleId': articleId, 'article': article}).getView();
+    // // if (OS_IOS) {
+        // // $.navGroupWin.openWindow(saudeaz_view);
+    // // }
+ 	// // if (OS_ANDROID) {
+//  		
+ 		// console.log('opening');
+ 		// articledetails_view.addEventListener('open', function(e) {
+   			// articledetails_view.activity.actionBar.hide();
+		// });
+        // articledetails_view.open();
+    // // }   
+// };
 
-var r1 = Ti.UI.createView({
-	top: "144dp",
-	left: "16dp",
-	// right: "0dp",
-	width: (screenWidth - 32) + "dp",
-	height: "200dp",
-	backgroundColor: "#000"
-});
 
-win.add(r1);
-
-// var r2 = Ti.UI.createView({
-	// // top: "352dp",
-	// // left: "16dp",
-	// // right: "16dp",
-	// height: "200dp",
-	// width: "8dp",
-	// backgroundColor: "#9a9a9a"
-// });
+// $.text.text = article;
+// $.textMenor.text = '';
 // 
-// aptt.add(r2);
+// //$.article.text = article;
 // 
-// var r3 = Ti.UI.createView({
-	// // top: "144dp",
-	// // left: "0dp",
-	// right: "0dp",
-	// // width: "552dp",
-	// height: "200dp",
-	// backgroundColor: "#242424"
-// });
+// var query = "SELECT" +
+			// "  article_details.description as detail, " +
+			// "  article_article_details.data as description " +
+			// "FROM " +
+			// "  article_details " +
+			// "INNER JOIN " +
+			// "  article_article_details " +
+			// "ON " +
+			// "  article_details.id = article_article_details.articledetails_id " +
+			// "WHERE " +
+			// "  article_article_details.article_id = " + articleId +";";
+// Ti.API.log(query);
 // 
-// aptt.add(r3);
-// win.add(aptt);
-
-win.open();
+// var db = Ti.Database.open('_alloy_');
+// var rs = db.execute(query);
+// 
+// Ti.API.log(rs.rowCount);
+// 
+// details = new Object();
+// while (rs.isValidRow()) {
+	// details[rs.fieldByName('detail')] = rs.fieldByName('description');
+	// rs.next();
+// }
+// 
+// rs.close();
+// 
+// var convert = new Markdown.getSanitizingConverter().makeHtml;
+// var accordionData = [];
+// accordionData.push('<html><head><script type="text/javascript" src="jquery.js"></script><script type="text/javascript" src="detailWebView.js"></script><meta name="viewport" content="initial-scale=1.0, user-scalable=no" /><link rel="stylesheet" type="text/css" href="accordion.css"></head><body><div class="accordion vertical"><ul>');
+// 
+// details_names = Object.keys(details);
+// for(var i=0,j=details_names.length; i<j; i++){
+	// detail_name = details_names[i];
+	// detail_description = convert(details[detail_name]);
+// 	
+// 
+// 
+	// accordionData.push('<li class="list"><div class="labelBox"><img src="iconCel.png" class="imgIcon"/><label>');
+	// accordionData.push(detail_name);
+	// accordionData.push('</label><span class="arrow"></span></div><div class="content"><div class="cb">');
+	// accordionData.push(detail_description);
+	// accordionData.push('</div></div></li>');
+// };
+// accordionData.push('</ul></div></body></html>');
+// 
+// console.log(accordionData);
+// 
+// 
+// var details = Titanium.UI.createWebView({
+            // width  : Ti.UI.FILL,
+            // height : Ti.UI.FILL,
+            // enableZoomControls: false,
+              // backgroundColor: "#eeeeee"
+        // });
+//         
+// details.html = accordionData.join('');
+// 
+// /*details.addEventListener("load", function() {
+   // details.evalJS("$('body').html('changed!');");
+// });*/
+// 
+// 
+// //details.evalJS('window.onload=function(){for(var t=document.getElementsByTagName("li"),e=0;e<t.length;e++){var n=t[e];t[e].addEventListener("click",function(){var t=n.getAttribute("class");"list active"==t?n.innerHtml="list unactive":n.innerHTML="list active"},!1)}};');
+// 
+// $.win.add(details);
+// 
+// var query2 = "SELECT " +
+			// "  article.id," +
+			// "  article.name " +
+			// "FROM " +
+			// "  article " +
+			// "INNER JOIN " +
+			// "  related_articles " +
+			// "ON " +
+			// "  article.id = related_articles.related_article_id " +
+			// "WHERE " +
+			// "  related_articles.article_id = " + articleId + ";";
+// 
+// var articlesRS = db.execute(query2);
+// 
+// var related_articles = [];
+// while (articlesRS.isValidRow()) {
+	// related_articles.push({
+		// 'articleId': articlesRS.fieldByName('id'),
+		// 'articleName': articlesRS.fieldByName('name')
+	// });
+  // articlesRS.next();
+// }
+// var articles_labels = [];
+// if (related_articles.length) {
+// 	
+	// for (var i=0; i < related_articles.length; i++) {
+	  // var art = related_articles[i];
+	  // Ti.API.log('info', art.articleName);
+	  // var ll = $.UI.create('Label', {text: art.articleName, id: art.articleId, classes: ["rel_articles"]});
+	  // ll.addEventListener('click', openRelatedArticle);
+	// //  $.rel_articles_view.add(ll);
+	// };
+// 
+// } else {
+	// Ti.API.log('info', 'Sem artigos relacionados');
+// };
+// articlesRS.close();
+// db.close();

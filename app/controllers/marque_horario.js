@@ -134,7 +134,7 @@ var picker = Ti.UI.createPicker({
 	value: setValue, visibleItems:2, useSpinner:false, 
 	top:"40dp",
 	left:"18dp",
-	zIndex:6, width:"240dp",height:"130dp"
+	zIndex:6, width:"243dp",height:"150dp"
 });
 
 var pickerLabel = Ti.UI.createLabel({

@@ -29,7 +29,8 @@
 "#menu_btn": {
 	width: "24dp",
 	height: "24dp",
-	left:0
+	left:0,
+	touchEnable: false
 }
 
 ".label_title": {

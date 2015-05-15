@@ -51,13 +51,13 @@
 
 "#header_view1": {
 	width: Titanium.UI.FILL,
-	height: '300px'
+	height: '180dp'
 }
 
 
 ".painel": {
 	backgroundColor:"#5090CD",
-	height:"250px",
+	height:"145dp",
 	color:"#ffffff",
 	top:'0px', 
 	width:"100%",
@@ -69,7 +69,7 @@
 	left:"72dp", 
 	color:"#ffffff",
 	font: {
-		fontSize: 25
+		fontSize: "25dp"
 	}
 }
 
@@ -77,15 +77,15 @@
 	zIndex:4,
 	color:"#ffffff",
 	font: {
-		fontSize: 15
-	}, top:110,
+		fontSize: "15dp"
+	}, top:"110dp",
 	left:"120dp"
 	
 }
 
 ".imageBt":{
 	backgroundImage: '/buttonDetail.png',
-    top: "145dp",
+    top: "115dp",
     width: "56dp",
     height: "56dp",
     right:10,
