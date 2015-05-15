@@ -100,7 +100,8 @@ for (var i=0; i < tableData.length; i++) {
   var row_arrow = Ti.UI.createImageView({
   	image: '/images/android/common/ic_chevron_right_grey600_36dp.png',
   	width: "24dp",
-  	touchEnabled: false
+  	touchEnabled: false,
+  	right:"0"
   });
   
   row_arrow_containner.add(row_arrow);

@@ -120,7 +120,7 @@
 	color: "white",
 	textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER,
 	font: {
-		fontSize: "14dp"
+		fontSize: "16dp"
 	}
 }
 
@@ -177,25 +177,25 @@
 }
 
 ".label_title_menu": {
-	left:"52dp",touchEnable:false,
+	left:"72dp",touchEnable:false,
 	width:"190dp",color:"#858687",
 	font: {
-		fontSize: "12dp"
+		fontSize: "16dp"
 	}
 }
 
 ".label_title_selected": {
-	left:"52dp",touchEnable:false,color:"#5091cd",
+	left:"72dp",touchEnable:false,color:"#5091cd",
 	width:"190dp",
 	font: {
-		fontSize: "12dp"
+		fontSize: "16dp"
 	}
 }
 
 ".label_title_menu_desc": {
 	left:"0",touchEnable:false,
 	font: {
-		fontSize: "12dp",
+		fontSize: "16dp",
 	}
 }
 
@@ -206,7 +206,7 @@
 	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
 	color:"#fff",
 	font: {
-		fontSize: "12dp"
+		fontSize: "16dp"
 	}
 }
 

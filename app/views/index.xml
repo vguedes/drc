@@ -10,7 +10,7 @@
 				  <TableView id="table2">
 					<TableViewRow  class="botao_menu_top" onClick="toggle_menu">
 							<ImageView class="menu_btn" image="/images/android/common/icon_menu/01.png"></ImageView>
-							<Label class="label_title_selected">Início</Label>
+						
 					</TableViewRow>
 					
 					<TableViewRow class="botao_menu"><Label class="label_title_menu_desc">Consultas e exames</Label></TableViewRow>

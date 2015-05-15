@@ -5,33 +5,32 @@
 	cinza claro		F0F0F2
  */
 
-".menu_btn": {
-    top: 11,
-    width: 36,
-    height: 36,
-    left:5,
-    zIndex:9
+".title": {
+	width: Titanium.UI.FILL,
+	height: "56dp",
+ 	backgroundColor:"#5090cd",
+	top: 0
 }
+
+".back_btn": {
+	 left: "0dp",
+	width: "24dp",
+	touchEnabled: false
+}
+
+".clickable_area": {
+	width: "48dp",
+	height: "48dp",
+	left: "16dp",
+}
+
 
 ".label_title": {
 	width: Titanium.UI.SIZE,
 	height: Titanium.UI.FILL,
  	color: "white",
  	font: {fontWeight:'bold',fontSize: "20dp"},
-	left: "20dp"
-}
-".back_btn": {
-	// left: "16dp",
-	width: "24dp",
-	touchEnabled: false,
-	left: "14dp"
-	// height: 20
-}
-
-".clickable_area": {
-	width: "48dp",
-	height: "48dp",
-	left: "5dp",
+	left: "72dp"
 }
 
 ".container" : {
@@ -65,9 +64,9 @@
 	zIndex:1
 }
 
-".title": {
+".title4": {
 	zIndex:4,
-	left:"120px", 
+	left:"72dp", 
 	color:"#ffffff",
 	font: {
 		fontSize: 25
@@ -80,15 +79,15 @@
 	font: {
 		fontSize: 15
 	}, top:110,
-	left:"120px"
+	left:"120dp"
 	
 }
 
 ".imageBt":{
 	backgroundImage: '/buttonDetail.png',
-    top: "185px",
-    width: "108px",
-    height: "106px",
+    top: "145dp",
+    width: "56dp",
+    height: "56dp",
     right:10,
     zIndex:9
 }
@@ -101,71 +100,11 @@
 
 
 "#title_label": {
-	width: '80%',
+	width: '72dp',
 	color: "#fff",
 	backgroundColor: "#5090CD",
 	font: {
 		fontSize: 30
 	},
 	textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER,
-}
-
-"#details": {
-	//width: '100%',
-	//height: Titanium.UI.SIZE
-	left:'0px'
-}
-
-
-".active div.content" : { backgroundColor: "#000000"}
-".unactive div.content" : { backgroundColor: "#ffffff"}
-"#rel_articles_view": {
-	width: Titanium.UI.FILL,
-	height: Titanium.UI.SIZE
-}
-
-"#rel_articles_label": {
-	width: Titanium.UI.SIZE,
-	height: Titanium.UI.SIZE
-}
-
-".rel_articles": {
-	left: "10px",
-	color: "#5090CD"
-}
-
-".article": {
-	color: "#000",
-	left: "5%",
-	font: {
-		fontWeight: 'bold',
-		fontSize: 14
-	}
-}
-
-".header": {
-	color: "#000",
-	// backgroundColor: "#C0C0C0",
-	// left: "5%",
-	width: Titanium.UI.FILL,
-	height: "40",
-	font: {
-		fontSize: 12
-	}
-}
-
-".data": {
-	width: Titanium.UI.FILL,
-	height: "100"
-}
-
-".hor": {
-	width: Titanium.UI.FILL,
-	height: Titanium.UI.FILL
-}
-
-".btns_containner": {
-	width: "80%",
-	height: Titanium.UI.FILL
-	
 }

@@ -8,17 +8,41 @@
 
 ".title": {
 	width: Titanium.UI.FILL,
-	height: 58,
+	height: "56dp",
  	backgroundColor:"#5090cd",
 	top: 0
 }
 
-".menu_btn": {
-	left: 10,
-	width: 25,
-	height: 20
+".clickable_area": {
+	width: "48dp",
+	height: "48dp",
+	left: "16dp",
 }
 
+
+".menu_btn": {
+	left: "0dp",
+	width: "24dp",
+	height: "24dp"
+}
+
+
+  ".row_arrow_containner":{
+  	width: "48dp",
+  	height: "48dp",
+  	right: "16dp",
+  	touchEnabled: false
+  }
+  
+   ".row_arrow":{
+  	backgroundImage: '/images/android/common/ic_chevron_right_grey600_36dp.png',
+  	width: "24dp",
+  	touchEnabled: false,
+  	right:"0"
+   }
+  
+  
+  
 ".label_title": {
 	width: Titanium.UI.SIZE,
 	height: Titanium.UI.FILL,
@@ -28,20 +52,20 @@
 }
 
 ".find_btn": {
-	right: 20,
-	width: '48px',
-	height: '48px'
+	right: "16dp",
+	width: '24dp',
+	height: '24dp'
 }
 
 ".row": {
 	width: Titanium.UI.FILL,
-	height: 55
+	height: "72dp"
 }
 
 ".row_icon": {
-	width: 25,
-	height: 25,
-	left: 20
+	width: "25dp",
+	height: "25dp",
+	left: "16dp"
 }
 
 ".row_label": {
@@ -54,12 +78,4 @@
 	}
 }
 
-".row_arrow": {
-width:36,height:36,
-	backgroundImage: '/images/android/common/ic_chevron_right_grey600_36dp.png',
-	right: 20,
-	color: "#151515",
-	font: {
-		fontSize: 18
-	}
-}
+
