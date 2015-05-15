@@ -52,15 +52,15 @@ var labelTitle = Ti.UI.createLabel({
 //	Create & Define Tooltip Label
 var labelLetterBall = Ti.UI.createLabel({
 	backgroundColor:"#5090cd",
-	width:"100px",
-	height:"100px",
-	right:15,
-	top:54,
+	width:"100dp",
+	height:"100dp",
+	right:"16dp",
+	top:"54dp",
 	borderRadius:50,
 	zIndex:2,
 	color:'white',
 	textAlign:'center',
-	font:{fontSize:30},
+	font:{fontSize:"30dp"},
 	text:"",
 	opacity:0
 });
@@ -69,12 +69,12 @@ var labelLetterBall = Ti.UI.createLabel({
 var absoluteLabelLetter = Ti.UI.createLabel({
     textAlign:'left',
 	left:0,
-    font:{fontSize:20},
-    width:25,
-    height:30,
+    font:{fontSize:"20dp"},
+    width:"25dp",
+    height:"50dp",
     text:'',
-    top:68,
-    left:"40px",
+    top:"63dp",
+    left:"18dp",
     verticalAlign: 'bottom',
     backgroundColor: 'white',
     zIndex:3
@@ -82,20 +82,19 @@ var absoluteLabelLetter = Ti.UI.createLabel({
 
 var labelPadding = Ti.UI.createLabel({
     textAlign:'left',
-	left:0,
-    font:{fontSize:20},
-    width:25,
-    height:30,
+    font:{fontSize:"20dp"},
+    width:"25dp",
+    height:"30dp",
     text:'',
-    top:58,
-    left:"40px",
+    top:"58dp",
+    left:"18dp",
     backgroundColor:'white',
     zIndex:2
 });
 
 //	Create & Define Hidden Label to Fix ScrollEvent StopPropagation **HACK SAFADO
 var labelOverMask = Ti.UI.createLabel({
-	left:"40px",
+	left:"40dp",
 	color:"#cccccc",
 	backgroundColor:'transparent',
 	opacity:1,
@@ -170,7 +169,7 @@ for (var i=0; i<tableDataLength; i++){
 	    className:'forumEvent',
 		rowIndex:i,
 		rowLetter: rowLetter,
-	    height:50,
+	    height:"72dp",
 	    width: "100%"
 	});
 
@@ -178,8 +177,8 @@ for (var i=0; i<tableDataLength; i++){
 	//	Define & Add TableRow Childrens
 	var labelLetter = Ti.UI.createLabel({
 	    textAlign:'left',
-		left:0,
-	    font:{fontSize:20},
+		left:"18dp",
+	    font:{fontSize:"20dp"},
 	    color:"#6e6f71",
 	    width:25,
 	    // touchEnabled: false,
@@ -202,8 +201,8 @@ for (var i=0; i<tableDataLength; i++){
 	
 	
 	var labelDetails = Ti.UI.createLabel({
-	    font:{fontSize:16},
-	    left:80, color:"#151515",
+	    font:{fontSize:"16sp"},
+	    left:"72dp", color:"#151515",
 	    // width:130,
 	    touchEnabled: false,
 	    rowId:rowData.articleId,
@@ -212,15 +211,22 @@ for (var i=0; i<tableDataLength; i++){
 		
 	row.add(labelDetails);
 	
-	var labelArrow = Ti.UI.createLabel({
-	   	right:0,
-	    width:36,height:36,
-		 backgroundImage: '/images/android/common/ic_chevron_right_grey600_36dp.png',
-	    font:{fontSize:18},
-	    touchEnabled: false,color:"#151515"
-	});
-	
-	row.add(labelArrow);
+	  var row_arrow_containner = Ti.UI.createView({
+	  	width: "48dp",
+	  	height: "48dp",
+	  	right: "16dp",
+	  	touchEnabled: false
+	  });
+	  
+	  var row_arrow = Ti.UI.createImageView({
+	  	image: '/images/android/common/ic_chevron_right_grey600_36dp.png',
+	  	width: "24dp",
+	  	touchEnabled: false,
+	  	right:"0"
+	  });
+  
+    row_arrow_containner.add(row_arrow);
+    row.add(row_arrow_containner);
 	
 	row.addEventListener('click', function(e){
 		console.log('ae'+e);
@@ -238,7 +244,7 @@ tableData.push(row);
 var table = Ti.UI.createTableView({
   	data: tableData,
   	top:65,
-	left:"40px",
+	left:"0dp",
 	color:"#6e6f71"
 });
 
@@ -337,15 +343,15 @@ var clickable_area = Ti.UI.createView({
     top: 5,
     width: 48,
     height: 48,
-    left:"5dp",
+    left:"0dp",
     zIndex:9
 });
 
 var backArrow = Ti.UI.createImageView({
   backgroundImage: '/images/android/common/ic_arrow_back_white_24dp.png',
-    width: 24,
-    height: 24,touchEnabled: false,
-    left:"14dp",
+    width: "24dp",
+    height: "24dp",touchEnabled: false,
+    left:"16dp",
     zIndex:9
 });
 

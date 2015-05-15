@@ -19,6 +19,8 @@ Ti.App.addEventListener("clsAppntStack", function(data) {
 	win.close();
 });
 
+
+
 // Create & Define BackButton
 var clickable_area = Ti.UI.createView({
     top: "5dp",
@@ -45,11 +47,9 @@ clickable_area.addEventListener('click', function(e){
 
 //	Create & Define Title Label
 var labelTitle = Ti.UI.createLabel({
-	width: "100%",
-	height: "56dp",
+	height: "56dp", left:"72dp",
 	color: "#fefffd",
 	backgroundColor:"#5090cd",
-	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
 	top:"0", font:{fontSize:"20dp", fontWeight:"bold"},zIndex:50,
 	text:"3. Marque o dia e horário"
 });
@@ -146,9 +146,9 @@ var pickerLabel = Ti.UI.createLabel({
   
 var bgPicker = Ti.UI.createLabel({
 	width:"100%",
-	height:"150dp",
+	height:"200dp",
 	backgroundColor:"#5090cd",
-	top:"50dp",
+	top:"0dp",
 	zIndex:5
 	
 });

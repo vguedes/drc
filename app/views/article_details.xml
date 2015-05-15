@@ -1,24 +1,17 @@
 <Alloy>
-	<Window id="win" class="container" layout="vertical">
-
-		<View id="header_view" layout="horizontal">
-				<View class="clickable_area" onClick="back">
-		    	<ImageView class="back_btn" image="/images/android/common/ic_arrow_back_white_24dp.png"></ImageView>
-		   </View>
-				<Label class="label_title">dr.consulta</Label>
+	<Window id="win" class="container" layout="vertical">		
+		<View class="title">
+			<View class="clickable_area" onClick="close_window">
+				<ImageView class="back_btn" image="/images/android/common/ic_arrow_back_white_24dp.png"></ImageView>
+			</View>
+			<Label class="label_title" id="title1">dr.consulta</Label>
+			<!-- <ImageView class="find_btn" image="/images/android/common/ic_search_white_18dp.png"></ImageView> -->
 		</View>
-
-		<!--<Label id="article" class="article" />
-
-		<View id="rel_articles_view" layout="horizontal">
-			<Label id="rel_articles_label">Artigos relacionados:</Label>
-		</View>--->
-		
 		
 		<View id="header_view1">
 			<Label id="painel1" class="painel"></Label>
 			<Label id="imgbt" class="imageBt" onClick="load_consulta"></Label>
-			<Label id="text" class="title">Ginecologista</Label>
+			<Label id="text" class="title4">Ginecologista</Label>
 			<Label id="textMenor" class="menor">Gineco</Label>
 		</View>
 		

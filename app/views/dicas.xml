@@ -1,7 +1,9 @@
 <Alloy>
 	<Window class="container" layout="vertical">
 		<View class="title">
-			<ImageView class="menu_btn" image="/images/android/common/ic_menu_white_18dp.png"></ImageView>
+			<View class="clickable_area">
+				<ImageView class="menu_btn" image="/images/android/common/ic_menu_white_24dp.png"></ImageView>
+			</View>
 			<Label class="label_title">Dicas</Label>
 			<ImageView class="find_btn" image="/images/android/common/ic_search_white_18dp.png"></ImageView>
 		</View>
@@ -9,32 +11,44 @@
 			<TableViewRow class="row" onClick="open_articles">
 				<ImageView touchEnabled="false" image="/gravidez_icon.png" class="row_icon"></ImageView>
 				<Label touchEnabled="false" class="row_label" section="gravidez">Gravidez e recém nascido</Label>
-				<Label touchEnabled="false" text="" class="row_arrow"></Label>
+				<View class="row_arrow_containner">
+					<Label touchEnabled="false" text="" class="row_arrow"></Label>
+				</View>
 			</TableViewRow>
 			<TableViewRow class="row" onClick="open_articles">
 				<ImageView touchEnabled="false" image="/gravidez_icon.png" class="row_icon"></ImageView>
 				<Label touchEnabled="false" class="row_label" section="crianca">Criança e adolescente</Label>
-				<Label touchEnabled="false" text="" class="row_arrow"></Label>
+				<View class="row_arrow_containner">
+					<Label touchEnabled="false" text="" class="row_arrow"></Label>
+				</View>
 			</TableViewRow>
 			<TableViewRow class="row" onClick="open_articles">
 				<ImageView touchEnabled="false" image="/gravidez_icon.png" class="row_icon"></ImageView>
 				<Label touchEnabled="false" class="row_label" section="exames">Exames</Label>
-				<Label touchEnabled="false" text="" class="row_arrow"></Label>
+				<View class="row_arrow_containner">
+					<Label touchEnabled="false" text="" class="row_arrow"></Label>
+				</View>
 			</TableViewRow>
 			<TableViewRow class="row" onClick="open_articles">
 				<ImageView touchEnabled="false" image="/gravidez_icon.png" class="row_icon"></ImageView>
 				<Label touchEnabled="false" class="row_label" section="saude_homem"saude_homem>Saúde do Homem</Label>
-				<Label touchEnabled="false" text="" class="row_arrow"></Label>
+				<View class="row_arrow_containner">
+					<Label touchEnabled="false" text="" class="row_arrow"></Label>
+				</View>
 			</TableViewRow>
 			<TableViewRow class="row" onClick="open_articles">
 				<ImageView touchEnabled="false" image="/gravidez_icon.png" class="row_icon"></ImageView>
 				<Label touchEnabled="false" class="row_label" section="saude_mulher">Saúde da Mulher</Label>
-				<Label touchEnabled="false" text="" class="row_arrow"></Label>
+				<View class="row_arrow_containner">
+					<Label touchEnabled="false" text="" class="row_arrow"></Label>
+				</View>
 			</TableViewRow>
 			<TableViewRow class="row" onClick="open_articles">
 				<ImageView touchEnabled="false" image="/gravidez_icon.png" class="row_icon"></ImageView>
 				<Label touchEnabled="false" class="row_label" section="terceira_idade">Terceira idade</Label>
-				<Label touchEnabled="false" text="" class="row_arrow"></Label>
+				<View class="row_arrow_containner">
+					<Label touchEnabled="false" text="" class="row_arrow"></Label>
+				</View>
 			</TableViewRow>
 		</TableView>
 	</Window>

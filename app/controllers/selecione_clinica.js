@@ -17,21 +17,28 @@ win.addEventListener("open", function() {
 });
 
 
+
+var viewTitle = Ti.UI.createView({
+	width: Titanium.UI.FILL,
+	height: "56dp",
+ 	backgroundColor:"#5090cd",
+	top: 0
+});	
+
 // Create & Define BackButton
 var clickable_area = Ti.UI.createView({
-    top: 5,
-    width: 48,
-    height: 48,
-    left:"5dp",
-    zIndex:9
+    top: "5dp",
+    width: "48dp",
+    height: "48dp",
+    left:"0dp",
+    zIndex:999
 });
 
 var backArrow = Ti.UI.createImageView({
   backgroundImage: '/images/android/common/ic_arrow_back_white_24dp.png',
-    width: 24,
-    height: 24,touchEnabled: false,
-    left:"14dp",
-    zIndex:9
+    width: "24dp",
+    height: "24dp",touchEnabled: false,
+    left:"16dp"
 });
 
 clickable_area.add(backArrow);
@@ -41,18 +48,17 @@ clickable_area.addEventListener('click', function(e){
 });
 
 
-//	Create & Define Title Label
-var labelTitle = Ti.UI.createLabel({
-	width: "100%",
-	height: "56dp",
-	color: "#fefffd",
-	backgroundColor:"#5090cd",
-	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
-	top:"0",
-	font:{fontSize:"20dp",fontWeight:'bold'},
-	text:"2. Selecione a clínica"
+var labelTitleText = Ti.UI.createLabel({
+	height: Titanium.UI.FILL,
+ 	color: "white",
+ 	font: {fontWeight:'bold',fontSize: "20dp"},
+	left: "72dp",zIndex:999, text:"2.Selecione uma clínica"
 });
 
+
+
+viewTitle.add(labelTitleText);
+viewTitle.add(clickable_area);
 
 
 
@@ -92,17 +98,17 @@ for (var i=1; i<tableDataLength; i++){
 	//	Define TableRow
 	var row = Ti.UI.createTableViewRow({
 	    className:'forumEvent',
-	    height:70
+	    height:"72dp"
 	});
 
 
 	//	Define & Add TableRow Childrens
 	var labelClinic = Ti.UI.createLabel({
 	    textAlign:'left',
-	    top:8,
-		left:20,
+	    top:"8dp",
+		left:"16dp",
 		color: "#191819",
-	    font:{fontSize:16},
+	    font:{fontSize:"16dp"},
 	    clinic_backend_id:rowData.backend_id,
 	    clinic_address:rowData.address,
 	    touchEnabled:false,
@@ -113,11 +119,11 @@ for (var i=1; i<tableDataLength; i++){
 	
 	var labelClinicDetail = Ti.UI.createLabel({
 	    textAlign:'left',
-		left:20,
-		top:28,
+		left:"16dp",
+		top:"28dp",
 		width:"90%",
 		color: "#7c7c7c",
-	    font:{fontSize:14},
+	    font:{fontSize:"14dp"},
 	    touchEnabled:false,
 	    text:rowData.address
 	});
@@ -132,15 +138,7 @@ for (var i=1; i<tableDataLength; i++){
 	// });
 // 	
 	// row.add(labelDistance);
-	
-	var borderSeparator = Ti.UI.createLabel({
-		width:'100%',
-		height:'1px',
-		backgroundColor:'#cccccc',
-		top:69
-	});
-	
-	row.add(borderSeparator);
+
 
 	
 	
@@ -163,17 +161,14 @@ tableDataCompleted.push(row);
 //	Define Table
 var table = Ti.UI.createTableView({
   	data: tableDataCompleted,
-  	top:58,
-	left:"0px",
+  	top:"72dp",
+	left:"0",
 	color:"#6e6f71"
 });
 
 
 //	ADD objs to window
-win.add(clickable_area);
 
-
-
-win.add(labelTitle);
+win.add(viewTitle);
 win.add(table);
 win.open();

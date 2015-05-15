@@ -13,7 +13,7 @@
 	color: "#fff",
 	backgroundColor: "#5090CD",
 	font: {
-		fontSize: 18,fontWeight:'bold'
+		fontSize: "20dp",fontWeight:'bold'
 	}
 }
 
