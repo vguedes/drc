@@ -4,7 +4,7 @@ var Markdown = require("Markdown.Sanitizer");
 var back = function(e) {$.win.close();};
 
 function load_consulta() {
-	var v = Alloy.createController("especialidades", {}).getView();
+	var v = Alloy.createController("especialidades", {'appointment': true}).getView();
  		v.addEventListener('open', function(e) {
    			v.activity.actionBar.hide();	
 
