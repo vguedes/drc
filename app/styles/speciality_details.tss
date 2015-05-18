@@ -109,7 +109,8 @@
 ".symptoms_view_icon_click_area": {
 	width: "48dp",
 	height: "48dp",
-	left: "16dp"
+	left: "16dp",
+	touchEnabled: false
 }
 
 ".symptoms_view_icon": {
@@ -123,13 +124,15 @@
 	left: "72dp",
 	font: {
 		fontSize: "16dp"
-	}
+	},
+	touchEnabled: false
 }
 
 ".symptoms_view_arrow_click_area": {
 	right: "16dp",
 	width: "48dp",
-	height: "48dp"
+	height: "48dp",
+	touchEnabled: false
 }
 
 ".symptoms_view_arrow": {
@@ -137,15 +140,27 @@
 	width: "24dp",
 	height: "24dp",
 	image: "/images/android/common/ic_chevron_right_grey600_36dp.png",
+	touchEnabled: false
 }
 
 ".symptoms_description": {
 	left: "16dp",
 	right: "16dp",
+	height: "72dp",
 	font: {
 		fontSize: "14dp"
 	}
 }
+
+".exams_description": {
+	left: "16dp",
+	right: "16dp",
+	height: "72dp",
+	font: {
+		fontSize: "14dp"
+	}
+}
+
 
 ".exams_view_icon": {
 	width: "24dp",

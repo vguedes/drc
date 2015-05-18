@@ -14,31 +14,41 @@
 			<Label id="textMenor" class="menor">Gineco</Label>
 		</View>
 		<ScrollView class="details">
+			
+			
+			
 			<Label id="sp_description" class="sp_description" />
 			<View class="hr" />
-			<View class="symptoms_view">
+			
+			
+			
+			<View class="symptoms_view" onClick="toggleSymptoms">
 				<View class="symptoms_view_icon_click_area">
 					<ImageView class="symptoms_view_icon" />
 				</View>
-				<Label class="symptoms_view_label">Simtomas</Label>
+				<Label class="symptoms_view_label">Sintomas</Label>
 				<View class="symptoms_view_arrow_click_area">
-					<ImageView class="symptoms_view_arrow" />
+					<ImageView id="symptoms_view_arrow" class="symptoms_view_arrow" />
 				</View>
 			</View>
 			<Label id="symptoms" class="symptoms_description" />
 			<View class="hr" />
 			
-			<View class="symptoms_view">
+			
+			
+			
+			
+			<View class="symptoms_view" onClick="toggleExams">
 				<View class="symptoms_view_icon_click_area">
 					<ImageView class="exams_view_icon" />
 				</View>
 				<Label class="symptoms_view_label">Exames</Label>
 				<View class="symptoms_view_arrow_click_area">
-					<ImageView class="symptoms_view_arrow" />
+					<ImageView id="exams_view_arrow" class="symptoms_view_arrow" />
 				</View>
 			</View>
-			<Label id="exams" class="symptoms_description" />
-			
+			<Label id="exams" class="exams_description" />
+			<View class="hr" />
 			
 			
 		</ScrollView>

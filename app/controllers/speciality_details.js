@@ -37,6 +37,43 @@ $.textMenor.text = sp.synonym;
 $.sp_description.text = sp.description;
 $.symptoms.text = sp.symptoms;
 $.exams.text = sp.exams;
+$.symptoms.setHeight(0);
+$.exams.setHeight(0);
+$.symptoms_view_arrow.setTransform(Ti.UI.create2DMatrix({ 
+    rotate: 90
+}));
+$.exams_view_arrow.setTransform(Ti.UI.create2DMatrix({ 
+    rotate: 90
+}));
+
+
+function toggleSymptoms(e) {
+	if ($.symptoms.getHeight() == 0) {
+		$.symptoms.setHeight("90dp");
+		$.symptoms_view_arrow.setTransform(Ti.UI.create2DMatrix({ 
+		    rotate: -90
+		}));
+	} else {
+		$.symptoms.setHeight(0);
+		$.symptoms_view_arrow.setTransform(Ti.UI.create2DMatrix({ 
+		    rotate: 90
+		}));
+	}
+}
+
+function toggleExams(e) {
+	if ($.exams.getHeight() == 0) {
+		$.exams.setHeight("90dp");
+		$.exams_view_arrow.setTransform(Ti.UI.create2DMatrix({ 
+		    rotate: -90
+		}));
+	} else {
+		$.exams.setHeight(0);
+		$.exams_view_arrow.setTransform(Ti.UI.create2DMatrix({ 
+		    rotate: 90
+		}));
+	}
+}
 
 // while (articlesRS.isValidRow()) {
 	// tableData.push({
