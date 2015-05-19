@@ -16,7 +16,7 @@ function open_especialidade(e) {
 }	
 
 function open_clinic(e) {
-	var speciality_backend_id = e.source.children[1].backend_id;
+	var speciality_backend_id = e.source.children[1].sp_backend_id;
 	var speciality_name= e.source.children[1].text;
 	clinic_view = Alloy.createController("selecione_clinica", {'speciality_backend_id': speciality_backend_id,'speciality_name':speciality_name}).getView();
  }

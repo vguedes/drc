@@ -14,6 +14,8 @@ var tel = args['tel'];
 			var preco = args['preco'];
 			var slotId = args['slotId'];
 			var speciality_backend_id = args['speciality_backend_id'];
+			
+			console.log(speciality_backend_id);
 
 
 //	Create & Define Window
@@ -363,13 +365,35 @@ tableData.push(rowNasc);
 				var xhr = Ti.Network.createHTTPClient({
 					onload: function(e) {
 						var results = JSON.parse(this.responseText);
+						if (results.operationResult.status == "OK") {
+
+
+
+						    var consultaMarcadaView = Alloy.createController("consulta_marcada",{
+						    	"especialidade": especialidade,
+						    	"doutorId": doutorId,
+								"doutor": doutor,
+								"doutorCrm": doutorCrm,
+								"data":data,
+								"horario":horario,
+								"clinica":clinica,
+								"endereco_clinica": endereco_clinica,
+								"preco": preco
+						    }).getView();
+
+
+
+
+						} else{
+							alert('results');
+						};
 						console.log(results);
 					},
 					onerror: function(e) {
 						console.error(e);
 						// alert(e.error);
 					},
-					timeout: 10000
+					timeout: 120000
 				});
 				
 				// var birthDate = textFieldNacimento
@@ -391,6 +415,7 @@ tableData.push(rowNasc);
 	             };
 	             params = JSON.stringify(params);
 	             params = JSON.parse(params);
+	             console.log(params);
 	             xhr.open("POST", base_url + '/schedule');
 	             xhr.setRequestHeader('Authorization', 'Bearer '  + token);
 	             xhr.setRequestHeader('Content-Type', 'application/json');
@@ -402,7 +427,7 @@ tableData.push(rowNasc);
 				console.log(this.getAllResponseHeaders( ));
 				console.log(arguments);
 			},
-			timeout : 10000  // in milliseconds
+			timeout : 120000  // in milliseconds
 		});
 		
 		client.open("POST", base_url + auth_method);

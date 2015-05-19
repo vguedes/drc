@@ -1,5 +1,6 @@
 var args = arguments[0] || {};
 var speciality_backend_id = args['speciality_backend_id'];
+console.log(speciality_backend_id, 'speciality_backend_id em marque_horario');
 var speciality_name = args['speciality_name'];
 var clinic_backend_id = args['clinic_backend_id'];
 var clinic_name = args['clinic_name'];
@@ -129,8 +130,8 @@ function getDataJson(datetime){
 var picker = Ti.UI.createPicker({
 	selectionIndicator:true,
 	type:Ti.UI.PICKER_TYPE_DATE,
-	minDate: minDate,
-	maxDate: maxDate,
+	minDate: setValue,
+	// maxDate: maxDate,
 	value: setValue, visibleItems:2, useSpinner:false, 
 	top:"40dp",
 	left:"18dp",
@@ -322,6 +323,7 @@ function drawTable(tableJsonData) {
 
 		//limpa rows
 		 for (var i=table.data[0].rows.length;i>=0;i--){
+		 	console.log("Deletanto " + i);
 	            table.deleteRow(i);
 	    }
     
@@ -336,7 +338,17 @@ function drawTable(tableJsonData) {
 	for (var o in tableJsonData) {
 	    len++;
 	}
-	
+
+
+var slotId = false;
+var doctorName = false;
+var doctcorId = false;
+var doctorCrm = false;
+var apptTime = false;
+var price = false;
+
+
+
 	//	START LOOP INTO DATA ARRAY
 for (var i=0; i<len; i++){
 	
@@ -372,6 +384,16 @@ for (var i=0; i<len; i++){
 	for(ind=0; ind<lenSec; ind++){
 		var dataL = tableJsonData[Object.keys(tableJsonData)[i]][ind];
 		heightCoach = 55 + (35*ind);
+		
+			console.log('======== OBJ ========');
+			console.log(dataL.slotId, '  slotId');
+			console.log(dataL.doctorId, '  doctorId');
+			console.log(dataL.doctorName, '  doctorName');
+			console.log(dataL.doctorCrm, '  doctorCrm');
+			console.log('======== END OBJ ========');
+
+		
+		
 		var labelCoach = Ti.UI.createLabel({
 		    textAlign:'left',
 		    top:heightCoach,
@@ -381,6 +403,12 @@ for (var i=0; i<len; i++){
 			color:'#fefffd',
 			backgroundColor:'#5090cd',
 		    font:{fontSize:"12dp"},
+		    slotId: dataL.slotId,
+		    doctorId: dataL.doctorId,
+		    doctorCrm: dataL.doctorCrm,
+		    doctorName: dataL.doctorName,
+		    apptTime: dataL.time,
+		    price: dataL.price,
 		    text:'    '+dataL.time+' - Dr(a). '+dataL.doctorName,
 		    borderRadius:4,
 		    backgroundPaddingLeft: "30dp",
@@ -388,6 +416,23 @@ for (var i=0; i<len; i++){
 		});
 		
 		labelCoach.addEventListener('click',function(e){
+			console.log(e);
+			slotId = e.source.slotId;
+			doctorName = e.source.doctorName;
+			doctorId = e.source.doctorId;
+			doctorCrm = e.source.doctorCrm;
+			apptTime = e.source.apptTime;
+			price = e.source.price;
+			
+			console.log('======== EXTRACTED ========');
+			console.log(slotId, '  slotId');
+			console.log(doctorId, '  doctorId');
+			console.log(doctorName, '  doctorName');
+			console.log(doctorCrm, '  doctorCrm');
+			console.log(apptTime, '  apptTime');
+			console.log(price, '  price');
+			console.log('======== END EXTRACTED ========');
+			
 			var widthModal = 276;
 			
 		    var modalConfirm = Ti.UI.createView ({
@@ -440,7 +485,7 @@ for (var i=0; i<len; i++){
 			zIndex:12, width:"210dp",
 			color:'#868688',
 			font:{fontSize:"12dp"},
-			text: 'Sua consulta de '+speciality_name+' com Dr(a) '+dataL.doctorName+' será '+FormatDate(pickerVal.getDate(),pickerVal.getMonth(),pickerVal.getFullYear())+' as '+nowTime+'hrs na clínica '+clinic_name+'.'
+			text: 'Sua consulta de '+speciality_name+' com Dr(a) '+doctorName+' será '+FormatDate(pickerVal.getDate(),pickerVal.getMonth(),pickerVal.getFullYear())+' as '+apptTime+'hrs na clínica '+clinic_name+'.'
 		});
 		
 		var labelModalEdit = Ti.UI.createLabel({
@@ -470,15 +515,16 @@ for (var i=0; i<len; i++){
 			var pickerVal =  picker.getValue();
 			
 			var especialidade = speciality_name;
-			var doutor = dataL.doctorName;
-			var doutorId = dataL.doctorId;
-			var doutorCrm = dataL.doctorCrm;
-			var preco = dataL.price;
+			var doutor = doctorName;
+			var doutorId = doctorId;
+			var doutorCrm = doctorCrm;
+			var preco = price;
 			var data = pickerVal.getDate()+' - '+pickerVal.getMonth() +' - '+ pickerVal.getFullYear();
-			var horario = nowTime;
+			var horario = apptTime;
 			var clinica = clinic_name;
 			var endereco_clinica = clinic_address;
-			var slotId = dataL.slotId;
+			// var slotId = slotId;
+			console.log(slotId, '-------------- slotId');
 			
 			var dadosPacienteView = Alloy.createController("dados_paciente",{
 				"especialidade": especialidade,

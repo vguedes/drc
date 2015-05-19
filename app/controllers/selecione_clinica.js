@@ -1,5 +1,6 @@
 var args = arguments[0] || {};
 var speciality_backend_id = args['speciality_backend_id'];
+console.log(speciality_backend_id, '---------------------------    speciality_backend_id em selecione_clinica');
 var speciality_name = args['speciality_name'];
 
 //	Create & Define Window
