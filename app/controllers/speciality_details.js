@@ -75,6 +75,10 @@ function toggleExams(e) {
 	}
 }
 
+function showArticles(e) {
+	var consultaView = Alloy.createController("artigos", {'speciality': sp.name, 'window_title': sp.name}).getView();
+}
+
 // while (articlesRS.isValidRow()) {
 	// tableData.push({
 		// 'id': articlesRS.fieldByName('id'),

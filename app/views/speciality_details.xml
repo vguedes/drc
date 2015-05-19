@@ -49,6 +49,18 @@
 			</View>
 			<Label id="exams" class="exams_description" />
 			<View class="hr" />
+
+
+			<View class="symptoms_view" onClick="showArticles">
+				<View class="symptoms_view_icon_click_area">
+					<ImageView class="articles_view_icon" />
+				</View>
+				<Label class="symptoms_view_label">Artigos</Label>
+				<View class="symptoms_view_arrow_click_area">
+					<ImageView id="articles_view_arrow" class="symptoms_view_arrow" />
+				</View>
+			</View>
+
 			
 			
 		</ScrollView>

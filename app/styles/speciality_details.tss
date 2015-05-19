@@ -169,6 +169,12 @@
 	image: "/exame_geral_icon.png"
 }
 
+".articles_view_icon": {
+	width: "24dp",
+	height: "24dp",
+	touchEnabled: false,
+	image: "/images/android/common/ic_school_grey600_24dp.png"
+}
 
 
 
