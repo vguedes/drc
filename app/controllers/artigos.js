@@ -265,57 +265,60 @@ var table = Ti.UI.createTableView({
 	color:"#151515"
 });
 
-//	SETTING OFFSET POS
-var rowHeight = 95;
-var totalHeight = (parseInt(table.data[0].rowCount))*rowHeight;
-var rowCount = table.data[0].rowCount;
-
-//	DEFINE ANIMATION & LISTERNERS
-var activityShow = 0;
-var activityHide = 0;
-var animateState = 0;
-
-var animateShow = Ti.UI.createAnimation({
-	opacity:1,
-	duration:500
-});
-
-//	SET VARIABLES TO ABLE LISTENERS TO WORK
-var scrolling = null;
-var finished = null;
-var activityListerner = 0;
+if (table.data.length) {
+	//	SETTING OFFSET POS
+	var rowHeight = 95;
+	var totalHeight = (parseInt(table.data[0].rowCount))*rowHeight;
+	var rowCount = table.data[0].rowCount;
 	
-
-//	ADD LISTERNERS TENTAR SEM O SETIMEOUT E COLOCAR DELAY
-labelLetterBall.addEventListener('aShow',function(e){
-	activityListerner = 1;
-	labelLetterBall.animate(animateShow,function(){
-  		finished = 1;
+	//	DEFINE ANIMATION & LISTERNERS
+	var activityShow = 0;
+	var activityHide = 0;
+	var animateState = 0;
+	
+	var animateShow = Ti.UI.createAnimation({
+		opacity:1,
+		duration:500
 	});
-});
-
-var animateHide= Ti.UI.createAnimation({
-	opacity:0,
-	duration:500
-});
-
-labelLetterBall.addEventListener('aHide',function(e){
-  activityListerner = 1;	
-  labelLetterBall.animate(animateHide,function(){
-	   activityListerner = 0;
-  });	
-});
-
 	
-table.addEventListener('scrollend',function(e){
-	if(scrolling == 1){
-		setTimeout(function(){
-			scrolling = 0;
-			labelLetterBall.fireEvent('aHide');
-		},1000);
-	}
-	if(finished == 1){labelLetterBall.fireEvent('aHide');}	
-});
+	//	SET VARIABLES TO ABLE LISTENERS TO WORK
+	var scrolling = null;
+	var finished = null;
+	var activityListerner = 0;
+		
+	
+	//	ADD LISTERNERS TENTAR SEM O SETIMEOUT E COLOCAR DELAY
+	labelLetterBall.addEventListener('aShow',function(e){
+		activityListerner = 1;
+		labelLetterBall.animate(animateShow,function(){
+	  		finished = 1;
+		});
+	});
+	
+	var animateHide= Ti.UI.createAnimation({
+		opacity:0,
+		duration:500
+	});
+	
+	labelLetterBall.addEventListener('aHide',function(e){
+	  activityListerner = 1;	
+	  labelLetterBall.animate(animateHide,function(){
+		   activityListerner = 0;
+	  });	
+	});
+	
+		
+	table.addEventListener('scrollend',function(e){
+		if(scrolling == 1){
+			setTimeout(function(){
+				scrolling = 0;
+				labelLetterBall.fireEvent('aHide');
+			},1000);
+		}
+		if(finished == 1){labelLetterBall.fireEvent('aHide');}	
+	});
+
+};
 
 table.addEventListener('scroll',function(e){
 	
