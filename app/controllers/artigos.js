@@ -1,5 +1,6 @@
 var args = arguments[0] || {};
 var articlesSession = args.articlesSession || false;
+var speciality = args.speciality || false;
 var window_title = args.window_title || false;
 // console.debug(articlesSession);
 
@@ -124,6 +125,22 @@ if (articlesSession) {
 				"  article_article_sessions.article_sessions_id = article_sessions.id " +
 				"WHERE " +
 				"  article_sessions.name = '" + articlesSession + "';";
+} else if (speciality) {
+	var query = "SELECT " +
+				"  article.id as id, " +
+				"  article.name as name " +
+				"FROM " +
+				"  article " +
+				"JOIN " +
+				"  speciality_article " +
+				"ON " +
+				"  article.id = speciality_article.article_id " +
+				"JOIN " +
+				"  speciality " +
+				"ON " +
+				"  speciality_article.speciality_id = speciality.id " +
+				"WHERE " +
+				"  speciality.name = '" + speciality + "';";
 } else{
 	var query = 'SELECT id, name FROM article ORDER BY name';
 };
