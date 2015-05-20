@@ -274,7 +274,7 @@ function getAvailableSlots(today) {
              var params = {
                 'startDate': today,
                 //TODO deixar passar o serviceId
-                'serviceId': '43',
+                'serviceId': speciality_backend_id,
                 'totalDays': '0',
                 'groupBy': 'UNIT'
              };
