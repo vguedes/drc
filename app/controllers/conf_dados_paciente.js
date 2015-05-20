@@ -385,13 +385,13 @@ tableData.push(rowNasc);
 
 
 						} else{
-							alert(results);
+							alert(results.operationResult.message);
 						};
 						console.log(results);
 					},
 					onerror: function(e) {
 						console.error(e);
-						// alert(e.error);
+						alert(e.error);
 					},
 					timeout: 120000
 				});
@@ -426,6 +426,7 @@ tableData.push(rowNasc);
 			onerror: function(e) {
 				console.log(this.getAllResponseHeaders( ));
 				console.log(arguments);
+				alert(e.error);
 			},
 			timeout : 120000  // in milliseconds
 		});
