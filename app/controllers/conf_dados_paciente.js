@@ -385,7 +385,7 @@ tableData.push(rowNasc);
 
 
 						} else{
-							alert('results');
+							alert(results);
 						};
 						console.log(results);
 					},
