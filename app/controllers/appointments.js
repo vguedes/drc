@@ -1,6 +1,7 @@
 Ti.UI.backgroundColor = 'white';
 var win = Ti.UI.createWindow({
-	 backgroundColor: 'white'
+	 backgroundColor: '#FFF',
+	 layout: "vertical"
 });
 
 Ti.App.addEventListener("clsAppntStack", function(data) {
@@ -60,7 +61,8 @@ var query = " SELECT" +
 			"	appointments.id as appt_id," +
 			" 	appointments.date_time as appt_date_time," +
 			" 	clinic.name as clinic_name," +
-			" 	speciality.name as speciality_name" +
+			" 	speciality.name as speciality_name," +
+			"	speciality.icon as speciality_icon" +
 			" FROM" +
 			" 	appointments" +
 			" INNER JOIN" +
@@ -77,7 +79,8 @@ while (articlesRS.isValidRow()) {
 		'appt_id': articlesRS.fieldByName('appt_id'),
 		'appt_date_time': new Date(articlesRS.fieldByName('appt_date_time')),
 		'clinic_name': articlesRS.fieldByName('clinic_name'),
-		'speciality_name': articlesRS.fieldByName('speciality_name')
+		'speciality_name': articlesRS.fieldByName('speciality_name'),
+		'speciality_icon': articlesRS.fieldByName('speciality_icon')
 	});
   articlesRS.next();
 }
@@ -87,7 +90,74 @@ db.close();
 console.log(tableData);
 
 
+var apptTable = Ti.UI.createTableView({
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	top: "8dp"
+});
+win.add(apptTable);
 
+for(var i=0,j=tableData.length; i<j; i++){
+  var appt = tableData[i];
+  // Row
+  var r = Ti.UI.createTableViewRow({
+  	height: "88dp"
+  });
+  // Icon
+  var speciality_icon = Ti.UI.createImageView({
+  	// top: "18dp",
+  	left: "16dp",
+  	width: "24dp",
+  	height: "24dp",
+  	image: appt.speciality_icon
+  });
+  r.add(speciality_icon);
+  // View for text
+  var labels_view = Ti.UI.createView({
+  	height: "88dp",
+  	right: "16dp",
+  	left: "72dp",
+  	layout: "vertical"
+  });
+  // Speciality
+  var speciality_label = Ti.UI.createLabel({
+  	color: "#868686",
+  	top: "16dp",
+  	left: 0,
+  	font: {
+  		fontSize: "20dp"
+  	},
+  	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+  	text: appt.speciality_name
+  });
+  labels_view.add(speciality_label);
+  // Data
+  var datetime_label = Ti.UI.createLabel({
+  	color: "#868686",
+  	left: 0,
+  	font: {
+  		fontSize: "14dp"
+  	},
+  	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+  	text: appt.appt_date_time
+  });
+  labels_view.add(datetime_label);
+  // Clinic
+  var clinic_label = Ti.UI.createLabel({
+  	color: "#868686",
+  	left: 0,
+  	font: {
+  		fontSize: "14dp"
+  	},
+  	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+  	text: appt.clinic_name
+  });
+  labels_view.add(clinic_label);
+  r.add(labels_view);
+  
+  apptTable.appendRow(r);
+  
+};
 
 
 
