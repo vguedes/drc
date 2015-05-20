@@ -10,6 +10,7 @@ var tel = args['tel'];
 			var data = args['data'];
 			var horario = args['horario'];
 			var clinica = args['clinica'];
+			var clinic_id = args["clinic_id"];
 			var endereco_clinica = args['endereco_clinica'];
 			var preco = args['preco'];
 			var slotId = args['slotId'];
@@ -367,6 +368,11 @@ tableData.push(rowNasc);
 						var results = JSON.parse(this.responseText);
 						if (results.operationResult.status == "OK") {
 
+							var apptDateTime = data + 'T' + horario;
+							var db = Ti.Database.open('_alloy_');
+							var query = 'INSERT INTO appointments VALUES (NULL, ' + clinic_id + ', ' + speciality_backend_id + ', ' + apptDateTime + ')';
+							var RS = db.execute(query);
+							db.close();
 
 
 						    var consultaMarcadaView = Alloy.createController("consulta_marcada",{

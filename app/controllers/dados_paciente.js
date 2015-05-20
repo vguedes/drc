@@ -8,6 +8,7 @@ var args = arguments[0] || {};
 			var data = args['data'];
 			var horario = args['horario'];
 			var clinica = args['clinica'];
+			var clinic_id = args["clinic_id"];
 			var endereco_clinica = args['endereco_clinica'];
 			var slotId = args['slotId'];
 			var speciality_backend_id = args['speciality_backend_id'];
@@ -243,6 +244,7 @@ tableData.push(rowCel);
 				"horario":horario,
 				"clinica":clinica,
 				"endereco_clinica":endereco_clinica,
+				"clinic_id": clinic_id,
 				"preco": preco,
 				"slotId": slotId,
 				"speciality_backend_id": speciality_backend_id,

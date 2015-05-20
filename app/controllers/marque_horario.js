@@ -2,7 +2,7 @@ var args = arguments[0] || {};
 var speciality_backend_id = args['speciality_backend_id'];
 console.log(speciality_backend_id, 'speciality_backend_id em marque_horario');
 var speciality_name = args['speciality_name'];
-var clinic_backend_id = args['clinic_backend_id'];
+var clinic_id = args['clinic_id'];
 var clinic_name = args['clinic_name'];
 var clinic_address = args['clinic_address'];
 
@@ -534,6 +534,7 @@ for (var i=0; i<len; i++){
 				"data":data,
 				"horario":horario,
 				"clinica":clinica,
+				"clinic_id": clinic_id,
 				"endereco_clinica": endereco_clinica,
 				"preco": preco,
 				"slotId": slotId,
