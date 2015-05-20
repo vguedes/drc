@@ -14,12 +14,18 @@
 					</TableViewRow>
 					
 					<TableViewRow class="botao_menu"><Label class="label_title_menu_desc">Consultas e exames</Label></TableViewRow>
-					
+
 					<TableViewRow class="botao_menu" onClick="load_consulta">
 							<ImageView class="menu_btn" image="/images/android/common/icon_menu/02.png"></ImageView>
 							<Label class="label_title_menu">Marcar</Label>
 					</TableViewRow>
 					
+					<TableViewRow class="botao_menu" onClick="open_appointments">
+							<ImageView class="menu_btn" image="/images/android/common/icon_menu/03.png"></ImageView>
+							<Label class="label_title_menu">Marcados</Label>
+							<!-- TODO Adicionar balão com número de consultas marcadas-->
+					</TableViewRow>
+
 					<!--<TableViewRow class="botao_menu">
 							<ImageView class="menu_btn" image="/images/android/common/icon_menu/03.png"></ImageView>
 							<Label class="label_title_menu">Marcados</Label>

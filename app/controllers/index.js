@@ -119,7 +119,10 @@ function open_menu_teste() {
  	var consultaView = Alloy.createController("TESTE_menu", {}).getView();
 }
  
-
+function open_appointments(){
+	toggle_menu();
+	var consultaView = Alloy.createController("appointments", {}).getView();
+}
 
 
 
