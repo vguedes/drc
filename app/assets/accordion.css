@@ -25,18 +25,20 @@ cinza claro		F0F0F2
 	height:250px;
 	color:#ffffff;
 	float:left; width:100%;
+	color: black;
 }
 
 .title {
 	font-size: 25px;
 	margin-left:20px;
-	margin-top:70px; display:block;	
+	margin-top:70px; display:block;
+	color: black;
 }
 
 .menor {
 	font-size: 15px;
 	margin-left:20px;display:block;
-	
+	color: black;
 }
 
 .accordion {
@@ -48,26 +50,31 @@ cinza claro		F0F0F2
     /*width:100%;*/
     /*padding:10px;*/
      float:left;
+     color: black;
 }
 .accordion ul {
     list-style:none;
     margin:0;
-    padding:0;    
+    padding:0;
+    color: black;  
 }
 .accordion li {
     margin:0;
     padding:0;
     position:relative;
+    color: black;
 }
 
 .accordion li .labelBox .arrow {
 	position:absolute;
 	right:10px; top:20px;
+	color: black;
 	background:url("arrowDrop.png") no-repeat scroll 0px 0px; width:19px; height:16px
 }
 
 .accordion .active .labelBox .arrow {
 	background:url("arrowDrop.png") no-repeat scroll -0px -16px; 
+	color: black;
 }
 
 .accordion [type=radio], .accordion [type=checkbox] {
@@ -75,7 +82,8 @@ cinza claro		F0F0F2
 }
 .accordion .labelBox {
     font-size:16px;
-    color:#ccc;
+    /*color:#ccc;*/
+    color: black;
     // text-shadow:1px 1px 1px #5090CD;
     font-weight:700;
     cursor:pointer;
@@ -89,7 +97,7 @@ cinza claro		F0F0F2
 }
 
 .accordion .imgIcon { margin-right:50px; margin-top:0px;  float:left; position:relative; top:0px;}
-.accordion label { float:left; margin-top:15px; width: 50%;}
+.accordion label { float:left; margin-top:15px; width: 50%; color: black;}
 /*.accordion ul li label:hover, .accordion [type=radio]:checked ~ label, .accordion [type=checkbox]:checked ~ label {
     background:#737373;
     color:#FFF;
@@ -100,27 +108,30 @@ cinza claro		F0F0F2
 .accordion .content {
     padding:0 0px;
   display:none;
+  color: black;
    /* border:1px solid #fff; /* Make the border match the background so it fades in nicely */
     -webkit-transition: all .5s ease-out;
     -moz-transition: all .5s ease-out;
 }
 
-.active .content { display:block;}
+.active .content { display:block; color: black;}
 
 .accordion p {
     color:#333;
     margin:0 0 10px;
+    color: black;
 }
 .accordion h3 {
     color:#542437;
     padding:0;
     margin:10px 0;
+    color: black;
 }
 
-.cb { padding:10px 20px;}
+.cb { padding:10px 20px; color: black;}
 
-.content * { color:#ccc; font-size:12px;}
-.content img { width:200px;}
+.content * { color:#ccc; font-size:12px; color: black;}
+.content img { width:200px; color: black;}
 
 /* Vertical */
 .vertical ul li {
