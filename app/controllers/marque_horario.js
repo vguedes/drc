@@ -486,7 +486,7 @@ for (var i=0; i<len; i++){
 			zIndex:12, width:"210dp",
 			color:'#868688',
 			font:{fontSize:"12dp"},
-			text: 'Sua consulta de '+speciality_name+' com Dr(a) '+doctorName+' será '+FormatDate(pickerVal.getDate(),pickerVal.getMonth(),pickerVal.getFullYear())+' as '+apptTime+'hrs na clínica '+clinic_name+'.'
+			text: 'Sua consulta de '+speciality_name+' com Dr(a) '+doctorName+' será '+FormatDate(pickerVal.getDate(),parseInt(pickerVal.getMonth()) + 1,pickerVal.getFullYear())+' as '+apptTime+'hrs na clínica '+clinic_name+'.'
 		});
 		
 		var labelModalEdit = Ti.UI.createLabel({
