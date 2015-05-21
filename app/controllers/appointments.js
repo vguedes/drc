@@ -99,6 +99,15 @@ win.add(apptTable);
 
 for(var i=0,j=tableData.length; i<j; i++){
   var appt = tableData[i];
+  // Formatting date_time
+  var days = ['DOM', 'SEG', 'TER', 'QUA', 'QUI', 'SEX', 'SAB'];
+  var months = ['JAN', 'FEV', 'MAR', 'ABR', 'MAI', 'JUN', 'JUL', 'AGO', 'SET', 'OUT', 'NOV', 'DEZ'];
+  var appt_day = days[appt.appt_date_time.getDay()];
+  var appt_month = months[appt.appt_date_time.getMonth()];
+  var appt_year = appt.appt_date_time.getFullYear();
+  var appt_time = appt.appt_date_time.getUTCHours() + ":" + appt.appt_date_time.getUTCMinutes(); 
+  var appt_date_time = appt_day + " " + appt.appt_date_time.getDate() + " " + appt_month + " " + appt_time;
+  
   // Row
   var r = Ti.UI.createTableViewRow({
   	height: "88dp"
@@ -139,7 +148,7 @@ for(var i=0,j=tableData.length; i<j; i++){
   		fontSize: "14dp"
   	},
   	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
-  	text: appt.appt_date_time
+  	text: appt_date_time
   });
   labels_view.add(datetime_label);
   // Clinic
@@ -150,7 +159,7 @@ for(var i=0,j=tableData.length; i<j; i++){
   		fontSize: "14dp"
   	},
   	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
-  	text: appt.clinic_name
+  	text: "CLÍNICA " + appt.clinic_name
   });
   labels_view.add(clinic_label);
   r.add(labels_view);
