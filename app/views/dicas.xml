@@ -1,11 +1,11 @@
 <Alloy>
-	<Window class="container" layout="vertical">
+	<Window id="win" class="container" layout="vertical">
 		<View class="title">
-			<View class="clickable_area">
-				<ImageView class="menu_btn" image="/images/android/common/ic_menu_white_24dp.png"></ImageView>
+			<View class="clickable_area" onClick="close_window">
+				<ImageView class="back_btn" image="/images/android/common/ic_arrow_back_white_24dp.png"></ImageView>
 			</View>
 			<Label class="label_title">Dicas</Label>
-			<ImageView class="find_btn" image="/images/android/common/ic_search_white_18dp.png"></ImageView>
+			<!-- <ImageView class="find_btn" image="/images/android/common/ic_search_white_18dp.png"></ImageView> -->
 		</View>
 		<TableView>
 			<TableViewRow class="row" onClick="open_articles">

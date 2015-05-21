@@ -10,3 +10,6 @@ function open_articles(e) {
 	
  }
  
+function close_window(e) {
+	$.win.close();
+}

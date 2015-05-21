@@ -20,10 +20,11 @@
 }
 
 
-".menu_btn": {
+".back_btn": {
 	left: "0dp",
 	width: "24dp",
-	height: "24dp"
+	height: "24dp",
+	touchEnabled: false
 }
 
 
