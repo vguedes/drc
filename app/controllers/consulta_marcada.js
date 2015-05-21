@@ -288,6 +288,7 @@ var letters = [];
 	
 	buttonAction.addEventListener('click',function(e){
 		 // var indexView = Alloy.createController("index",{}).getView();
+		 Ti.App.fireEvent('update_appointments_counter', {});
 		 Ti.App.fireEvent('clsAppntStack', {});
 		 
 	
