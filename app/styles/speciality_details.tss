@@ -88,6 +88,7 @@
 ".sp_description": {
 	left: "16dp",
 	right: "16dp",
+	color: 'black',
 	font: {
 		fontSize: "14dp"
 	}
@@ -122,6 +123,7 @@
 
 ".symptoms_view_label": {
 	left: "72dp",
+	color: "black",
 	font: {
 		fontSize: "16dp"
 	},
@@ -147,6 +149,7 @@
 	left: "16dp",
 	right: "16dp",
 	height: "72dp",
+	color: "black",
 	font: {
 		fontSize: "14dp"
 	}
@@ -156,6 +159,7 @@
 	left: "16dp",
 	right: "16dp",
 	height: "72dp",
+	color: "black",
 	font: {
 		fontSize: "14dp"
 	}
