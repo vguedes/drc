@@ -124,7 +124,22 @@ function open_appointments(){
 	var consultaView = Alloy.createController("appointments", {}).getView();
 }
 
-
-
+// Load appointments counter
+var db = Ti.Database.open('_alloy_');
+// Deveria funcionar, maaaaaaas...
+// var query = "SELECT COUNT(id) as appointments FROM appointment where date_time > " + (new Date()).toISOString() + ";";
+var appts_counter = 0;
+var now = new Date();
+var query = "SELECT date_time FROM appointments;";
+var appointmentsRS = db.execute(query); 
+while (appointmentsRS.isValidRow()) {
+	var apptDateTime = new Date(appointmentsRS.fieldByName('date_time'));
+	if (apptDateTime > now) {
+		appts_counter += 1;
+	};
+	appointmentsRS.next();
+}
+// var appts_counter = appointments.fieldByName('appointments');
+$.appointments_counter.text = appts_counter;
 
 

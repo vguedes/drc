@@ -212,3 +212,16 @@
 	}
 }
 
+".appointments_counter": {
+	right: "16dp",
+	backgroundColor: "red",
+	color: "white",
+	width: "20dp",
+	height: "20dp",
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER,
+	font: {
+		fontSize: "14dp",
+		fontWeight: "bold"
+	}
+}
+

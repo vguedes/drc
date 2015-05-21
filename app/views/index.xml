@@ -23,7 +23,7 @@
 					<TableViewRow class="botao_menu" onClick="open_appointments">
 							<ImageView class="menu_btn" image="/images/android/common/icon_menu/03.png"></ImageView>
 							<Label class="label_title_menu">Marcados</Label>
-							<!-- TODO Adicionar balão com número de consultas marcadas-->
+							<Label id="appointments_counter" class="appointments_counter">0</Label>
 					</TableViewRow>
 
 					<!--<TableViewRow class="botao_menu">
