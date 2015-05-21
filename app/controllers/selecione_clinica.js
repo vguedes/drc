@@ -1,6 +1,7 @@
 var args = arguments[0] || {};
 var speciality_backend_id = args['speciality_backend_id'];
 var speciality_name = args['speciality_name'];
+var speciality_id = args['speciality_id'];
 
 //	Create & Define Window
 Ti.UI.backgroundColor = 'white';
@@ -151,6 +152,7 @@ for (var i=1; i<tableDataLength; i++){
 		
 	    var marqueHorarioView = Alloy.createController("marque_horario",{
 	    	'speciality_backend_id': speciality_backend_id,
+	    	'speciality_id': speciality_id,
 	    	'speciality_name': speciality_name,
 	    	'clinic_id': clinic_id,
 	    	'clinic_name':clinic_name,

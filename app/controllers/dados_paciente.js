@@ -12,6 +12,7 @@ var args = arguments[0] || {};
 			var endereco_clinica = args['endereco_clinica'];
 			var slotId = args['slotId'];
 			var speciality_backend_id = args['speciality_backend_id'];
+			var speciality_id = args['speciality_id'];
 
 //	Create & Define Window
 Ti.UI.backgroundColor = 'white';
@@ -248,6 +249,7 @@ tableData.push(rowCel);
 				"preco": preco,
 				"slotId": slotId,
 				"speciality_backend_id": speciality_backend_id,
+				"speciality_id": speciality_id
 		    }).getView();
 		    
 	    };

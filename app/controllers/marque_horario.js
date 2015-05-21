@@ -1,5 +1,6 @@
 var args = arguments[0] || {};
 var speciality_backend_id = args['speciality_backend_id'];
+var speciality_id = args['speciality_id'];
 console.log(speciality_backend_id, 'speciality_backend_id em marque_horario');
 var speciality_name = args['speciality_name'];
 var clinic_id = args['clinic_id'];
@@ -538,7 +539,8 @@ for (var i=0; i<len; i++){
 				"endereco_clinica": endereco_clinica,
 				"preco": preco,
 				"slotId": slotId,
-				"speciality_backend_id": speciality_backend_id
+				"speciality_backend_id": speciality_backend_id,
+				"speciality_id": speciality_id
 			}).getView();
 		});
 		

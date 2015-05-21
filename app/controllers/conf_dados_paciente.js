@@ -7,7 +7,7 @@ var tel = args['tel'];
 			var doutorId = args['doutorId'];
 			var doutor = args['doutor'];
 			var doutorCrm = args['doutorCrm'];
-			var data = args['data'];
+			var data = args['data'].replace(/ /g,'');
 			var horario = args['horario'];
 			var clinica = args['clinica'];
 			var clinic_id = args["clinic_id"];
@@ -15,8 +15,17 @@ var tel = args['tel'];
 			var preco = args['preco'];
 			var slotId = args['slotId'];
 			var speciality_backend_id = args['speciality_backend_id'];
+			var speciality_id = args['speciality_id'];
+			data = data.split('-');
+			data[1] = parseInt(data[1]) + 1;
+			dd = [];
+			for(var i=0,j=data.length; i<j; i++){
+			  var x = data[i];
+			  dd.push(10 > x ? "0" + x : x);
+			};
+			data = dd.reverse().join('-');
 			
-			console.log(speciality_backend_id);
+			console.log(data);
 
 
 //	Create & Define Window
@@ -370,7 +379,7 @@ tableData.push(rowNasc);
 
 							var apptDateTime = data + 'T' + horario;
 							var db = Ti.Database.open('_alloy_');
-							var query = 'INSERT INTO appointments VALUES (NULL, ' + clinic_id + ', ' + speciality_backend_id + ', ' + apptDateTime + ')';
+							var query = "INSERT INTO appointments VALUES (NULL, " + clinic_id + ', ' + speciality_id + ", '" + apptDateTime + "')";
 							var RS = db.execute(query);
 							db.close();
 
