@@ -124,7 +124,8 @@ if (articlesSession) {
 				"ON " +
 				"  article_article_sessions.article_sessions_id = article_sessions.id " +
 				"WHERE " +
-				"  article_sessions.name = '" + articlesSession + "';";
+				"  article_sessions.name = '" + articlesSession + "' " +
+				"ORDER BY article.name ASC;";
 } else if (speciality) {
 	var query = "SELECT " +
 				"  article.id as id, " +
@@ -140,7 +141,8 @@ if (articlesSession) {
 				"ON " +
 				"  speciality_article.speciality_id = speciality.id " +
 				"WHERE " +
-				"  speciality.name = '" + speciality + "';";
+				"  speciality.name = '" + speciality + "' " +
+				"ORDER BY article.name ASC;";
 } else{
 	var query = 'SELECT id, name FROM article ORDER BY name';
 };
