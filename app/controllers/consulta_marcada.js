@@ -192,7 +192,7 @@ var letters = [];
 		left:"50dp", top:"18dp",
 	    font:{fontSize:"15dp"},
 	    width:"150dp",
-	    html:'<b>R$ ' + preco + '</b><br>Parcelamento em até 3x'
+	    html:'<b>R$ ' + preco + '</b><br>Parcelamento em dinheiro ou no cartão de\ndébito/crédito\nÀ vista ou parcelado'
 	});
 	
 	rowPag.add(labelLetterHTML);	
@@ -224,7 +224,7 @@ var letters = [];
 		left:"50dp", top:"18dp",
 	    font:{fontSize:"15dp"},
 	    width:"150dp",
-	    html:'<b>Documentos</b><br>Lembre-se de trazer seus medicamentos em uso e documentos de identidade:RG,CPF ou Carteira de Motorista'
+	    html:'<b>Dúvidas e cancelamentos</b><br>Ligue para (11) 2065 1325 de segunda a\nsexta das 8h às 19h.'
 	});
 	
 	rowDoc.add(labelLetterHTML);	
